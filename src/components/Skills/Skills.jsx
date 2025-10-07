@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import {
@@ -19,84 +18,168 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: 'Frontend',
+      title: 'Frontend Development',
       skills: [
-        { name: 'React', icon: <FaReact />, color: '#61DAFB' },
-        { name: 'Next.js', icon: <SiNextdotjs />, color: '#000000' },
-        { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
-        { name: 'JavaScript', icon: <FaJs />, color: '#F7DF1E' },
-        { name: 'HTML5', icon: <FaHtml5 />, color: '#E34F26' },
-        { name: 'CSS3', icon: <FaCss3Alt />, color: '#1572B6' },
-        { name: 'Tailwind', icon: <SiTailwindcss />, color: '#06B6D4' },
-        { name: 'Redux', icon: <SiRedux />, color: '#764ABC' },
+        { name: 'React', icon: <FaReact />, level: 95 },
+        { name: 'Next.js', icon: <SiNextdotjs />, level: 90 },
+        { name: 'TypeScript', icon: <SiTypescript />, level: 88 },
+        { name: 'JavaScript', icon: <FaJs />, level: 95 },
+        { name: 'HTML5', icon: <FaHtml5 />, level: 98 },
+        { name: 'CSS3', icon: <FaCss3Alt />, level: 95 },
+        { name: 'Tailwind', icon: <SiTailwindcss />, level: 92 },
+        { name: 'Redux', icon: <SiRedux />, level: 85 },
       ],
     },
     {
-      title: 'Backend',
+      title: 'Backend Development',
       skills: [
-        { name: 'Node.js', icon: <FaNodeJs />, color: '#339933' },
-        { name: 'Express', icon: <SiExpress />, color: '#000000' },
-        { name: 'Python', icon: <FaPython />, color: '#3776AB' },
-        { name: 'GraphQL', icon: <SiGraphql />, color: '#E10098' },
-        { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
-        { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#4169E1' },
+        { name: 'Node.js', icon: <FaNodeJs />, level: 90 },
+        { name: 'Express', icon: <SiExpress />, level: 88 },
+        { name: 'Python', icon: <FaPython />, level: 85 },
+        { name: 'GraphQL', icon: <SiGraphql />, level: 82 },
+        { name: 'MongoDB', icon: <SiMongodb />, level: 90 },
+        { name: 'PostgreSQL', icon: <SiPostgresql />, level: 85 },
       ],
     },
     {
-      title: 'Tools & Others',
+      title: 'Tools & Technologies',
       skills: [
-        { name: 'Git', icon: <FaGitAlt />, color: '#F05032' },
-        { name: 'Docker', icon: <FaDocker />, color: '#2496ED' },
-        { name: 'Figma', icon: <FaFigma />, color: '#F24E1E' },
-        { name: 'Database', icon: <FaDatabase />, color: '#00758F' },
+        { name: 'Git', icon: <FaGitAlt />, level: 93 },
+        { name: 'Docker', icon: <FaDocker />, level: 80 },
+        { name: 'Figma', icon: <FaFigma />, level: 88 },
+        { name: 'Database', icon: <FaDatabase />, level: 87 },
       ],
     },
   ]
 
   return (
-    <section className="skills section" id="skills">
-      <div className="container">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="section-title">Skills & Technologies</h2>
+    <>
+      {/* Top Marquee */}
+      <section className="skills-marquee">
+        <div className="marquee-content">
+          <span className="marquee-item">Modern Technologies ✦</span>
+          <span className="marquee-item">Best Practices ✦</span>
+          <span className="marquee-item">Scalable Solutions ✦</span>
+          <span className="marquee-item">Clean Code ✦</span>
+          <span className="marquee-item">Modern Technologies ✦</span>
+          <span className="marquee-item">Best Practices ✦</span>
+          <span className="marquee-item">Scalable Solutions ✦</span>
+          <span className="marquee-item">Clean Code ✦</span>
+        </div>
+      </section>
 
-          <div className="skills-grid">
-            {skillCategories.map((category, idx) => (
-              <motion.div
-                key={category.title}
-                className="skill-category"
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-              >
-                <h3 className="category-title">{category.title}</h3>
-                <div className="skills-list">
-                  {category.skills.map((skill, skillIdx) => (
-                    <motion.div
-                      key={skill.name}
-                      className="skill-item"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={inView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ duration: 0.3, delay: idx * 0.1 + skillIdx * 0.05 }}
-                    >
-                      <div className="skill-icon" style={{ color: skill.color }}>
-                        {skill.icon}
-                      </div>
-                      <span className="skill-name">{skill.name}</span>
-                    </motion.div>
-                  ))}
+      <section className="skills section" id="skills">
+        <div className="skills-container">
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Section Header */}
+            <div className="skills-header">
+              <span className="skills-badge">• Technical Skills</span>
+              <h2 className="skills-title">
+                Technologies &
+                <br />
+                Expertise
+              </h2>
+              <p className="skills-subtitle">
+                Building modern applications with cutting-edge technologies and best practices
+              </p>
+            </div>
+
+            {/* Skills Grid - Better Layout */}
+            <div className="skills-grid">
+              {skillCategories.map((category, idx) => (
+                <motion.div
+                  key={category.title}
+                  className="skill-category-card"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: idx * 0.15 }}
+                >
+                  <div className="category-header">
+                    <span className="category-icon">✦</span>
+                    <h3 className="category-title">{category.title}</h3>
+                  </div>
+
+                  <div className="skills-list">
+                    {category.skills.map((skill, skillIdx) => (
+                      <motion.div
+                        key={skill.name}
+                        className="skill-item"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={inView ? { opacity: 1, scale: 1 } : {}}
+                        transition={{ duration: 0.3, delay: idx * 0.1 + skillIdx * 0.05 }}
+                        whileHover={{ y: -5 }}
+                      >
+                        <div className="skill-item-content">
+                          <div className="skill-icon-wrapper">
+                            <div className="skill-icon">{skill.icon}</div>
+                          </div>
+                          <div className="skill-info">
+                            <span className="skill-name">{skill.name}</span>
+                            <div className="skill-progress-bar">
+                              <motion.div
+                                className="skill-progress-fill"
+                                initial={{ width: 0 }}
+                                animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
+                                transition={{ duration: 1, delay: idx * 0.1 + skillIdx * 0.1 }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Additional Info Section */}
+            <motion.div
+              className="skills-additional"
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <div className="additional-content">
+                <div className="additional-text">
+                  <h3>Always Learning</h3>
+                  <p>
+                    Continuously expanding my skill set with the latest technologies and industry best practices.
+                    Passionate about clean code, performance optimization, and creating exceptional user experiences.
+                  </p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-    </section>
+                <div className="additional-badges">
+                  <span className="tech-badge">React</span>
+                  <span className="tech-badge">Node.js</span>
+                  <span className="tech-badge">TypeScript</span>
+                  <span className="tech-badge">Next.js</span>
+                  <span className="tech-badge">MongoDB</span>
+                  <span className="tech-badge">Docker</span>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Bottom Marquee */}
+      <section className="skills-marquee skills-marquee-bottom">
+        <div className="marquee-content marquee-reverse">
+          <span className="marquee-item">React & Next.js ✦</span>
+          <span className="marquee-item">Node.js & Express ✦</span>
+          <span className="marquee-item">TypeScript & JavaScript ✦</span>
+          <span className="marquee-item">MongoDB & PostgreSQL ✦</span>
+          <span className="marquee-item">React & Next.js ✦</span>
+          <span className="marquee-item">Node.js & Express ✦</span>
+          <span className="marquee-item">TypeScript & JavaScript ✦</span>
+          <span className="marquee-item">MongoDB & PostgreSQL ✦</span>
+        </div>
+      </section>
+    </>
   )
 }
 

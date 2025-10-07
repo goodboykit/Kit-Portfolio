@@ -4,21 +4,24 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: transparent;
+  background: rgba(61, 79, 63, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: all var(--transition-base);
   padding: 1rem 0;
 }
 
 .navbar.scrolled {
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(61, 79, 63, 0.95);
   backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
 }
 
 .navbar-container {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,17 +30,28 @@
 .navbar-logo a {
   font-size: 1.5rem;
   font-weight: 700;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--light-text);
   text-decoration: none;
+  font-family: var(--font-serif);
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.navbar-logo a::before {
+  content: '✦';
+  color: var(--accent-orange);
+  margin-right: 0.5rem;
+}
+
+.navbar.scrolled .navbar-logo a {
+  color: var(--light-text);
 }
 
 .navbar-menu {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 2.5rem;
+  align-items: center;
 }
 
 .navbar-menu li a {
@@ -45,19 +59,26 @@
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
-  transition: color var(--transition-fast);
+  transition: all var(--transition-fast);
   position: relative;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 0;
 }
 
 .navbar-menu li a::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent-gradient);
+  background: var(--accent-yellow);
   transition: width var(--transition-base);
+}
+
+.navbar-menu li a:hover {
+  color: var(--accent-yellow);
 }
 
 .navbar-menu li a:hover::after,
@@ -65,28 +86,42 @@
   width: 100%;
 }
 
+.navbar-menu li a.active {
+  color: var(--accent-yellow);
+}
+
 .navbar-toggle {
   display: none;
   font-size: 1.5rem;
   color: var(--light-text);
   cursor: pointer;
+  transition: color var(--transition-fast);
 }
 
-@media (max-width: 768px) {
+.navbar-toggle:hover {
+  color: var(--accent-yellow);
+}
+
+@media (max-width: 968px) {
+  .navbar-container {
+    padding: 0 2rem;
+  }
+
   .navbar-toggle {
     display: block;
   }
 
   .navbar-menu {
     position: fixed;
-    top: 70px;
+    top: 80px;
     left: -100%;
     flex-direction: column;
-    background: rgba(15, 23, 42, 0.98);
+    background: rgba(61, 79, 63, 0.98);
     width: 100%;
-    padding: 2rem;
+    padding: 3rem 2rem;
     transition: left var(--transition-base);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    gap: 0;
   }
 
   .navbar-menu.active {
@@ -94,6 +129,28 @@
   }
 
   .navbar-menu li {
-    margin: 1rem 0;
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-menu li a {
+    display: block;
+    padding: 1.25rem 0;
+    font-size: 1.1rem;
+  }
+
+  .navbar-menu li:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar-container {
+    padding: 0 1.5rem;
+  }
+
+  .navbar-logo a {
+    font-size: 1.25rem;
   }
 }

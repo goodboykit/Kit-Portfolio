@@ -11,6 +11,7 @@ import AboutPage from './pages/AboutPage'
 import SkillsPage from './pages/SkillsPage'
 import ProjectsPage from './pages/ProjectsPage'
 import ContactPage from './pages/ContactPage'
+import PortfolioShowcase from './pages/PortfolioShowcase'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -138,6 +139,19 @@ function App() {
                     exit="exit"
                   >
                     <ContactPage />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/showcase"
+                element={
+                  <motion.div
+                    variants={pageVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                  >
+                    <PortfolioShowcase />
                   </motion.div>
                 }
               />

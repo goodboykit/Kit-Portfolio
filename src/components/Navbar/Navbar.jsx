@@ -22,6 +22,7 @@ const Navbar = () => {
     { to: '/about', label: 'About' },
     { to: '/skills', label: 'Skills' },
     { to: '/projects', label: 'Projects' },
+    { to: '/showcase', label: 'Showcase' },
     { to: '/contact', label: 'Contact' },
   ]
 
