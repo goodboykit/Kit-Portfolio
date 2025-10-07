@@ -81,24 +81,22 @@ const Contact = () => {
               <h2 className="contact-title">
                 <TypeAnimation
                   sequence={[
-                    "Let's work",
-                    3000,
-                    "Let's build",
-                    3000,
-                    "Let's create",
-                    3000,
                     "Let's connect",
+                    3000,
+                    "Let's collaborate",
+                    3000,
+                    "Get in touch",
+                    3000,
+                    "Reach out",
                     3000,
                   ]}
                   wrapper="span"
                   speed={50}
                   repeat={Infinity}
                 />
-                <br />
-                together
               </h2>
               <p className="contact-subtitle">
-                Have a project in mind or just want to chat? Drop me a message!
+                I'm actively seeking internship and career opportunities. Feel free to reach out!
               </p>
             </motion.div>
 
@@ -130,7 +128,7 @@ const Contact = () => {
                     viewport={{ once: false, amount: 0.3 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                   >
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                    I'm open to discussing internship opportunities, job openings, or networking connections in the tech industry.
                   </motion.p>
 
                   <div className="info-items">
@@ -245,7 +243,7 @@ const Contact = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder="Let's build something amazing"
+                      placeholder="Internship Inquiry / Job Opportunity"
                       required
                     />
                   </motion.div>
@@ -263,7 +261,7 @@ const Contact = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell me about your project..."
+                      placeholder="I'd love to hear from you..."
                       rows="6"
                       required
                     />
@@ -308,7 +306,7 @@ const Contact = () => {
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                Ready to start your project?
+                Looking for opportunities to grow
               </motion.h3>
               <motion.p
                 initial={{ opacity: 0.5, y: 20 }}
@@ -316,7 +314,7 @@ const Contact = () => {
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                Let's create something amazing together
+                Open to internships, entry-level positions, and collaboration
               </motion.p>
             </motion.div>
           </div>

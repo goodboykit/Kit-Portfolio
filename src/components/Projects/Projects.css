@@ -197,6 +197,18 @@
   opacity: 1;
 }
 
+.project-overlay-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+}
+
 .project-links {
   display: flex;
   gap: 1.5rem;
@@ -283,6 +295,8 @@
   font-size: 0.95rem;
   text-decoration: none;
   transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .view-project-btn:hover {

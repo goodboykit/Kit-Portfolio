@@ -119,18 +119,24 @@
   .navbar-menu {
     position: fixed;
     top: 80px;
-    left: -100%;
+    right: -100%;
     flex-direction: column;
     background: rgba(61, 79, 63, 0.98);
+    backdrop-filter: blur(10px);
     width: 100%;
-    padding: 3rem 2rem;
-    transition: left var(--transition-base);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    height: auto;
+    max-height: calc(100vh - 80px);
+    padding: 2rem 2rem;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
     gap: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .navbar-menu.active {
-    left: 0;
+    right: 0;
   }
 
   .navbar-menu li {
@@ -141,8 +147,8 @@
 
   .navbar-menu li a {
     display: block;
-    padding: 1.25rem 0;
-    font-size: 1.1rem;
+    padding: 1rem 0;
+    font-size: 1.05rem;
   }
 
   .navbar-menu li:last-child {
@@ -157,5 +163,87 @@
 
   .navbar-logo a {
     font-size: 1.25rem;
+  }
+
+  .navbar-menu {
+    max-width: 300px;
+    padding: 1.5rem 1.5rem;
+  }
+
+  .navbar-menu li a {
+    padding: 0.875rem 0;
+    font-size: 1rem;
+  }
+}
+
+/* Extra small devices (320px - 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem 0;
+  }
+
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .navbar-logo a {
+    font-size: 1.125rem;
+  }
+
+  .navbar-logo a::before {
+    margin-right: 0.35rem;
+  }
+
+  .navbar-toggle {
+    font-size: 1.35rem;
+  }
+
+  .navbar-menu {
+    max-width: 280px;
+    padding: 1.25rem 1.25rem;
+    top: 70px;
+    max-height: calc(100vh - 70px);
+  }
+
+  .navbar-menu li a {
+    padding: 0.75rem 0;
+    font-size: 0.95rem;
+  }
+}
+
+/* Very small devices (320px and below) */
+@media (max-width: 360px) {
+  .navbar-container {
+    padding: 0 0.875rem;
+  }
+
+  .navbar-logo a {
+    font-size: 1rem;
+  }
+
+  .navbar-menu {
+    max-width: 100%;
+    width: 85%;
+    padding: 1rem 1rem;
+  }
+
+  .navbar-menu li a {
+    padding: 0.65rem 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* Large tablets and small desktops (969px - 1200px) */
+@media (min-width: 969px) and (max-width: 1200px) {
+  .navbar-container {
+    padding: 0 2.5rem;
+  }
+
+  .navbar-menu {
+    gap: 2rem;
+  }
+
+  .navbar-menu li a {
+    font-size: 0.9rem;
   }
 }

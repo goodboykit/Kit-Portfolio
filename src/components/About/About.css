@@ -249,6 +249,45 @@
   transition: all 0.3s ease;
 }
 
+.education-item-inner {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.education-logo {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, var(--accent-orange), var(--accent-coral));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.education-logo .logo-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.school-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+}
+
+.education-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .education-header {
   display: flex;
   justify-content: space-between;
@@ -468,5 +507,266 @@
 
   .marquee-item {
     font-size: 1rem;
+  }
+
+  .education-item-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .education-logo {
+    margin-bottom: 1rem;
+  }
+}
+
+/* ===================================
+   WOW FACTOR ENHANCEMENTS - ABOUT
+   =================================== */
+
+/* Animated Gradient for About Title */
+.about-title {
+  background: linear-gradient(
+    135deg,
+    #1a1a1a,
+    var(--accent-orange),
+    var(--accent-yellow),
+    var(--accent-orange),
+    #1a1a1a
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientText 8s ease-in-out infinite;
+}
+
+@keyframes gradientText {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Glassmorphism for Stat Cards */
+.stat-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 0 40px rgba(255, 107, 74, 0.3),
+              0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* 3D Transform for Cards */
+.stat-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.stat-card:hover {
+  transform: translateY(-15px) rotateX(8deg) rotateY(5deg) scale(1.05);
+}
+
+/* Glowing Stat Numbers */
+.stat-number {
+  text-shadow: 0 0 20px rgba(255, 107, 74, 0.5),
+               0 0 40px rgba(255, 107, 74, 0.3);
+  transition: all 0.4s ease;
+}
+
+.stat-card:hover .stat-number {
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+               0 0 60px rgba(255, 215, 0, 0.5);
+}
+
+/* Floating Animation for About Badge Float */
+@keyframes floatBadgeAbout {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-12px) rotate(5deg) scale(1.05);
+  }
+  50% {
+    transform: translateY(-6px) rotate(-3deg) scale(1);
+  }
+  75% {
+    transform: translateY(-15px) rotate(3deg) scale(1.05);
+  }
+}
+
+.about-badge-float {
+  animation: floatBadgeAbout 4s ease-in-out infinite;
+}
+
+/* Shimmer Effect for About Image */
+.about-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmerAbout 3s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmerAbout {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Magnetic Effect for Education Cards */
+.education-item {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.education-item:hover {
+  transform: translateX(10px) scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 107, 74, 0.2),
+              0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+.education-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(180deg, var(--accent-orange), var(--accent-yellow));
+  transition: height 0.4s ease;
+}
+
+.education-item:hover::before {
+  height: 100%;
+}
+
+/* Glow Effect for Philosophy Section */
+.about-philosophy {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-philosophy::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.15) 0%,
+    transparent 70%
+  );
+  animation: rotateGlow 25s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 3D Tilt for Philosophy */
+.about-philosophy {
+  transform-style: preserve-3d;
+  perspective: 1500px;
+}
+
+.about-philosophy:hover {
+  transform: perspective(1500px) rotateX(2deg) scale(1.01);
+}
+
+/* Pulse Animation for Icons */
+.stat-icon {
+  animation: iconPulse 3s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* Ripple Effect on Stat Card Click */
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.4);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s, opacity 0.6s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.stat-card:active::after {
+  width: 300px;
+  height: 300px;
+  opacity: 1;
+}
+
+/* Smooth Bounce for Education Logo */
+.education-logo {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.education-item:hover .education-logo {
+  transform: translateY(-5px) rotate(5deg) scale(1.1);
+  box-shadow: 0 10px 30px rgba(255, 107, 74, 0.4);
+}
+
+/* Text Glow for Philosophy Quote */
+.philosophy-quote {
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.5),
+               0 0 60px rgba(255, 215, 0, 0.3);
+  animation: quoteGlow 4s ease-in-out infinite;
+}
+
+@keyframes quoteGlow {
+  0%, 100% {
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5),
+                 0 0 60px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(255, 107, 74, 0.6),
+                 0 0 80px rgba(255, 107, 74, 0.4);
   }
 }

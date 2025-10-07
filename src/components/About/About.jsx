@@ -230,15 +230,25 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 whileHover={{ x: 3, scale: 1.01 }}
               >
-                <div className="education-header">
-                  <div className="education-degree">BS Information Technology</div>
-                  <div className="education-date">2026 (Anticipated)</div>
+                <div className="education-item-inner">
+                  <div className="education-logo">
+                    <span className="logo-text">NU</span>
+                    {/* Replace with actual logo when ready */}
+                    {/* <img src="/path-to-nu-logo.png" alt="National University" className="school-logo" /> */}
+                  </div>
+
+                  <div className="education-content">
+                    <div className="education-header">
+                      <div className="education-degree">BS Information Technology</div>
+                      <div className="education-date">2026 (Anticipated)</div>
+                    </div>
+                    <div className="education-school">National University - Manila</div>
+                    <div className="education-location">Manila, Philippines</div>
+                    <ul className="education-details">
+                      <li>Fourth-year student, specializing in Mobile and Web Application</li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="education-school">National University - Manila</div>
-                <div className="education-location">Manila, Philippines</div>
-                <ul className="education-details">
-                  <li>Fourth-year student, specializing in Mobile and Web Application</li>
-                </ul>
               </motion.div>
 
               <motion.div
@@ -249,15 +259,25 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 whileHover={{ x: 3, scale: 1.01 }}
               >
-                <div className="education-header">
-                  <div className="education-degree">Senior High - STEM Strand</div>
-                  <div className="education-date">8/2020 - 6/2022</div>
+                <div className="education-item-inner">
+                  <div className="education-logo">
+                    <span className="logo-text">NSNU</span>
+                    {/* Replace with actual logo when ready */}
+                    {/* <img src="/path-to-nsnu-logo.png" alt="Nazareth School" className="school-logo" /> */}
+                  </div>
+
+                  <div className="education-content">
+                    <div className="education-header">
+                      <div className="education-degree">Senior High - STEM Strand</div>
+                      <div className="education-date">8/2020 - 6/2022</div>
+                    </div>
+                    <div className="education-school">Nazareth School of National University Manila</div>
+                    <div className="education-location">Philippines</div>
+                    <ul className="education-details">
+                      <li>Graduated with High Honors with consistent academic excellence throughout the Senior High School</li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="education-school">Nazareth School of National University Manila</div>
-                <div className="education-location">Philippines</div>
-                <ul className="education-details">
-                  <li>Graduated with High Honors with consistent academic excellence throughout the Senior High School</li>
-                </ul>
               </motion.div>
             </motion.div>
 

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { TypeAnimation } from 'react-type-animation'
 import { FaCalendarAlt, FaMapMarkerAlt, FaTrophy, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import './PortfolioShowcase.css'
 
@@ -12,6 +13,15 @@ const PortfolioShowcase = () => {
     { id: 3, label: 'Community Event', name: 'COMMUNITY-MEETUP', color: 'orange-gradient' },
     { id: 4, label: 'Flutter Workshop', name: 'FLUTTER-SESSION', color: 'yellow-gradient' },
   ]
+
+  // Auto-play functionality - change photo every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPhotoIndex((prev) => (prev + 1) % photoGallery.length)
+    }, 5000) // 5 seconds
+
+    return () => clearInterval(interval)
+  }, [photoGallery.length])
 
   const handleNextPhoto = () => {
     setCurrentPhotoIndex((prev) => (prev + 1) % photoGallery.length)
@@ -131,7 +141,21 @@ const PortfolioShowcase = () => {
                 Community Involvement
               </span>
               <h1 className="hero-title">
-                Tech Community
+                <TypeAnimation
+                  sequence={[
+                    'Tech Community',
+                    3000,
+                    'Developer Community',
+                    3000,
+                    'Innovation',
+                    3000,
+                    'Tech Leadership',
+                    3000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                />
                 <br />
                 <span className="title-highlight">Experience</span>
               </h1>
@@ -279,6 +303,20 @@ const PortfolioShowcase = () => {
 
       {/* Photo Showcase Carousel */}
       <section className="photo-showcase">
+        {/* Decorative Elements */}
+        <div className="decor-dots-group">
+          <span className="decor-dot dot-1"></span>
+          <span className="decor-dot dot-2"></span>
+          <span className="decor-dot dot-3"></span>
+          <span className="decor-dot dot-4"></span>
+          <span className="decor-dot dot-5"></span>
+        </div>
+        <div className="decor-shapes-group">
+          <div className="decor-triangle"></div>
+          <div className="decor-square"></div>
+          <div className="decor-line"></div>
+        </div>
+
         <div className="showcase-container">
           <div className="photo-showcase-grid">
             {/* Left Photo - Previous */}
@@ -301,12 +339,12 @@ const PortfolioShowcase = () => {
                 </div>
               </motion.div>
               <div className="photo-label-wrapper">
-                <span className="photo-number">
-                  {String((currentPhotoIndex - 1 + photoGallery.length) % photoGallery.length + 1).padStart(2, '0')} /
-                </span>
-                <span className="photo-name">
+                <div className="photo-number">
+                  {String((currentPhotoIndex - 1 + photoGallery.length) % photoGallery.length + 1).padStart(2, '0')}/
+                </div>
+                <div className="photo-name">
                   {photoGallery[(currentPhotoIndex - 1 + photoGallery.length) % photoGallery.length].name}
-                </span>
+                </div>
               </div>
             </motion.div>
 
@@ -352,12 +390,12 @@ const PortfolioShowcase = () => {
                 </div>
               </motion.div>
               <div className="photo-label-wrapper">
-                <span className="photo-number">
-                  {String((currentPhotoIndex + 1) % photoGallery.length + 1).padStart(2, '0')} /
-                </span>
-                <span className="photo-name">
+                <div className="photo-number">
+                  {String((currentPhotoIndex + 1) % photoGallery.length + 1).padStart(2, '0')}/
+                </div>
+                <div className="photo-name">
                   {photoGallery[(currentPhotoIndex + 1) % photoGallery.length].name}
-                </span>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -375,7 +413,18 @@ const PortfolioShowcase = () => {
                 <FaChevronLeft />
               </button>
             </motion.div>
-            <div className="cta-spacer"></div>
+            <div className="cta-spacer">
+              <div className="carousel-dots">
+                {photoGallery.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`carousel-dot ${index === currentPhotoIndex ? 'active' : ''}`}
+                    onClick={() => setCurrentPhotoIndex(index)}
+                    aria-label={`Go to photo ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
             <motion.div
               className="cta-box"
               initial={{ opacity: 0.5 }}
@@ -449,7 +498,22 @@ const PortfolioShowcase = () => {
             >
               <span className="collage-badge">• COMMUNITY PROJECT</span>
               <h2 className="collage-title">
-                I bring innovation and
+                I bring{' '}
+                <TypeAnimation
+                  sequence={[
+                    'innovation and',
+                    3000,
+                    'creativity and',
+                    3000,
+                    'passion and',
+                    3000,
+                    'dedication and',
+                    3000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                />
                 <br />
                 collaboration with every event
               </h2>
@@ -515,7 +579,21 @@ const PortfolioShowcase = () => {
               <FaTrophy />
             </motion.div>
             <h2 className="impact-title">
-              Building Communities,
+              <TypeAnimation
+                sequence={[
+                  'Building Communities,',
+                  3000,
+                  'Empowering Developers,',
+                  3000,
+                  'Fostering Innovation,',
+                  3000,
+                  'Leading Change,',
+                  3000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
               <br />
               <span className="impact-highlight">Creating Impact</span>
             </h2>

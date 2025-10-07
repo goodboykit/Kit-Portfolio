@@ -79,9 +79,12 @@ const Hero = () => {
           >
             <div className="profile-wrapper">
               <div className="profile-main">
-                <div className="profile-overlay">
-                  <span className="profile-initial">K</span>
+                {/* Replace src with your actual image path */}
+                <div className="profile-image-placeholder">
+                  <span className="placeholder-text">Your Photo Here</span>
                 </div>
+                {/* Uncomment below and add your image when ready */}
+                {/* <img src="/path-to-your-image.jpg" alt="Kit Nicholas Santiago" className="profile-image" /> */}
               </div>
 
               {/* Floating Badge */}

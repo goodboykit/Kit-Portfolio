@@ -51,8 +51,8 @@
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  margin-bottom: 5rem;
+  gap: 5rem;
+  margin-bottom: 6rem;
 }
 
 /* Left Side - Info Card */
@@ -64,7 +64,7 @@
 .info-card {
   background: white;
   border-radius: 0.5rem;
-  padding: 3rem;
+  padding: 3.5rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
   height: 100%;
 }
@@ -79,16 +79,16 @@
 
 .info-card > p {
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.8;
   color: var(--gray-text);
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .info-items {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .info-item {
@@ -194,21 +194,22 @@
 .contact-form {
   background: white;
   border-radius: 0.5rem;
-  padding: 3rem;
+  padding: 3.5rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
@@ -252,7 +253,7 @@
 
 .submit-btn {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1.25rem 2rem;
   background: var(--accent-orange);
   color: white;
   border: none;
@@ -263,7 +264,7 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .submit-btn:hover:not(:disabled) {
@@ -280,7 +281,7 @@
 /* Bottom CTA */
 .contact-cta {
   background: var(--primary-color);
-  padding: 4rem;
+  padding: 5rem 4rem;
   border-radius: 0.5rem;
   text-align: center;
   position: relative;
@@ -369,19 +370,26 @@
 
   .info-card,
   .contact-form {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 2rem;
   }
 
   .info-card h3 {
     font-size: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .info-card > p {
     font-size: 0.95rem;
+    margin-bottom: 2rem;
   }
 
   .info-items {
-    gap: 1.5rem;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
   }
 
   .info-icon {

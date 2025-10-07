@@ -180,13 +180,8 @@ const Projects = () => {
                       whileHover={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="project-links">
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" title="View Code">
-                          <FaGithub />
-                        </a>
-                        <a href={project.live} target="_blank" rel="noopener noreferrer" title="Live Demo">
-                          <FaExternalLinkAlt />
-                        </a>
+                      <div className="project-overlay-text">
+                        Click to view details
                       </div>
                     </motion.div>
                   </motion.div>
@@ -204,9 +199,9 @@ const Projects = () => {
                     </div>
 
                     <div className="project-action">
-                      <a href={project.live} className="view-project-btn">
-                        View Project →
-                      </a>
+                      <button className="view-project-btn" onClick={(e) => { e.stopPropagation(); openModal(project); }}>
+                        View Details →
+                      </button>
                     </div>
                   </div>
                 </motion.div>
@@ -275,15 +270,6 @@ const Projects = () => {
                 >
                   <FaGithub />
                   <span>View Code</span>
-                </a>
-                <a
-                  href={selectedProject.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="modal-btn modal-btn-live"
-                >
-                  <FaExternalLinkAlt />
-                  <span>Live Demo</span>
                 </a>
               </div>
             </div>
