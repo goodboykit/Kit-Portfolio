@@ -36,7 +36,8 @@ const PortfolioShowcase = () => {
         'Assessed and maintained tech systems with Facebook, Microsoft Teams live streaming',
         'Ensured quality and flow of services for events'
       ],
-      color: 'cyan'
+      color: 'cyan',
+      logoPlaceholder: 'GDSC'
     },
     {
       id: 2,
@@ -51,7 +52,8 @@ const PortfolioShowcase = () => {
         'Coordinates with core officers to ensure resource allocation',
         'Strategic planning for club sustainability'
       ],
-      color: 'yellow'
+      color: 'yellow',
+      logoPlaceholder: 'AWS'
     },
     {
       id: 3,
@@ -66,7 +68,8 @@ const PortfolioShowcase = () => {
         'Provided onsite basic computer literacy training',
         'Taught useful tools for organization day-to-day operations'
       ],
-      color: 'peach'
+      color: 'peach',
+      logoPlaceholder: 'NU'
     },
     {
       id: 4,
@@ -81,7 +84,8 @@ const PortfolioShowcase = () => {
         'Engages with students and developers',
         'Promotes no-code/low-code solutions in mobile development and AI powered apps'
       ],
-      color: 'coral'
+      color: 'coral',
+      logoPlaceholder: 'FF'
     }
   ]
 
@@ -229,36 +233,44 @@ const PortfolioShowcase = () => {
                   boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15)"
                 }}
               >
-                <div className="experience-header">
-                  <div className="experience-type-badge">{exp.type}</div>
-                  <motion.div
-                    className="experience-icon"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                  >
-                    ✦
-                  </motion.div>
-                </div>
-
-                <h3 className="experience-org">{exp.organization}</h3>
-                <h4 className="experience-role">{exp.role}</h4>
-
-                <div className="experience-meta">
-                  <div className="meta-item">
-                    <FaMapMarkerAlt />
-                    <span>{exp.location}</span>
+                <div className="experience-card-inner">
+                  <div className={`experience-logo ${exp.color}-bg`}>
+                    <span className="logo-text">{exp.logoPlaceholder}</span>
                   </div>
-                  <div className="meta-item">
-                    <FaCalendarAlt />
-                    <span>{exp.period}</span>
+
+                  <div className="experience-content">
+                    <div className="experience-header">
+                      <div className="experience-type-badge">{exp.type}</div>
+                      <motion.div
+                        className="experience-icon"
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                      >
+                        ✦
+                      </motion.div>
+                    </div>
+
+                    <h3 className="experience-org">{exp.organization}</h3>
+                    <h4 className="experience-role">{exp.role}</h4>
+
+                    <div className="experience-meta">
+                      <div className="meta-item">
+                        <FaMapMarkerAlt />
+                        <span>{exp.location}</span>
+                      </div>
+                      <div className="meta-item">
+                        <FaCalendarAlt />
+                        <span>{exp.period}</span>
+                      </div>
+                    </div>
+
+                    <ul className="experience-description">
+                      {exp.description.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-
-                <ul className="experience-description">
-                  {exp.description.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
               </motion.div>
             ))}
           </div>
@@ -464,13 +476,21 @@ const PortfolioShowcase = () => {
                 <div className="photo-placeholder yellow-gradient">
                   <span className="photo-placeholder-text">Workshop Leader</span>
                 </div>
-                <motion.div
-                  className="drag-badge"
-                  whileHover={{ scale: 1.03 }}
-                >
-                  <span>DRAG<br />TO VIEW<br />MORE</span>
-                </motion.div>
               </div>
+              <motion.div
+                className="drag-badge"
+                animate={{
+                  rotate: 360
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                whileHover={{ scale: 1.03 }}
+              >
+                <span>DRAG<br />TO VIEW<br />MORE</span>
+              </motion.div>
             </motion.div>
           </div>
 

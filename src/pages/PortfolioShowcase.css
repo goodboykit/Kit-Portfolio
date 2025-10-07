@@ -187,12 +187,12 @@
   margin-top: 3rem;
 }
 
-.stat-item {
+.hero-stats .stat-item {
   text-align: left;
   cursor: pointer;
 }
 
-.stat-number {
+.hero-stats .stat-number {
   font-family: var(--showcase-font-serif);
   font-size: 2.5rem;
   font-weight: 400;
@@ -201,7 +201,7 @@
   display: block;
 }
 
-.stat-label {
+.hero-stats .stat-label {
   font-size: 0.75rem;
   color: #ffffff !important;
   text-transform: uppercase;
@@ -321,6 +321,52 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+}
+
+.experience-card-inner {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.experience-logo {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--showcase-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cyan-bg {
+  background: linear-gradient(135deg, var(--showcase-cyan), #5eb5b5);
+}
+
+.yellow-bg {
+  background: linear-gradient(135deg, var(--showcase-yellow), var(--showcase-yellow-dark));
+}
+
+.peach-bg {
+  background: linear-gradient(135deg, var(--showcase-peach), #ffbe8d);
+}
+
+.coral-bg {
+  background: linear-gradient(135deg, var(--showcase-coral), var(--showcase-orange));
+}
+
+.experience-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .experience-card::before {
@@ -793,8 +839,8 @@
 
 .drag-badge {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
   width: 90px;
   height: 90px;
   background-color: var(--showcase-white);
@@ -811,6 +857,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   z-index: 10;
   cursor: pointer;
+  transform-origin: center;
 }
 
 /* Artistic Gallery */
@@ -1093,7 +1140,7 @@
     gap: 2.5rem;
   }
 
-  .stat-number {
+  .hero-stats .stat-number {
     font-size: 2.5rem;
   }
 
@@ -1196,7 +1243,7 @@
     gap: 2rem;
   }
 
-  .stat-number {
+  .hero-stats .stat-number {
     font-size: 2rem;
   }
 
@@ -1218,6 +1265,8 @@
     width: 70px;
     height: 70px;
     font-size: 0.5rem;
+    top: 5px;
+    right: 5px;
   }
 
   .photo-box {
@@ -1233,6 +1282,16 @@
     padding: 2rem;
   }
 
+  .experience-card-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .experience-logo {
+    margin-bottom: 1rem;
+  }
+
   .experience-org {
     font-size: 1.25rem;
   }
@@ -1240,6 +1299,7 @@
   .experience-meta {
     flex-direction: column;
     gap: 0.75rem;
+    justify-content: center;
   }
 
   .seminar-card {
