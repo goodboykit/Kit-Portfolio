@@ -1,13 +1,8 @@
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import { TypeAnimation } from 'react-type-animation'
 import './About.css'
 
 const About = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
-
   return (
     <>
       {/* Marquee Section - Cream Background */}
@@ -26,27 +21,43 @@ const About = () => {
 
       <section className="about section" id="about">
         <div className="about-container">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             {/* Section Header */}
-            <div className="about-header">
+            <motion.div
+              className="about-header"
+              initial={{ opacity: 0.5, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <span className="about-badge">• About Me</span>
-            </div>
+            </motion.div>
 
             {/* Main Content Grid */}
             <div className="about-content">
               <motion.div
                 className="about-text-section"
-                initial={{ opacity: 0, x: -50 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                initial={{ opacity: 0.5, x: -60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
                 <h2 className="about-title">
-                  Building innovative
+                  <TypeAnimation
+                    sequence={[
+                      'Building innovative',
+                      3000,
+                      'Creating powerful',
+                      3000,
+                      'Designing modern',
+                      3000,
+                      'Developing scalable',
+                      3000,
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    repeat={Infinity}
+                  />
                   <br />
                   digital solutions
                 </h2>
@@ -70,9 +81,11 @@ const About = () => {
 
               <motion.div
                 className="about-image-section"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                initial={{ opacity: 0.5, scale: 0.8, rotate: -5 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                whileHover={{ scale: 1.02, rotate: 1 }}
               >
                 <div className="about-image-wrapper">
                   <div className="about-image-placeholder"></div>
@@ -84,40 +97,178 @@ const About = () => {
             </div>
 
             {/* Stats Section */}
-            <motion.div
-              className="about-stats"
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <div className="stat-card">
-                <div className="stat-number">20+</div>
+            <div className="about-stats">
+              <motion.div
+                className="stat-card"
+                initial={{ opacity: 0.5, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0 }}
+                whileHover={{
+                  scale: 1.02,
+                  y: -3,
+                  rotate: [0, -1, 1, 0],
+                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)"
+                }}
+              >
+                <motion.div
+                  className="stat-number"
+                  whileHover={{ scale: 1.03, color: "#FFD700" }}
+                >
+                  20+
+                </motion.div>
                 <div className="stat-label">Projects Built</div>
-                <div className="stat-icon">✦</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-number">5+</div>
+                <motion.div
+                  className="stat-icon"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                >
+                  ✦
+                </motion.div>
+              </motion.div>
+              <motion.div
+                className="stat-card"
+                initial={{ opacity: 0.5, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                whileHover={{
+                  scale: 1.02,
+                  y: -3,
+                  rotate: [0, 1, -1, 0],
+                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)"
+                }}
+              >
+                <motion.div
+                  className="stat-number"
+                  whileHover={{ scale: 1.03, color: "#FF6B4A" }}
+                >
+                  5+
+                </motion.div>
                 <div className="stat-label">Hackathon Wins</div>
-                <div className="stat-icon">✦</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-number">8+</div>
+                <motion.div
+                  className="stat-icon"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 0.5 }}
+                >
+                  ✦
+                </motion.div>
+              </motion.div>
+              <motion.div
+                className="stat-card"
+                initial={{ opacity: 0.5, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                whileHover={{
+                  scale: 1.02,
+                  y: -3,
+                  rotate: [0, -1, 1, 0],
+                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)"
+                }}
+              >
+                <motion.div
+                  className="stat-number"
+                  whileHover={{ scale: 1.03, color: "#FFD700" }}
+                >
+                  8+
+                </motion.div>
                 <div className="stat-label">Certifications</div>
-                <div className="stat-icon">✦</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-number">10+</div>
+                <motion.div
+                  className="stat-icon"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1 }}
+                >
+                  ✦
+                </motion.div>
+              </motion.div>
+              <motion.div
+                className="stat-card"
+                initial={{ opacity: 0.5, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                whileHover={{
+                  scale: 1.02,
+                  y: -3,
+                  rotate: [0, 1, -1, 0],
+                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)"
+                }}
+              >
+                <motion.div
+                  className="stat-number"
+                  whileHover={{ scale: 1.03, color: "#FF6B4A" }}
+                >
+                  10+
+                </motion.div>
                 <div className="stat-label">Tech Events</div>
-                <div className="stat-icon">✦</div>
-              </div>
+                <motion.div
+                  className="stat-icon"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1.5 }}
+                >
+                  ✦
+                </motion.div>
+              </motion.div>
+            </div>
+
+            {/* Education Section */}
+            <motion.div
+              className="about-education"
+              initial={{ opacity: 0.5, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <h3 className="education-title">Education</h3>
+
+              <motion.div
+                className="education-item"
+                initial={{ opacity: 0.5, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                whileHover={{ x: 3, scale: 1.01 }}
+              >
+                <div className="education-header">
+                  <div className="education-degree">BS Information Technology</div>
+                  <div className="education-date">2026 (Anticipated)</div>
+                </div>
+                <div className="education-school">National University - Manila</div>
+                <div className="education-location">Manila, Philippines</div>
+                <ul className="education-details">
+                  <li>Fourth-year student, specializing in Mobile and Web Application</li>
+                </ul>
+              </motion.div>
+
+              <motion.div
+                className="education-item"
+                initial={{ opacity: 0.5, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                whileHover={{ x: 3, scale: 1.01 }}
+              >
+                <div className="education-header">
+                  <div className="education-degree">Senior High - STEM Strand</div>
+                  <div className="education-date">8/2020 - 6/2022</div>
+                </div>
+                <div className="education-school">Nazareth School of National University Manila</div>
+                <div className="education-location">Philippines</div>
+                <ul className="education-details">
+                  <li>Graduated with High Honors with consistent academic excellence throughout the Senior High School</li>
+                </ul>
+              </motion.div>
             </motion.div>
 
             {/* Philosophy Section */}
             <motion.div
               className="about-philosophy"
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.8 }}
+              initial={{ opacity: 0.5, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              whileHover={{ scale: 1.02 }}
             >
               <div className="philosophy-content">
                 <span className="philosophy-quote">"</span>
@@ -132,7 +283,7 @@ const About = () => {
                 </div>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

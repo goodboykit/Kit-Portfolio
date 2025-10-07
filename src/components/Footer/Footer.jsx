@@ -1,21 +1,14 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaTiktok } from 'react-icons/fa'
 import { motion } from 'framer-motion'
-import toast from 'react-hot-toast'
 import './Footer.css'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
-  const [email, setEmail] = useState('')
+  const location = useLocation()
 
-  const handleSubscribe = (e) => {
-    e.preventDefault()
-    if (email) {
-      toast.success('Thank you for subscribing!')
-      setEmail('')
-    }
-  }
+  const isActive = (path) => location.pathname === path
 
   const categories = [
     'Web Development',
@@ -49,106 +42,251 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-content">
           {/* Studio Section */}
-          <div className="footer-section">
-            <h4 className="footer-title">
-              <span className="title-icon">✦</span> STUDIO
-            </h4>
-            <ul className="footer-links">
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/projects">Projects</Link></li>
-              <li><Link to="/skills">Skills</Link></li>
-              <li><Link to="/showcase">Showcase</Link></li>
-            </ul>
-          </div>
+          <motion.div
+            className="footer-section"
+            initial={{ opacity: 0.5, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ delay: 0 * 0.1, duration: 0.5, ease: "easeOut" }}
+          >
+            <motion.h4
+              className="footer-title"
+              whileHover={{ x: 5 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <motion.span
+                className="title-icon"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              >
+                ✦
+              </motion.span> STUDIO
+            </motion.h4>
+            <div className="footer-buttons">
+              <motion.div whileHover={{ scale: 1.02, y: -2 }}>
+                <Link to="/about" className={`footer-pill-btn ${isActive('/about') ? 'footer-pill-btn-filled' : ''}`}>ABOUT</Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.02, y: -2 }}>
+                <Link to="/projects" className={`footer-pill-btn ${isActive('/projects') ? 'footer-pill-btn-filled' : ''}`}>PROJECTS</Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.02, y: -2 }}>
+                <Link to="/skills" className={`footer-pill-btn ${isActive('/skills') ? 'footer-pill-btn-filled' : ''}`}>SKILLS</Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.02, y: -2 }}>
+                <Link to="/showcase" className={`footer-pill-btn ${isActive('/showcase') ? 'footer-pill-btn-filled' : ''}`}>SHOWCASE</Link>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="footer-vertical-divider"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          ></motion.div>
 
           {/* Discover Section */}
-          <div className="footer-section">
-            <h4 className="footer-title">
-              <span className="title-icon">✦</span> DISCOVER
-            </h4>
-            <div className="footer-discover-tags">
-              <Link to="/projects" className="discover-tag">Web Development</Link>
-              <Link to="/projects" className="discover-tag">UI/UX</Link>
-              <Link to="/projects" className="discover-tag">Mobile</Link>
+          <motion.div
+            className="footer-section"
+            initial={{ opacity: 0.5, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ delay: 1 * 0.1, duration: 0.5, ease: "easeOut" }}
+          >
+            <motion.h4
+              className="footer-title"
+              whileHover={{ x: 5 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <motion.span
+                className="title-icon"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 0.5 }}
+              >
+                ✦
+              </motion.span> DISCOVER
+            </motion.h4>
+            <div className="footer-buttons">
+              <motion.div whileHover={{ scale: 1.02, y: -2 }}>
+                <Link to="/projects" className="footer-pill-btn">WEB DEVELOPMENT</Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.02, y: -2 }}>
+                <Link to="/projects" className="footer-pill-btn">MOBILE APPS</Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.02, y: -2 }}>
+                <Link to="/skills" className="footer-pill-btn">FULL STACK</Link>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
+
+          <motion.div
+            className="footer-vertical-divider"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          ></motion.div>
 
           {/* Contact Section */}
-          <div className="footer-section">
-            <h4 className="footer-title">
-              <span className="title-icon">✦</span> CONTACT
-            </h4>
-            <div className="footer-contact-info">
-              <a href="mailto:santiagonikos@gmail.com" className="contact-link">
-                santiagonikos@gmail.com
-              </a>
-              <a href="tel:+13109850496" className="contact-link">
-                +1 (310) 985-0496
-              </a>
+          <motion.div
+            className="footer-section"
+            initial={{ opacity: 0.5, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ delay: 2 * 0.1, duration: 0.5, ease: "easeOut" }}
+          >
+            <motion.h4
+              className="footer-title"
+              whileHover={{ x: 5 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <motion.span
+                className="title-icon"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 1 }}
+              >
+                ✦
+              </motion.span> CONTACT
+            </motion.h4>
+            <div className="footer-buttons">
+              <motion.a
+                href="tel:+13109850496"
+                className="footer-pill-btn footer-pill-btn-outline"
+                whileHover={{ scale: 1.02, y: -2 }}
+              >
+                (310) 985-0496
+              </motion.a>
+              <motion.a
+                href="mailto:santiagonikos@gmail.com"
+                className="footer-pill-btn footer-pill-btn-filled"
+                whileHover={{ scale: 1.02, y: -2 }}
+              >
+                SANTIAGONIKOS@GMAIL.COM
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Newsletter Section */}
-          <div className="footer-section">
-            <h4 className="footer-title">
-              <span className="title-icon">✦</span> NEWSLETTER
-            </h4>
-            <form onSubmit={handleSubscribe} className="newsletter-form">
-              <input
-                type="email"
-                placeholder="Your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="newsletter-input"
-                required
-              />
-              <button type="submit" className="newsletter-btn">
-                Subscribe →
-              </button>
-            </form>
-          </div>
+          <motion.div
+            className="footer-vertical-divider"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          ></motion.div>
+
+          {/* Location Section */}
+          <motion.div
+            className="footer-section"
+            initial={{ opacity: 0.5, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ delay: 3 * 0.1, duration: 0.5, ease: "easeOut" }}
+          >
+            <motion.h4
+              className="footer-title"
+              whileHover={{ x: 5 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <motion.span
+                className="title-icon"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 1.5 }}
+              >
+                ✦
+              </motion.span> LOCATION
+            </motion.h4>
+            <div className="footer-buttons">
+              <motion.span
+                className="footer-pill-btn footer-pill-btn-outline"
+                whileHover={{ scale: 1.02, y: -2 }}
+              >
+                BELLFLOWER, CA
+              </motion.span>
+              <motion.span
+                className="footer-pill-btn footer-pill-btn-outline"
+                whileHover={{ scale: 1.02, y: -2 }}
+              >
+                MANILA, PH
+              </motion.span>
+            </div>
+          </motion.div>
         </div>
 
-        <div className="footer-divider"></div>
+        <motion.div
+          className="footer-divider"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 1, delay: 0.8 }}
+        ></motion.div>
 
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <div className="footer-logo">
-              <span className="logo-icon">✦</span>
-              <span className="logo-text">Portfolio</span>
-            </div>
+            <motion.div
+              className="footer-logo"
+              initial={{ opacity: 0.5, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <motion.span
+                className="logo-icon"
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              >
+                ✦
+              </motion.span>
+              <span className="logo-text">Kit Nicholas</span>
+            </motion.div>
 
-            <p className="footer-copyright">
+            <motion.p
+              className="footer-copyright"
+              initial={{ opacity: 0.5, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+            >
               ALL RIGHTS RESERVED TO <strong>KIT NICHOLAS SANTIAGO</strong> {currentYear}
-            </p>
+            </motion.p>
 
             <div className="footer-socials">
+              <motion.a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0.5, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.4, delay: 1.3 }}
+                whileHover={{ y: -2, scale: 1.03, rotate: 1 }}
+              >
+                <FaGithub />
+              </motion.a>
+              <motion.a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0.5, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.4, delay: 1.4 }}
+                whileHover={{ y: -2, scale: 1.03, rotate: 1 }}
+              >
+                <FaLinkedin />
+              </motion.a>
               <motion.a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ y: -5, scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 300 }}
+                initial={{ opacity: 0.5, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.4, delay: 1.5 }}
+                whileHover={{ y: -2, scale: 1.03, rotate: 1 }}
               >
                 <FaTwitter />
-              </motion.a>
-              <motion.a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -5, scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <FaInstagram />
-              </motion.a>
-              <motion.a
-                href="https://tiktok.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -5, scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <FaTiktok />
               </motion.a>
             </div>
           </div>

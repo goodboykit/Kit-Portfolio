@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { TypeAnimation } from 'react-type-animation'
 import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa'
 import Modal from 'react-modal'
 import './Projects.css'
@@ -9,13 +10,33 @@ import './Projects.css'
 Modal.setAppElement('#root')
 
 const Projects = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
+  const [headerRef, headerInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  })
+
+  const [gridRef, gridInView] = useInView({
+    triggerOnce: false,
     threshold: 0.1,
   })
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState(null)
+
+  // Stagger animation for project cards
+  const projectVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        delay: i * 0.15,
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    })
+  }
 
   const projects = [
     {
@@ -92,43 +113,73 @@ const Projects = () => {
 
       <section className="projects section" id="projects">
         <div className="projects-container">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             {/* Section Header */}
-            <div className="projects-header">
+            <motion.div
+              className="projects-header"
+              initial={{ opacity: 0.5, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <span className="projects-badge">• Featured Work</span>
               <h2 className="projects-title">
-                Selected
+                <TypeAnimation
+                  sequence={[
+                    'Selected',
+                    3000,
+                    'Featured',
+                    3000,
+                    'Innovative',
+                    3000,
+                    'Creative',
+                    3000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                />
                 <br />
                 Projects
               </h2>
               <p className="projects-subtitle">
                 Showcasing my best work in web development, design, and creative solutions
               </p>
-            </div>
+            </motion.div>
 
             {/* Projects Grid */}
-            <div className="projects-grid">
+            <div ref={gridRef} className="projects-grid">
               {projects.map((project, idx) => (
                 <motion.div
                   key={project.id}
                   className={`project-card project-${project.color}`}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: idx * 0.15 }}
+                  initial={{ opacity: 0.5, y: 50, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{
+                    delay: idx * 0.15,
+                    duration: 0.6,
+                    ease: "easeOut"
+                  }}
+                  whileHover={{ y: -2, scale: 1.01 }}
                   onClick={() => openModal(project)}
                 >
                   <div className="project-number">
                     <span>0{project.id}</span>
                   </div>
 
-                  <div className="project-image">
+                  <motion.div
+                    className="project-image"
+                    whileHover={{ scale: 1.01 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <div className="project-image-placeholder"></div>
-                    <div className="project-overlay">
+                    <motion.div
+                      className="project-overlay"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       <div className="project-links">
                         <a href={project.github} target="_blank" rel="noopener noreferrer" title="View Code">
                           <FaGithub />
@@ -137,8 +188,8 @@ const Projects = () => {
                           <FaExternalLinkAlt />
                         </a>
                       </div>
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
 
                   <div className="project-content">
                     <h3 className="project-title">{project.title}</h3>
@@ -161,7 +212,7 @@ const Projects = () => {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

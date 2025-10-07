@@ -33,26 +33,29 @@ function App() {
     document.body.style.overflow = 'unset'
   }
 
-  // Page transition variants
+  // Enhanced page transition variants with slide effect
   const pageVariants = {
     initial: {
       opacity: 0,
-      y: 20,
+      x: -50,
+      scale: 0.98,
     },
     animate: {
       opacity: 1,
-      y: 0,
+      x: 0,
+      scale: 1,
       transition: {
-        duration: 0.4,
-        ease: 'easeOut',
+        duration: 0.5,
+        ease: [0.6, 0.05, 0.01, 0.9],
       },
     },
     exit: {
       opacity: 0,
-      y: -20,
+      x: 50,
+      scale: 0.98,
       transition: {
-        duration: 0.3,
-        ease: 'easeIn',
+        duration: 0.4,
+        ease: [0.6, 0.05, 0.01, 0.9],
       },
     },
   }

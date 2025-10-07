@@ -1,172 +1,207 @@
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaReact, FaNodeJs } from 'react-icons/fa'
-import { SiFlutter, SiMongodb } from 'react-icons/si'
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import './Hero.css'
 
 const Hero = () => {
+  const { scrollY } = useScroll()
+  const y1 = useTransform(scrollY, [0, 300], [0, 50])
+  const y2 = useTransform(scrollY, [0, 300], [0, -50])
+  const opacity = useTransform(scrollY, [0, 300], [1, 0])
+
   return (
     <section className="hero" id="hero">
       <div className="hero-container">
-        {/* Charlotte Evelyn Style Layout */}
-        <div className="hero-grid-layout">
-          {/* Top Left - Large Name Section */}
+        {/* Minimalistic Grid Layout */}
+        <div className="hero-minimalistic-grid">
+
+          {/* Left - Name & Title */}
           <motion.div
-            className="hero-name-section"
-            initial={{ opacity: 0, x: -30 }}
+            className="hero-name-block"
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            style={{ y: y1, opacity }}
           >
-            <h1 className="hero-large-name">
+            <div className="name-badge">
+              <span className="badge-diamond">✦</span>
+              <span className="badge-label">HELLO, I'M</span>
+            </div>
+
+            <h1 className="hero-main-name">
               Kit Nicholas
               <br />
-              <span className="hero-surname">Santiago</span>
+              <span className="hero-last-name">Santiago</span>
             </h1>
 
-            <div className="hero-role-badge">
-              <span className="role-line">—</span>
-              <p className="role-text">
-                PRO<br />
-                DEVELOPER
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Center - Large Profile Image with Play Button */}
-          <motion.div
-            className="hero-profile-main"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="profile-main-image">
-              <div className="profile-image-inner">
-                <span className="profile-letter">K</span>
-              </div>
-
-              {/* Play Button Overlay */}
-              <div className="profile-play-button">
-                <span>▶</span>
-              </div>
+            <div className="hero-animated-role">
+              <TypeAnimation
+                sequence={[
+                  'Web Developer',
+                  2000,
+                  'Mobile App Developer',
+                  2000,
+                  'Full Stack Developer',
+                  2000,
+                  'IT Student',
+                  2000,
+                ]}
+                wrapper="h2"
+                speed={50}
+                repeat={Infinity}
+                className="animated-role-text"
+              />
             </div>
 
-            {/* Floating Yellow Badge */}
-            <motion.div
-              className="floating-yellow-badge"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            >
-              <span className="badge-text">SHOOT FOR THE MOON</span>
-            </motion.div>
-
-            {/* Scroll Down Circle */}
-            <div className="scroll-circle-badge">
-              <span className="scroll-text">SCROLL<br />DOWN</span>
-              <span className="scroll-arrow">↓</span>
-            </div>
-          </motion.div>
-
-          {/* Top Right - Quote Card */}
-          <motion.div
-            className="hero-quote-card"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <span className="quote-icon">"</span>
-            <h3 className="quote-text">
-              My code is a
-              <br />
-              <span className="quote-highlight">innovation</span>
-            </h3>
-          </motion.div>
-
-          {/* Right Side - Instagram Card */}
-          <motion.div
-            className="hero-instagram-card"
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <p className="instagram-text">
-              STAY TUNED FOR NEWS
-              <br />
-              AND NEW WORK ON
-              <br />
-              GITHUB
+            <p className="hero-short-bio">
+              4th year IT student specializing in Mobile & Web Applications.
+              Building innovative digital solutions.
             </p>
-            <FaGithub className="instagram-icon" />
-            <div className="instagram-divider"></div>
-            <div className="instagram-image">
-              <div className="instagram-img-placeholder"></div>
-            </div>
-          </motion.div>
 
-          {/* Right Side - Contact CTA */}
-          <motion.div
-            className="hero-contact-cta"
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            <h3 className="cta-title">CONTACT<br />WITH ME</h3>
-            <div className="cta-arrow-circle">
-              <span>→</span>
-            </div>
-          </motion.div>
-
-          {/* Bottom Left - Camera Icon Card */}
-          <motion.div
-            className="hero-camera-card"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <div className="camera-icon-wrapper">
-              <FaReact className="camera-icon" />
-            </div>
-          </motion.div>
-
-          {/* Bottom Left - CTA Text */}
-          <motion.div
-            className="hero-bottom-cta"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-          >
-            <h3 className="bottom-cta-text">
-              LET'S TAKE YOUR<br />
-              <span className="cta-highlight">PROJECTS</span> TO THE<br />
-              NEXT LEVEL
-            </h3>
-          </motion.div>
-
-          {/* Bottom Right - Small Profile Card */}
-          <motion.div
-            className="hero-small-profile"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <div className="small-profile-image">
-              <div className="small-profile-placeholder"></div>
-            </div>
-            <div className="small-profile-info">
-              <p className="small-profile-name">KIT NICHOLAS</p>
-              <p className="small-profile-title">WAS A 4TH YEAR IT STUDENT<br />AND DEVELOPER</p>
-              <Link to="/projects" className="small-profile-link">
-                ALL PROJECTS →
+            <div className="hero-cta-group">
+              <Link to="/projects" className="btn-primary-hero">
+                View Projects
+              </Link>
+              <Link to="/contact" className="btn-secondary-hero">
+                Get In Touch
               </Link>
             </div>
           </motion.div>
+
+          {/* Right - Profile Image */}
+          <motion.div
+            className="hero-profile-block"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            style={{ y: y2 }}
+          >
+            <div className="profile-wrapper">
+              <div className="profile-main">
+                <div className="profile-overlay">
+                  <span className="profile-initial">K</span>
+                </div>
+              </div>
+
+              {/* Floating Badge */}
+              <motion.div
+                className="floating-badge-circle"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              >
+                <span className="floating-badge-text">TOP 1 • UI DESIGN • COMPETITION</span>
+              </motion.div>
+
+              {/* Info Badge */}
+              <motion.div
+                className="profile-info-badge"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
+                <div className="info-badge-content">
+                  <span className="info-badge-number">5+</span>
+                  <span className="info-badge-label">Hackathon Wins</span>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+
         </div>
+
+        {/* Bottom Stats - Minimalistic */}
+        <motion.div
+          className="hero-stats-minimal"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <div className="stat-minimal-item">
+            <span className="stat-minimal-number">20+</span>
+            <span className="stat-minimal-label">Projects</span>
+          </div>
+          <div className="stat-divider-minimal"></div>
+          <div className="stat-minimal-item">
+            <span className="stat-minimal-number">4+</span>
+            <span className="stat-minimal-label">Years Exp</span>
+          </div>
+          <div className="stat-divider-minimal"></div>
+          <div className="stat-minimal-item">
+            <span className="stat-minimal-number">8+</span>
+            <span className="stat-minimal-label">Certifications</span>
+          </div>
+        </motion.div>
+
+        {/* Social Links */}
+        <motion.div
+          className="hero-social-minimal"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link-minimal">
+            <FaGithub />
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link-minimal">
+            <FaLinkedin />
+          </a>
+          <a href="mailto:santiagonikos@gmail.com" className="social-link-minimal">
+            <FaEnvelope />
+          </a>
+        </motion.div>
       </div>
 
-      {/* Background Decoration */}
-      <div className="hero-bg-decoration">
-        <div className="bg-blur-circle circle-1"></div>
-        <div className="bg-blur-circle circle-2"></div>
+      {/* Background Elements */}
+      <div className="hero-bg-minimal">
+        <motion.div
+          className="bg-circle-minimal circle-1"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.03, 0.05, 0.03],
+            x: [0, 50, 0],
+            y: [0, -30, 0]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        ></motion.div>
+        <motion.div
+          className="bg-circle-minimal circle-2"
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.03, 0.06, 0.03],
+            x: [0, -40, 0],
+            y: [0, 40, 0]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        ></motion.div>
+
+        {/* Floating Particles */}
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="floating-particle"
+            style={{
+              position: 'absolute',
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: Math.random() * 6 + 3 + 'px',
+              height: Math.random() * 6 + 3 + 'px',
+              borderRadius: '50%',
+              background: `rgba(255, ${Math.random() > 0.5 ? 215 : 107}, ${Math.random() > 0.5 ? 0 : 74}, ${Math.random() * 0.3 + 0.1})`,
+            }}
+            animate={{
+              y: [0, -100, 0],
+              x: [0, Math.random() * 50 - 25, 0],
+              opacity: [0.2, 0.5, 0.2],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: Math.random() * 5,
+            }}
+          />
+        ))}
       </div>
     </section>
   )

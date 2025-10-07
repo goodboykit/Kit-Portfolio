@@ -195,18 +195,20 @@
 .stat-number {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--accent-orange);
+  color: var(--accent-orange) !important;
   font-family: var(--font-serif);
   margin-bottom: 0.5rem;
   line-height: 1;
+  opacity: 1 !important;
 }
 
 .stat-label {
   font-size: 0.95rem;
-  color: var(--gray-text);
+  color: #333333 !important;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-weight: 500;
+  font-weight: 600;
+  opacity: 1 !important;
 }
 
 .stat-icon {
@@ -222,6 +224,86 @@
 .stat-card:hover .stat-icon {
   opacity: 1;
   transform: rotate(180deg);
+}
+
+/* Education Section */
+.about-education {
+  margin: 4rem 0;
+  padding: 3rem 0;
+}
+
+.education-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 2.5rem;
+  font-family: var(--font-serif);
+}
+
+.education-item {
+  background: var(--card-background);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.education-degree {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.education-date {
+  font-size: 0.95rem;
+  color: var(--accent-orange);
+  font-weight: 600;
+}
+
+.education-school {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.education-location {
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+  margin-bottom: 1rem;
+}
+
+.education-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.education-details li {
+  color: var(--secondary-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.education-details li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--accent-orange);
+  font-size: 0.8rem;
 }
 
 /* Philosophy Section */

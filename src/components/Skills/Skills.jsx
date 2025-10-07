@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { TypeAnimation } from 'react-type-animation'
 import {
   FaReact, FaNodeJs, FaPython, FaGitAlt, FaDocker,
   FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaFigma
@@ -11,10 +12,49 @@ import {
 import './Skills.css'
 
 const Skills = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
+  const [headerRef, headerInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  })
+
+  const [gridRef, gridInView] = useInView({
+    triggerOnce: false,
     threshold: 0.1,
   })
+
+  const [additionalRef, additionalInView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  })
+
+  // Stagger animation for category cards
+  const categoryVariants = {
+    hidden: { opacity: 0.5, y: 20, scale: 0.98 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        delay: i * 0.15,
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    })
+  }
+
+  // Stagger animation for skill items
+  const skillItemVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: (i) => ({
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: i * 0.05,
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    })
+  }
 
   const skillCategories = [
     {
@@ -70,34 +110,55 @@ const Skills = () => {
 
       <section className="skills section" id="skills">
         <div className="skills-container">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             {/* Section Header */}
-            <div className="skills-header">
+            <motion.div
+              className="skills-header"
+              initial={{ opacity: 0.5, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <span className="skills-badge">• Technical Skills</span>
               <h2 className="skills-title">
-                Technologies &
+                <TypeAnimation
+                  sequence={[
+                    'Technologies &',
+                    3000,
+                    'Modern Stack &',
+                    3000,
+                    'Tools &',
+                    3000,
+                    'Frameworks &',
+                    3000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                />
                 <br />
                 Expertise
               </h2>
               <p className="skills-subtitle">
                 Building modern applications with cutting-edge technologies and best practices
               </p>
-            </div>
+            </motion.div>
 
             {/* Skills Grid - Better Layout */}
-            <div className="skills-grid">
+            <div ref={gridRef} className="skills-grid">
               {skillCategories.map((category, idx) => (
                 <motion.div
                   key={category.title}
                   className="skill-category-card"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: idx * 0.15 }}
+                  initial={{ opacity: 0.5, y: 20, scale: 0.98 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{
+                    delay: idx * 0.15,
+                    duration: 0.6,
+                    ease: "easeOut"
+                  }}
+                  whileHover={{ y: -3, scale: 1.02 }}
                 >
                   <div className="category-header">
                     <span className="category-icon">✦</span>
@@ -109,10 +170,15 @@ const Skills = () => {
                       <motion.div
                         key={skill.name}
                         className="skill-item"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={inView ? { opacity: 1, scale: 1 } : {}}
-                        transition={{ duration: 0.3, delay: idx * 0.1 + skillIdx * 0.05 }}
-                        whileHover={{ y: -5, scale: 1.05 }}
+                        initial={{ opacity: 0.5, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        transition={{
+                          delay: skillIdx * 0.05,
+                          duration: 0.4,
+                          ease: "easeOut"
+                        }}
+                        whileHover={{ y: -2, scale: 1.03, rotate: 1 }}
                       >
                         <div className="skill-item-content">
                           <div className="skill-icon-wrapper">
@@ -132,29 +198,43 @@ const Skills = () => {
             {/* Additional Info Section */}
             <motion.div
               className="skills-additional"
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.8 }}
+              initial={{ opacity: 0.5, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              whileHover={{ scale: 1.01 }}
             >
               <div className="additional-content">
-                <div className="additional-text">
+                <motion.div
+                  className="additional-text"
+                  initial={{ opacity: 0.5, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
                   <h3>Always Learning</h3>
                   <p>
                     Continuously expanding my skill set with the latest technologies and industry best practices.
                     Passionate about clean code, performance optimization, and creating exceptional user experiences.
                   </p>
-                </div>
-                <div className="additional-badges">
+                </motion.div>
+                <motion.div
+                  className="additional-badges"
+                  initial={{ opacity: 0.5, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
                   <span className="tech-badge">React</span>
                   <span className="tech-badge">Node.js</span>
                   <span className="tech-badge">TypeScript</span>
                   <span className="tech-badge">Next.js</span>
                   <span className="tech-badge">MongoDB</span>
                   <span className="tech-badge">Docker</span>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

@@ -1,16 +1,11 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import { TypeAnimation } from 'react-type-animation'
 import toast from 'react-hot-toast'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import './Contact.css'
 
 const Contact = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -73,43 +68,82 @@ const Contact = () => {
   return (
     <section className="contact section" id="contact">
         <div className="contact-container">
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             {/* Section Header */}
-            <div className="contact-header">
+            <motion.div
+              className="contact-header"
+              initial={{ opacity: 0.5, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <span className="contact-badge">• Contact Me</span>
               <h2 className="contact-title">
-                Let's work
+                <TypeAnimation
+                  sequence={[
+                    "Let's work",
+                    3000,
+                    "Let's build",
+                    3000,
+                    "Let's create",
+                    3000,
+                    "Let's connect",
+                    3000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                />
                 <br />
                 together
               </h2>
               <p className="contact-subtitle">
                 Have a project in mind or just want to chat? Drop me a message!
               </p>
-            </div>
+            </motion.div>
 
             {/* Contact Content */}
             <div className="contact-content">
               {/* Left Side - Info */}
               <motion.div
                 className="contact-info"
-                initial={{ opacity: 0, x: -50 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                initial={{ opacity: 0.5, x: -60, scale: 0.95 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
-                <div className="info-card">
-                  <h3>Get in touch</h3>
-                  <p>
+                <motion.div
+                  className="info-card"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <motion.h3
+                    initial={{ opacity: 0.5, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                  >
+                    Get in touch
+                  </motion.h3>
+                  <motion.p
+                    initial={{ opacity: 0.5, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  >
                     I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-                  </p>
+                  </motion.p>
 
                   <div className="info-items">
                     {contactInfo.map((info, idx) => (
-                      <div key={info.title} className="info-item">
+                      <motion.div
+                        key={info.title}
+                        className="info-item"
+                        initial={{ opacity: 0.5, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        transition={{ delay: idx * 0.1, duration: 0.5, ease: "easeOut" }}
+                        whileHover={{ x: 2, scale: 1.02 }}
+                      >
                         <div className="info-icon">{info.icon}</div>
                         <div className="info-content">
                           <h4>{info.title}</h4>
@@ -119,39 +153,57 @@ const Contact = () => {
                             <span>{info.value}</span>
                           )}
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
 
-                  <div className="social-links">
+                  <motion.div
+                    className="social-links"
+                    initial={{ opacity: 0.5, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.7 }}
+                  >
                     <p className="social-label">Follow me:</p>
                     <div className="social-icons">
-                      {socialLinks.map((social) => (
-                        <a
+                      {socialLinks.map((social, idx) => (
+                        <motion.a
                           key={social.label}
                           href={social.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           title={social.label}
                           className="social-icon"
+                          initial={{ opacity: 0.5, scale: 0 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: false, amount: 0.3 }}
+                          transition={{ duration: 0.4, delay: 0.8 + idx * 0.1 }}
+                          whileHover={{ scale: 1.03, rotate: 1 }}
                         >
                           {social.icon}
-                        </a>
+                        </motion.a>
                       ))}
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               </motion.div>
 
               {/* Right Side - Form */}
               <motion.div
                 className="contact-form-wrapper"
-                initial={{ opacity: 0, x: 50 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                initial={{ opacity: 0.5, x: 60, scale: 0.95 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               >
                 <form className="contact-form" onSubmit={handleSubmit}>
-                  <div className="form-row">
+                  <motion.div
+                    className="form-row"
+                    initial={{ opacity: 0.5, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ delay: 0 * 0.1, duration: 0.5, ease: "easeOut" }}
+                  >
                     <div className="form-group">
                       <label htmlFor="name">Your Name</label>
                       <input
@@ -177,9 +229,15 @@ const Contact = () => {
                         required
                       />
                     </div>
-                  </div>
+                  </motion.div>
 
-                  <div className="form-group">
+                  <motion.div
+                    className="form-group"
+                    initial={{ opacity: 0.5, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ delay: 1 * 0.1, duration: 0.5, ease: "easeOut" }}
+                  >
                     <label htmlFor="subject">Subject</label>
                     <input
                       type="text"
@@ -190,9 +248,15 @@ const Contact = () => {
                       placeholder="Let's build something amazing"
                       required
                     />
-                  </div>
+                  </motion.div>
 
-                  <div className="form-group">
+                  <motion.div
+                    className="form-group"
+                    initial={{ opacity: 0.5, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ delay: 2 * 0.1, duration: 0.5, ease: "easeOut" }}
+                  >
                     <label htmlFor="message">Your Message</label>
                     <textarea
                       id="message"
@@ -203,11 +267,21 @@ const Contact = () => {
                       rows="6"
                       required
                     />
-                  </div>
+                  </motion.div>
 
-                  <button type="submit" className="submit-btn" disabled={isSubmitting}>
+                  <motion.button
+                    type="submit"
+                    className="submit-btn"
+                    disabled={isSubmitting}
+                    initial={{ opacity: 0.5, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ delay: 3 * 0.1, duration: 0.5, ease: "easeOut" }}
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     {isSubmitting ? 'Sending...' : 'Send Message →'}
-                  </button>
+                  </motion.button>
                 </form>
               </motion.div>
             </div>
@@ -215,15 +289,37 @@ const Contact = () => {
             {/* Bottom CTA */}
             <motion.div
               className="contact-cta"
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.8 }}
+              initial={{ opacity: 0.5, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              whileHover={{ scale: 1.02 }}
             >
-              <div className="cta-decoration">✦</div>
-              <h3>Ready to start your project?</h3>
-              <p>Let's create something amazing together</p>
+              <motion.div
+                className="cta-decoration"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              >
+                ✦
+              </motion.div>
+              <motion.h3
+                initial={{ opacity: 0.5, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                Ready to start your project?
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0.5, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                Let's create something amazing together
+              </motion.p>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
   )
