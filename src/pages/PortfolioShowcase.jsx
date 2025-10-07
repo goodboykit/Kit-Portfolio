@@ -303,20 +303,6 @@ const PortfolioShowcase = () => {
 
       {/* Photo Showcase Carousel */}
       <section className="photo-showcase">
-        {/* Decorative Elements */}
-        <div className="decor-dots-group">
-          <span className="decor-dot dot-1"></span>
-          <span className="decor-dot dot-2"></span>
-          <span className="decor-dot dot-3"></span>
-          <span className="decor-dot dot-4"></span>
-          <span className="decor-dot dot-5"></span>
-        </div>
-        <div className="decor-shapes-group">
-          <div className="decor-triangle"></div>
-          <div className="decor-square"></div>
-          <div className="decor-line"></div>
-        </div>
-
         <div className="showcase-container">
           <div className="photo-showcase-grid">
             {/* Left Photo - Previous */}
