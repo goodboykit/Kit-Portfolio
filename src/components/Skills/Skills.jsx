@@ -20,41 +20,41 @@ const Skills = () => {
     {
       title: 'Frontend Development',
       skills: [
-        { name: 'React', icon: <FaReact />, level: 95 },
-        { name: 'Next.js', icon: <SiNextdotjs />, level: 90 },
-        { name: 'TypeScript', icon: <SiTypescript />, level: 88 },
-        { name: 'JavaScript', icon: <FaJs />, level: 95 },
-        { name: 'HTML5', icon: <FaHtml5 />, level: 98 },
-        { name: 'CSS3', icon: <FaCss3Alt />, level: 95 },
-        { name: 'Tailwind', icon: <SiTailwindcss />, level: 92 },
-        { name: 'Redux', icon: <SiRedux />, level: 85 },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'Next.js', icon: <SiNextdotjs /> },
+        { name: 'TypeScript', icon: <SiTypescript /> },
+        { name: 'JavaScript', icon: <FaJs /> },
+        { name: 'HTML5', icon: <FaHtml5 /> },
+        { name: 'CSS3', icon: <FaCss3Alt /> },
+        { name: 'Tailwind', icon: <SiTailwindcss /> },
+        { name: 'Redux', icon: <SiRedux /> },
       ],
     },
     {
       title: 'Backend Development',
       skills: [
-        { name: 'Node.js', icon: <FaNodeJs />, level: 90 },
-        { name: 'Express', icon: <SiExpress />, level: 88 },
-        { name: 'Python', icon: <FaPython />, level: 85 },
-        { name: 'GraphQL', icon: <SiGraphql />, level: 82 },
-        { name: 'MongoDB', icon: <SiMongodb />, level: 90 },
-        { name: 'PostgreSQL', icon: <SiPostgresql />, level: 85 },
+        { name: 'Node.js', icon: <FaNodeJs /> },
+        { name: 'Express', icon: <SiExpress /> },
+        { name: 'Python', icon: <FaPython /> },
+        { name: 'GraphQL', icon: <SiGraphql /> },
+        { name: 'MongoDB', icon: <SiMongodb /> },
+        { name: 'PostgreSQL', icon: <SiPostgresql /> },
       ],
     },
     {
       title: 'Tools & Technologies',
       skills: [
-        { name: 'Git', icon: <FaGitAlt />, level: 93 },
-        { name: 'Docker', icon: <FaDocker />, level: 80 },
-        { name: 'Figma', icon: <FaFigma />, level: 88 },
-        { name: 'Database', icon: <FaDatabase />, level: 87 },
+        { name: 'Git', icon: <FaGitAlt /> },
+        { name: 'Docker', icon: <FaDocker /> },
+        { name: 'Figma', icon: <FaFigma /> },
+        { name: 'Database', icon: <FaDatabase /> },
       ],
     },
   ]
 
   return (
     <>
-      {/* Top Marquee */}
+      {/* Top Marquee - Cream Background */}
       <section className="skills-marquee">
         <div className="marquee-content">
           <span className="marquee-item">Modern Technologies ✦</span>
@@ -112,7 +112,7 @@ const Skills = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={inView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ duration: 0.3, delay: idx * 0.1 + skillIdx * 0.05 }}
-                        whileHover={{ y: -5 }}
+                        whileHover={{ y: -5, scale: 1.05 }}
                       >
                         <div className="skill-item-content">
                           <div className="skill-icon-wrapper">
@@ -120,14 +120,6 @@ const Skills = () => {
                           </div>
                           <div className="skill-info">
                             <span className="skill-name">{skill.name}</span>
-                            <div className="skill-progress-bar">
-                              <motion.div
-                                className="skill-progress-fill"
-                                initial={{ width: 0 }}
-                                animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-                                transition={{ duration: 1, delay: idx * 0.1 + skillIdx * 0.1 }}
-                              />
-                            </div>
                           </div>
                         </div>
                       </motion.div>
@@ -163,20 +155,6 @@ const Skills = () => {
               </div>
             </motion.div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Bottom Marquee */}
-      <section className="skills-marquee skills-marquee-bottom">
-        <div className="marquee-content marquee-reverse">
-          <span className="marquee-item">React & Next.js ✦</span>
-          <span className="marquee-item">Node.js & Express ✦</span>
-          <span className="marquee-item">TypeScript & JavaScript ✦</span>
-          <span className="marquee-item">MongoDB & PostgreSQL ✦</span>
-          <span className="marquee-item">React & Next.js ✦</span>
-          <span className="marquee-item">Node.js & Express ✦</span>
-          <span className="marquee-item">TypeScript & JavaScript ✦</span>
-          <span className="marquee-item">MongoDB & PostgreSQL ✦</span>
         </div>
       </section>
     </>

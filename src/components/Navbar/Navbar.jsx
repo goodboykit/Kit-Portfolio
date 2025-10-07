@@ -6,14 +6,34 @@ import './Navbar.css'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [hidden, setHidden] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      const currentScrollY = window.scrollY
+
+      // Always show navbar at the very top
+      if (currentScrollY < 10) {
+        setHidden(false)
+        setScrolled(false)
+      } else {
+        setScrolled(true)
+
+        // Hide on scroll down, show on scroll up
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          setHidden(true)
+        } else {
+          setHidden(false)
+        }
+      }
+
+      setLastScrollY(currentScrollY)
     }
-    window.addEventListener('scroll', handleScroll)
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [lastScrollY])
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
@@ -27,7 +47,7 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${hidden ? 'hidden' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
           <Link to="/">Portfolio</Link>

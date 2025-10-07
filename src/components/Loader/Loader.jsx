@@ -116,10 +116,38 @@ const Loader = ({ onLoadingComplete }) => {
               initial="hidden"
               animate="visible"
             >
-              <div
+              <motion.div
                 className="progress-bar-fill"
                 style={{ width: `${progress}%` }}
+                animate={{
+                  boxShadow: [
+                    '0 0 15px rgba(255, 215, 0, 0.5)',
+                    '0 0 25px rgba(255, 107, 74, 0.8)',
+                    '0 0 15px rgba(255, 215, 0, 0.5)'
+                  ]
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                }}
               />
+              {/* Animated indicator at progress position */}
+              {progress > 0 && progress < 100 && (
+                <motion.div
+                  className="progress-indicator"
+                  style={{ left: `${progress}%` }}
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    opacity: [0.8, 1, 0.8]
+                  }}
+                  transition={{
+                    duration: 1,
+                    repeat: Infinity,
+                    ease: 'easeInOut'
+                  }}
+                />
+              )}
             </motion.div>
           </div>
           <motion.div
@@ -150,6 +178,39 @@ const Loader = ({ onLoadingComplete }) => {
         <div className="bg-circle circle-1"></div>
         <div className="bg-circle circle-2"></div>
         <div className="bg-circle circle-3"></div>
+
+        {/* Additional animated elements */}
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="floating-particle"
+            initial={{
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
+              scale: 0,
+              opacity: 0
+            }}
+            animate={{
+              y: [null, Math.random() * window.innerHeight],
+              x: [null, Math.random() * window.innerWidth],
+              scale: [0, Math.random() * 0.8 + 0.5, 0],
+              opacity: [0, 0.6, 0]
+            }}
+            transition={{
+              duration: Math.random() * 5 + 3,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+              ease: "easeInOut"
+            }}
+            style={{
+              position: 'absolute',
+              width: `${Math.random() * 8 + 4}px`,
+              height: `${Math.random() * 8 + 4}px`,
+              borderRadius: '50%',
+              background: ['#ffd700', '#ff6b4a', '#6fcfcf'][Math.floor(Math.random() * 3)]
+            }}
+          />
+        ))}
       </div>
     </motion.div>
   )

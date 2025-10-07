@@ -7,8 +7,13 @@
   background: rgba(61, 79, 63, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: all var(--transition-base);
+  transition: transform 0.3s ease, all var(--transition-base);
   padding: 1rem 0;
+  transform: translateY(0);
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
 }
 
 .navbar.scrolled {

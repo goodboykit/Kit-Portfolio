@@ -47,19 +47,19 @@ const Contact = () => {
     {
       icon: <FaEnvelope />,
       title: 'Email',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com',
+      value: 'santiagonikos@gmail.com',
+      link: 'mailto:santiagonikos@gmail.com',
     },
     {
       icon: <FaPhone />,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+1 (310) 985-0496',
+      link: 'tel:+13109850496',
     },
     {
       icon: <FaMapMarkerAlt />,
       title: 'Location',
-      value: 'Your City, Country',
+      value: 'Bellflower, CA | Manila, PH',
       link: null,
     },
   ]

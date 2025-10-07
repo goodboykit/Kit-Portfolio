@@ -76,7 +76,7 @@ const Projects = () => {
 
   return (
     <>
-      {/* Top Marquee */}
+      {/* Top Marquee - Cream Background */}
       <section className="projects-marquee">
         <div className="marquee-content">
           <span className="marquee-item">Recent Work ✦</span>
@@ -162,20 +162,6 @@ const Projects = () => {
               ))}
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Bottom Marquee */}
-      <section className="projects-marquee projects-marquee-bottom">
-        <div className="marquee-content marquee-reverse">
-          <span className="marquee-item">E-Commerce Solutions ✦</span>
-          <span className="marquee-item">Web Applications ✦</span>
-          <span className="marquee-item">Responsive Design ✦</span>
-          <span className="marquee-item">API Integration ✦</span>
-          <span className="marquee-item">E-Commerce Solutions ✦</span>
-          <span className="marquee-item">Web Applications ✦</span>
-          <span className="marquee-item">Responsive Design ✦</span>
-          <span className="marquee-item">API Integration ✦</span>
         </div>
       </section>
 

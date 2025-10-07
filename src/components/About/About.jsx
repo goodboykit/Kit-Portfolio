@@ -10,7 +10,7 @@ const About = () => {
 
   return (
     <>
-      {/* Marquee Section */}
+      {/* Marquee Section - Cream Background */}
       <section className="about-marquee">
         <div className="marquee-content">
           <span className="marquee-item">Passionate Developer ✦</span>
@@ -46,19 +46,25 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <h2 className="about-title">
-                  Crafting digital
+                  Building innovative
                   <br />
-                  experiences with passion
+                  digital solutions
                 </h2>
                 <p className="about-description">
-                  Hello! I'm a passionate developer with a love for creating elegant solutions to complex problems.
-                  My journey in web development started several years ago, and I've been constantly learning and
-                  growing ever since.
+                  Hi! I'm Kit Nicholas Santiago, a 4th year IT student specializing in Mobile and Web Application
+                  development. As a US citizen currently studying in the Philippines at National University Manila,
+                  I bring a unique perspective to software development, blending international experience with
+                  technical expertise.
                 </p>
                 <p className="about-description">
-                  I specialize in building responsive, user-friendly applications using modern technologies.
-                  When I'm not coding, you can find me exploring new technologies and contributing to open-source
-                  projects.
+                  My journey includes active participation in tech communities like Google Developers Students Club
+                  and AWS Learning Club, where I've developed projects using React, Flutter, Node.js, and cloud technologies.
+                  I've competed in multiple hackathons achieving top placements, and I'm passionate about creating
+                  user-centered applications that solve real-world problems.
+                </p>
+                <p className="about-description">
+                  Currently seeking internship opportunities in the US to apply my skills in mobile and web development,
+                  contribute to innovative projects, and continue growing as a developer.
                 </p>
               </motion.div>
 
@@ -85,23 +91,23 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <div className="stat-card">
-                <div className="stat-number">50+</div>
-                <div className="stat-label">Projects Completed</div>
+                <div className="stat-number">20+</div>
+                <div className="stat-label">Projects Built</div>
                 <div className="stat-icon">✦</div>
               </div>
               <div className="stat-card">
                 <div className="stat-number">5+</div>
-                <div className="stat-label">Years Experience</div>
+                <div className="stat-label">Hackathon Wins</div>
                 <div className="stat-icon">✦</div>
               </div>
               <div className="stat-card">
-                <div className="stat-number">100+</div>
-                <div className="stat-label">Happy Clients</div>
+                <div className="stat-number">8+</div>
+                <div className="stat-label">Certifications</div>
                 <div className="stat-icon">✦</div>
               </div>
               <div className="stat-card">
-                <div className="stat-number">24/7</div>
-                <div className="stat-label">Dedicated Support</div>
+                <div className="stat-number">10+</div>
+                <div className="stat-label">Tech Events</div>
                 <div className="stat-icon">✦</div>
               </div>
             </motion.div>
@@ -116,30 +122,17 @@ const About = () => {
               <div className="philosophy-content">
                 <span className="philosophy-quote">"</span>
                 <h3 className="philosophy-text">
-                  Creating beautiful, functional, and user-centered digital experiences that make a difference
+                  Building innovative solutions through clean code, continuous learning, and a passion
+                  for creating meaningful digital experiences
                 </h3>
                 <div className="philosophy-author">
-                  <span className="author-name">My Philosophy</span>
+                  <span className="author-name">My Approach</span>
                   <span className="author-divider">—</span>
-                  <span className="author-title">Design & Development</span>
+                  <span className="author-title">Mobile & Web Development</span>
                 </div>
               </div>
             </motion.div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Bottom Marquee */}
-      <section className="about-marquee about-marquee-bottom">
-        <div className="marquee-content marquee-reverse">
-          <span className="marquee-item">Turning Ideas Into Reality ✦</span>
-          <span className="marquee-item">Pixel Perfect Design ✦</span>
-          <span className="marquee-item">Clean Architecture ✦</span>
-          <span className="marquee-item">Optimized Performance ✦</span>
-          <span className="marquee-item">Turning Ideas Into Reality ✦</span>
-          <span className="marquee-item">Pixel Perfect Design ✦</span>
-          <span className="marquee-item">Clean Architecture ✦</span>
-          <span className="marquee-item">Optimized Performance ✦</span>
         </div>
       </section>
     </>
