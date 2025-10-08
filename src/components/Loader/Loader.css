@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #3d4f3f;
+  background: linear-gradient(135deg, #2d3f2f 0%, #3d4f3f 50%, #4a5d4c 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +24,8 @@
 
 /* Logo Animation */
 .loader-logo {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
 }
 
 .logo-circle {
@@ -67,10 +68,143 @@
 }
 
 .logo-text {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: #ffd700;
   font-family: 'Georgia', serif;
+  letter-spacing: 0.1em;
+}
+
+/* Orbiting Particles */
+.orbit-particle {
+  pointer-events: none;
+}
+
+.particle-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff6b4a;
+  box-shadow: 0 0 15px rgba(255, 107, 74, 0.8);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.orbit-particle:nth-child(2) .particle-dot {
+  background: #ffd700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.orbit-particle:nth-child(3) .particle-dot {
+  background: #6fcfcf;
+  box-shadow: 0 0 15px rgba(111, 207, 207, 0.8);
+}
+
+/* Name Display */
+.loader-name {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.name-text {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #f5f2ed;
+  margin-bottom: 0.5rem;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.name-subtitle {
+  font-size: 1rem;
+  color: rgba(245, 242, 237, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.name-specialization {
+  font-size: 0.875rem;
+  color: #ffd700;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Loading Phase */
+.loader-phase {
+  text-align: center;
+  min-height: 30px;
+  margin: 0.5rem 0;
+}
+
+.loader-phase p {
+  font-size: 0.95rem;
+  color: #ffd700;
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Tagline */
+.loader-tagline {
+  text-align: center;
+  margin: 0.75rem 0;
+}
+
+.loader-tagline p {
+  font-size: 0.875rem;
+  color: rgba(245, 242, 237, 0.6);
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Corner Decorations */
+.corner-decoration {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.corner-decoration.top-left {
+  top: 2rem;
+  left: 2rem;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 8px 0 0 0;
+}
+
+.corner-decoration.top-right {
+  top: 2rem;
+  right: 2rem;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 8px 0 0;
+}
+
+.corner-decoration.bottom-left {
+  bottom: 2rem;
+  left: 2rem;
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 8px;
+}
+
+.corner-decoration.bottom-right {
+  bottom: 2rem;
+  right: 2rem;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 8px 0;
 }
 
 @keyframes pulse {
@@ -358,19 +492,57 @@
   }
 
   .logo-text {
-    font-size: 2.8rem;
+    font-size: 2rem;
   }
 
-  .loader-text h2 {
-    font-size: 1.6rem;
+  .name-text {
+    font-size: 1.8rem;
   }
 
-  .loader-text p {
+  .name-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .name-specialization {
     font-size: 0.8rem;
+  }
+
+  .loader-phase p {
+    font-size: 0.85rem;
+  }
+
+  .particle-dot {
+    width: 10px;
+    height: 10px;
   }
 
   .loader-progress {
     max-width: 300px;
+  }
+
+  .corner-decoration {
+    width: 60px;
+    height: 60px;
+  }
+
+  .corner-decoration.top-left,
+  .corner-decoration.top-right {
+    top: 1.5rem;
+  }
+
+  .corner-decoration.bottom-left,
+  .corner-decoration.bottom-right {
+    bottom: 1.5rem;
+  }
+
+  .corner-decoration.top-left,
+  .corner-decoration.bottom-left {
+    left: 1.5rem;
+  }
+
+  .corner-decoration.top-right,
+  .corner-decoration.bottom-right {
+    right: 1.5rem;
   }
 
   .circle-1,
@@ -378,5 +550,80 @@
   .circle-3 {
     width: 350px;
     height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-content {
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .logo-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .logo-inner {
+    width: 80px;
+    height: 80px;
+  }
+
+  .logo-text {
+    font-size: 1.75rem;
+  }
+
+  .name-text {
+    font-size: 1.5rem;
+  }
+
+  .name-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .name-specialization {
+    font-size: 0.75rem;
+  }
+
+  .loader-phase p {
+    font-size: 0.8rem;
+  }
+
+  .loader-progress {
+    max-width: 260px;
+  }
+
+  .particle-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .loader-tagline p {
+    font-size: 0.75rem;
+  }
+
+  .corner-decoration {
+    width: 50px;
+    height: 50px;
+  }
+
+  .corner-decoration.top-left,
+  .corner-decoration.top-right {
+    top: 1rem;
+  }
+
+  .corner-decoration.bottom-left,
+  .corner-decoration.bottom-right {
+    bottom: 1rem;
+  }
+
+  .corner-decoration.top-left,
+  .corner-decoration.bottom-left {
+    left: 1rem;
+  }
+
+  .corner-decoration.top-right,
+  .corner-decoration.bottom-right {
+    right: 1rem;
   }
 }

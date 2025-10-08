@@ -5,9 +5,10 @@ import './Loader.css'
 const Loader = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0)
   const [isExiting, setIsExiting] = useState(false)
+  const [loadingPhase, setLoadingPhase] = useState('initializing')
 
   useEffect(() => {
-    // Simulate loading progress
+    // Simulate loading progress - 6-8 seconds total
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -16,13 +17,20 @@ const Loader = ({ onLoadingComplete }) => {
             setIsExiting(true)
             setTimeout(() => {
               onLoadingComplete()
-            }, 800) // Wait for exit animation
-          }, 300)
+            }, 1000) // Wait for exit animation
+          }, 500)
           return 100
         }
-        return prev + 2
+
+        // Update loading phases
+        if (prev < 25) setLoadingPhase('initializing')
+        else if (prev < 50) setLoadingPhase('loading assets')
+        else if (prev < 75) setLoadingPhase('preparing content')
+        else if (prev < 100) setLoadingPhase('almost ready')
+
+        return prev + 1
       })
-    }, 30)
+    }, 70) // 70ms * 100 = 7 seconds
 
     return () => clearInterval(interval)
   }, [onLoadingComplete])
@@ -39,14 +47,29 @@ const Loader = ({ onLoadingComplete }) => {
   }
 
   const logoVariants = {
-    hidden: { scale: 0, rotate: -180 },
+    hidden: { scale: 0, rotate: -180, opacity: 0 },
     visible: {
       scale: 1,
       rotate: 0,
+      opacity: 1,
       transition: {
         type: 'spring',
-        stiffness: 100,
-        damping: 10,
+        stiffness: 80,
+        damping: 12,
+        duration: 1.2,
+      },
+    },
+  }
+
+  const nameVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.8,
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
   }
@@ -89,22 +112,131 @@ const Loader = ({ onLoadingComplete }) => {
           initial="hidden"
           animate="visible"
         >
-          <div className="logo-circle">
+          <motion.div
+            className="logo-circle"
+            animate={{
+              rotate: 360,
+              scale: [1, 1.05, 1],
+            }}
+            transition={{
+              rotate: {
+                duration: 8,
+                repeat: Infinity,
+                ease: "linear",
+              },
+              scale: {
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }
+            }}
+          >
             <div className="logo-inner">
-              <span className="logo-text">P</span>
+              <motion.span
+                className="logo-text"
+                animate={{
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                KN
+              </motion.span>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Orbiting particles around logo */}
+          {[...Array(3)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="orbit-particle"
+              animate={{
+                rotate: 360,
+              }}
+              transition={{
+                duration: 3 - i * 0.5,
+                repeat: Infinity,
+                ease: "linear",
+                delay: i * 0.3,
+              }}
+              style={{
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+              }}
+            >
+              <div className="particle-dot" />
+            </motion.div>
+          ))}
         </motion.div>
 
-        {/* Loading Text */}
+        {/* Name Display */}
         <motion.div
-          className="loader-text"
-          variants={textVariants}
+          className="loader-name"
+          variants={nameVariants}
           initial="hidden"
           animate="visible"
         >
-          <h2>Loading Kit Nicholas Portfolio</h2>
-          <p>Please wait</p>
+          <motion.h1
+            className="name-text"
+            animate={{
+              opacity: [0.8, 1, 0.8],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            Kit Nicholas T. Santiago
+          </motion.h1>
+          <motion.p
+            className="name-subtitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+          >
+            4th Year IT Student
+          </motion.p>
+          <motion.p
+            className="name-specialization"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.4, duration: 0.6 }}
+          >
+            Specialized in Mobile & Web Application
+          </motion.p>
+        </motion.div>
+
+        {/* Loading Phase Text */}
+        <motion.div
+          className="loader-phase"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+        >
+          <motion.p
+            key={loadingPhase}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.4 }}
+          >
+            {loadingPhase}...
+          </motion.p>
+        </motion.div>
+
+        {/* Tagline */}
+        <motion.div
+          className="loader-tagline"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2, duration: 0.8 }}
+        >
+          <p>Passionate Developer | Problem Solver | US Citizen</p>
         </motion.div>
 
         {/* Progress Bar */}
@@ -172,6 +304,32 @@ const Loader = ({ onLoadingComplete }) => {
           <span className="dot"></span>
         </motion.div>
       </div>
+
+      {/* Decorative Corner Elements */}
+      <motion.div
+        className="corner-decoration top-left"
+        initial={{ opacity: 0, x: -20, y: -20 }}
+        animate={{ opacity: 0.3, x: 0, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
+      />
+      <motion.div
+        className="corner-decoration top-right"
+        initial={{ opacity: 0, x: 20, y: -20 }}
+        animate={{ opacity: 0.3, x: 0, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
+      />
+      <motion.div
+        className="corner-decoration bottom-left"
+        initial={{ opacity: 0, x: -20, y: 20 }}
+        animate={{ opacity: 0.3, x: 0, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.8 }}
+      />
+      <motion.div
+        className="corner-decoration bottom-right"
+        initial={{ opacity: 0, x: 20, y: 20 }}
+        animate={{ opacity: 0.3, x: 0, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.8 }}
+      />
 
       {/* Background Animation */}
       <div className="loader-background">
