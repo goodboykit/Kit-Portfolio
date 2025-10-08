@@ -103,8 +103,8 @@ const Loader = ({ onLoadingComplete }) => {
           initial="hidden"
           animate="visible"
         >
-          <h2>Loading Portfolio</h2>
-          <p>Please wait while we prepare your experience</p>
+          <h2>Loading Kit Nicholas Portfolio</h2>
+          <p>Please wait</p>
         </motion.div>
 
         {/* Progress Bar */}

@@ -301,7 +301,7 @@
   font-size: 4rem;
   font-weight: 400;
   line-height: 1.2;
-  color: var(--showcase-black);
+  color: var(--showcase-olive);
   letter-spacing: -0.02em;
 }
 
@@ -827,7 +827,7 @@
   font-size: 3rem;
   font-weight: 400;
   line-height: 1.2;
-  color: var(--showcase-black);
+  color: var(--showcase-olive);
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
 }
@@ -1192,25 +1192,73 @@
 
 @media (max-width: 968px) {
   .hero-grid,
-  .photo-showcase-grid,
-  .photo-cta-row,
   .collage-top-section {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
-  .showcase-photo-item:first-child,
-  .showcase-photo-item:last-child {
-    display: none;
-  }
-
   .photo-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     justify-items: center;
   }
 
+  .photo-showcase {
+    padding: 4rem 0;
+  }
+
+  .photo-cta-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .cta-box {
+    flex: 0 0 auto;
+  }
+
+  .cta-spacer {
+    flex: 0 0 auto;
+  }
+
+  .showcase-photo-item {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .photo-box {
+    width: 100%;
+    height: 280px;
+  }
+
   .circular-photo {
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 320px;
+  }
+
+  .showcase-photo-center {
+    order: 2;
+  }
+
+  .showcase-photo-item:first-child {
+    order: 1;
+  }
+
+  .showcase-photo-item:last-child {
+    order: 3;
+  }
+
+  .photo-label-wrapper {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .photo-name {
+    text-align: center;
   }
 
   .hero-content {
@@ -1363,23 +1411,36 @@
     font-size: 1.75rem;
   }
 
+  .photo-showcase-grid {
+    gap: 0.875rem;
+  }
+
+  .showcase-photo-item {
+    max-width: 200px;
+  }
+
+  .photo-box {
+    height: 200px;
+  }
+
   .circular-photo {
-    width: 260px;
-    height: 260px;
+    width: 220px;
+    height: 220px;
   }
 
   .large-circular-photo {
-    width: 280px;
-    height: 280px;
+    width: 240px;
+    height: 240px;
   }
 
   .photo-showcase {
-    padding: 4rem 0;
+    padding: 3rem 0;
   }
 
   .photo-cta-row {
-    gap: 2rem;
-    padding-top: 2rem;
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+    margin-top: 0.5rem;
   }
 
   .nav-arrow-button {
@@ -1443,14 +1504,26 @@
     font-size: 1.5rem;
   }
 
+  .photo-showcase-grid {
+    gap: 0.75rem;
+  }
+
+  .showcase-photo-item {
+    max-width: 180px;
+  }
+
+  .photo-box {
+    height: 180px;
+  }
+
   .circular-photo {
-    width: 240px;
-    height: 240px;
+    width: 200px;
+    height: 200px;
   }
 
   .large-circular-photo {
-    width: 260px;
-    height: 260px;
+    width: 220px;
+    height: 220px;
   }
 
   .nav-arrow-button {
@@ -1467,6 +1540,28 @@
 
   .carousel-dot.active {
     width: 18px;
+  }
+
+  .photo-showcase {
+    padding: 2.5rem 0;
+  }
+
+  .photo-cta-row {
+    gap: 1rem;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .photo-label-wrapper {
+    margin-top: 0.75rem;
+  }
+
+  .photo-name {
+    font-size: 0.65rem;
+  }
+
+  .photo-number {
+    font-size: 0.85rem;
   }
 
   .drag-badge {
@@ -1492,8 +1587,21 @@
 }
 
 @media (max-width: 640px) {
+  .photo-showcase-grid {
+    gap: 1rem;
+  }
+
+  .showcase-photo-item {
+    max-width: 220px;
+  }
+
   .photo-box {
-    height: 280px;
+    height: 220px;
+  }
+
+  .circular-photo {
+    width: 240px;
+    height: 240px;
   }
 
   .experience-card-inner {

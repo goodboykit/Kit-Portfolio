@@ -110,6 +110,7 @@ const Navbar = () => {
               <NavLink
                 to={link.to}
                 onClick={() => setIsOpen(false)}
+                end
               >
                 {link.label}
               </NavLink>

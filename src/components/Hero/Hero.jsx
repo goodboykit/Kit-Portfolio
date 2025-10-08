@@ -60,12 +60,16 @@ const Hero = () => {
             </p>
 
             <div className="hero-cta-group">
-              <Link to="/projects" className="btn-primary-hero">
-                View Projects
-              </Link>
-              <Link to="/contact" className="btn-secondary-hero">
-                Get In Touch
-              </Link>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/projects" className="btn-primary-hero">
+                  View Projects
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/contact" className="btn-secondary-hero">
+                  Get In Touch
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -78,14 +82,18 @@ const Hero = () => {
             style={{ y: y2 }}
           >
             <div className="profile-wrapper">
-              <div className="profile-main">
+              <motion.div
+                className="profile-main"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 {/* Replace src with your actual image path */}
                 <div className="profile-image-placeholder">
                   <span className="placeholder-text">Your Photo Here</span>
                 </div>
                 {/* Uncomment below and add your image when ready */}
                 {/* <img src="/path-to-your-image.jpg" alt="Kit Nicholas Santiago" className="profile-image" /> */}
-              </div>
+              </motion.div>
 
               {/* Floating Badge */}
               <motion.div
@@ -143,15 +151,34 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link-minimal">
+          <motion.a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link-minimal"
+            whileHover={{ scale: 1.15, y: -3 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <FaGithub />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link-minimal">
+          </motion.a>
+          <motion.a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link-minimal"
+            whileHover={{ scale: 1.15, y: -3 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <FaLinkedin />
-          </a>
-          <a href="mailto:santiagonikos@gmail.com" className="social-link-minimal">
+          </motion.a>
+          <motion.a
+            href="mailto:santiagonikos@gmail.com"
+            className="social-link-minimal"
+            whileHover={{ scale: 1.15, y: -3 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <FaEnvelope />
-          </a>
+          </motion.a>
         </motion.div>
       </div>
 

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { TypeAnimation } from 'react-type-animation'
-import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa'
+import { FaGithub, FaExternalLinkAlt, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import Modal from 'react-modal'
 import './Projects.css'
 
@@ -93,6 +93,20 @@ const Projects = () => {
   const closeModal = () => {
     setModalIsOpen(false)
     setTimeout(() => setSelectedProject(null), 300)
+  }
+
+  const goToNextProject = () => {
+    if (!selectedProject) return
+    const currentIndex = projects.findIndex(p => p.id === selectedProject.id)
+    const nextIndex = (currentIndex + 1) % projects.length
+    setSelectedProject(projects[nextIndex])
+  }
+
+  const goToPreviousProject = () => {
+    if (!selectedProject) return
+    const currentIndex = projects.findIndex(p => p.id === selectedProject.id)
+    const previousIndex = (currentIndex - 1 + projects.length) % projects.length
+    setSelectedProject(projects[previousIndex])
   }
 
   return (
@@ -231,6 +245,14 @@ const Projects = () => {
                 <div className="modal-number">
                   <span>0{selectedProject.id}</span>
                 </div>
+
+                <button className="image-nav image-nav-left" onClick={goToPreviousProject} aria-label="Previous project">
+                  <FaChevronLeft />
+                </button>
+
+                <button className="image-nav image-nav-right" onClick={goToNextProject} aria-label="Next project">
+                  <FaChevronRight />
+                </button>
               </div>
             </div>
 
