@@ -1,0 +1,89 @@
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-orange) 0%,
+    var(--accent-yellow) 50%,
+    var(--accent-coral) 100%
+  );
+  z-index: 9999;
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+  transition: width 0.1s ease-out;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-orange), var(--accent-yellow));
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.scroll-to-top:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 968px) {
+  .scroll-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.125rem;
+  }
+
+  .scroll-progress-bar {
+    height: 3px;
+  }
+}
+
+@media (max-width: 640px) {
+  .scroll-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 42px;
+    height: 42px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 0.875rem;
+  }
+}

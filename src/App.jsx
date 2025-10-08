@@ -6,6 +6,8 @@ import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import Loader from './components/Loader/Loader'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+import ScrollIndicators from './components/ScrollIndicators/ScrollIndicators'
+import AnimatedBackground from './components/AnimatedBackground/AnimatedBackground'
 import Home from './pages/Home'
 import AboutPage from './pages/AboutPage'
 import SkillsPage from './pages/SkillsPage'
@@ -74,8 +76,10 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
+          <AnimatedBackground />
           <Toaster position="top-right" />
           <ScrollToTop />
+          <ScrollIndicators />
           <Navbar />
 
           <AnimatePresence mode="wait">

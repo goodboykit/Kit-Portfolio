@@ -94,7 +94,7 @@ const Navbar = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           whileHover={{ scale: 1.05 }}
         >
-          <Link to="/">Portfolio</Link>
+          <Link to="/">Kit Nicholas Portfolio</Link>
         </motion.div>
 
         <ul className={`navbar-menu ${isOpen ? 'active' : ''}`}>
