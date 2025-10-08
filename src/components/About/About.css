@@ -345,6 +345,153 @@
   font-size: 0.8rem;
 }
 
+/* Achievements Section */
+.about-achievements {
+  margin: 4rem 0;
+  padding: 3rem 0;
+}
+
+.achievements-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 2.5rem;
+  font-family: var(--font-serif);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.achievement-item {
+  background: var(--card-background);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.achievement-item:hover {
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+  border-color: var(--accent-orange);
+}
+
+.achievement-rank {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  background: var(--primary-color);
+  min-width: 100px;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.achievement-details {
+  flex: 1;
+}
+
+.achievement-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.achievement-description {
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.achievement-year {
+  font-size: 0.875rem;
+  color: var(--accent-orange);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Certifications Section */
+.about-certifications {
+  margin: 4rem 0;
+  padding: 3rem 0;
+}
+
+.certifications-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 2.5rem;
+  font-family: var(--font-serif);
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.certification-item {
+  background: var(--card-background);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.certification-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-orange);
+  transform: translateY(-3px);
+}
+
+.certification-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  background: var(--accent-orange);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.certification-content {
+  flex: 1;
+}
+
+.certification-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.certification-date {
+  font-size: 0.875rem;
+  color: var(--accent-orange);
+  font-weight: 600;
+}
+
 /* Philosophy Section */
 .about-philosophy {
   background: var(--primary-color);
@@ -518,6 +665,23 @@
   .education-logo {
     margin-bottom: 1rem;
   }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .achievement-rank {
+    width: 100%;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -544,6 +708,26 @@
   .education-title {
     font-size: 1.75rem;
   }
+
+  .achievements-title,
+  .certifications-title {
+    font-size: 1.75rem;
+  }
+
+  .achievement-rank {
+    font-size: 1rem;
+    padding: 0.75rem;
+    min-width: 80px;
+  }
+
+  .certification-item {
+    padding: 1.5rem;
+  }
+
+  .certification-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 @media (max-width: 360px) {
@@ -565,5 +749,27 @@
 
   .education-title {
     font-size: 1.5rem;
+  }
+
+  .achievements-title,
+  .certifications-title {
+    font-size: 1.5rem;
+  }
+
+  .achievement-rank {
+    font-size: 0.95rem;
+  }
+
+  .achievement-title {
+    font-size: 1rem;
+  }
+
+  .certification-name {
+    font-size: 0.95rem;
+  }
+
+  .certification-badge {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.7rem;
   }
 }

@@ -281,6 +281,183 @@ const About = () => {
               </motion.div>
             </motion.div>
 
+            {/* Achievements Section */}
+            <motion.div
+              className="about-achievements"
+              initial={{ opacity: 0.5, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <h3 className="achievements-title">Achievements</h3>
+              <div className="achievements-grid">
+                <motion.div
+                  className="achievement-item"
+                  initial={{ opacity: 0.5, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  whileHover={{ x: 3, scale: 1.01 }}
+                >
+                  <div className="achievement-rank">Top 1</div>
+                  <div className="achievement-details">
+                    <div className="achievement-title">Senior High School IT Immersion</div>
+                    <div className="achievement-description">User Interface Design: Online Thrift Mobile Application</div>
+                    <div className="achievement-year">S.Y 2022-2023</div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="achievement-item"
+                  initial={{ opacity: 0.5, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.15 }}
+                  whileHover={{ x: 3, scale: 1.01 }}
+                >
+                  <div className="achievement-rank">Top 7</div>
+                  <div className="achievement-details">
+                    <div className="achievement-title">Dela Salle University Hacker-Cup Hackathon</div>
+                    <div className="achievement-year">S.Y 2023-2024</div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="achievement-item"
+                  initial={{ opacity: 0.5, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  whileHover={{ x: 3, scale: 1.01 }}
+                >
+                  <div className="achievement-rank">Top 3</div>
+                  <div className="achievement-details">
+                    <div className="achievement-title">Ideathon Hackathon GDSC</div>
+                    <div className="achievement-description">Google Developers Students Club (National University Manila)</div>
+                    <div className="achievement-year">S.Y 2024-2025</div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="achievement-item"
+                  initial={{ opacity: 0.5, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.25 }}
+                  whileHover={{ x: 3, scale: 1.01 }}
+                >
+                  <div className="achievement-rank">Top 5</div>
+                  <div className="achievement-details">
+                    <div className="achievement-title">Dela Salle University Innovative Hacker-Cup Hackathon</div>
+                    <div className="achievement-year">S.Y 2024-2025</div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="achievement-item"
+                  initial={{ opacity: 0.5, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  whileHover={{ x: 3, scale: 1.01 }}
+                >
+                  <div className="achievement-rank">Top 11</div>
+                  <div className="achievement-details">
+                    <div className="achievement-title">GDSC InnOlympics Hackathon</div>
+                    <div className="achievement-description">Google Developers Students Club (PLM Manila)</div>
+                    <div className="achievement-year">S.Y 2024-2025</div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Certifications Section */}
+            <motion.div
+              className="about-certifications"
+              initial={{ opacity: 0.5, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <h3 className="certifications-title">Certifications</h3>
+              <div className="certifications-grid">
+                <motion.div
+                  className="certification-item"
+                  initial={{ opacity: 0.5, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  whileHover={{ y: -3, scale: 1.02 }}
+                >
+                  <div className="certification-badge">CISCO</div>
+                  <div className="certification-content">
+                    <div className="certification-name">Python Essentials 1 and 2</div>
+                    <div className="certification-date">12/04/2023</div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="certification-item"
+                  initial={{ opacity: 0.5, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.15 }}
+                  whileHover={{ y: -3, scale: 1.02 }}
+                >
+                  <div className="certification-badge">CISCO</div>
+                  <div className="certification-content">
+                    <div className="certification-name">HTML, CSS & JavaScript for Beginners</div>
+                    <div className="certification-date">12/05/2023</div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="certification-item"
+                  initial={{ opacity: 0.5, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  whileHover={{ y: -3, scale: 1.02 }}
+                >
+                  <div className="certification-badge">FORTINET</div>
+                  <div className="certification-content">
+                    <div className="certification-name">Introduction to the Threat Landscape 3.0</div>
+                    <div className="certification-date">06/06/2025</div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="certification-item"
+                  initial={{ opacity: 0.5, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.25 }}
+                  whileHover={{ y: -3, scale: 1.02 }}
+                >
+                  <div className="certification-badge">FORTINET</div>
+                  <div className="certification-content">
+                    <div className="certification-name">Certified Fundamentals Cybersecurity</div>
+                    <div className="certification-date">06/09/2025</div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="certification-item"
+                  initial={{ opacity: 0.5, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  whileHover={{ y: -3, scale: 1.02 }}
+                >
+                  <div className="certification-badge">FORTINET</div>
+                  <div className="certification-content">
+                    <div className="certification-name">Getting Started in Cybersecurity 3.0</div>
+                    <div className="certification-date">06/09/2026</div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+
             {/* Philosophy Section */}
             <motion.div
               className="about-philosophy"

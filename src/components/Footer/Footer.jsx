@@ -22,7 +22,13 @@ const Footer = () => {
   return (
     <footer className="footer">
       {/* Categories Banner */}
-      <div className="footer-categories">
+      <motion.div
+        className="footer-categories"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.1 }}
+        transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+      >
         <div className="categories-marquee">
           {categories.map((category, idx) => (
             <React.Fragment key={idx}>
@@ -37,17 +43,23 @@ const Footer = () => {
             </React.Fragment>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      <div className="footer-container">
+      <motion.div
+        className="footer-container"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.05 }}
+        transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+      >
         <div className="footer-content">
           {/* Studio Section */}
           <motion.div
             className="footer-section"
-            initial={{ opacity: 0.5, y: 20 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ delay: 0 * 0.1, duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.25, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <motion.h4
               className="footer-title"
@@ -80,19 +92,19 @@ const Footer = () => {
 
           <motion.div
             className="footer-vertical-divider"
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            initial={{ scaleY: 0, opacity: 0 }}
+            whileInView={{ scaleY: 1, opacity: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
           ></motion.div>
 
           {/* Discover Section */}
           <motion.div
             className="footer-section"
-            initial={{ opacity: 0.5, y: 20 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ delay: 1 * 0.1, duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.35, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <motion.h4
               className="footer-title"
@@ -122,19 +134,19 @@ const Footer = () => {
 
           <motion.div
             className="footer-vertical-divider"
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            initial={{ scaleY: 0, opacity: 0 }}
+            whileInView={{ scaleY: 1, opacity: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
           ></motion.div>
 
           {/* Contact Section */}
           <motion.div
             className="footer-section"
-            initial={{ opacity: 0.5, y: 20 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ delay: 2 * 0.1, duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.45, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <motion.h4
               className="footer-title"
@@ -169,19 +181,19 @@ const Footer = () => {
 
           <motion.div
             className="footer-vertical-divider"
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            initial={{ scaleY: 0, opacity: 0 }}
+            whileInView={{ scaleY: 1, opacity: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
           ></motion.div>
 
           {/* Location Section */}
           <motion.div
             className="footer-section"
-            initial={{ opacity: 0.5, y: 20 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ delay: 3 * 0.1, duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.55, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <motion.h4
               className="footer-title"
@@ -215,21 +227,21 @@ const Footer = () => {
 
         <motion.div
           className="footer-divider"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 1, delay: 0.8 }}
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 1 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 1, delay: 0.65, ease: [0.25, 0.1, 0.25, 1] }}
         ></motion.div>
 
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <motion.div
               className="footer-logo"
-              initial={{ opacity: 0.5, x: -30 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              whileHover={{ scale: 1.02 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.75, ease: [0.25, 0.1, 0.25, 1] }}
+              whileHover={{ scale: 1.03, x: 3 }}
             >
               <motion.span
                 className="logo-icon"
@@ -243,10 +255,10 @@ const Footer = () => {
 
             <motion.p
               className="footer-copyright"
-              initial={{ opacity: 0.5, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.85, ease: [0.25, 0.1, 0.25, 1] }}
             >
               ALL RIGHTS RESERVED TO <strong>KIT NICHOLAS SANTIAGO</strong> {currentYear}
             </motion.p>
@@ -256,11 +268,11 @@ const Footer = () => {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0.5, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.4, delay: 1.3 }}
-                whileHover={{ y: -2, scale: 1.03, rotate: 1 }}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.95, ease: [0.25, 0.1, 0.25, 1] }}
+                whileHover={{ y: -3, scale: 1.1 }}
               >
                 <FaGithub />
               </motion.a>
@@ -268,11 +280,11 @@ const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0.5, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.4, delay: 1.4 }}
-                whileHover={{ y: -2, scale: 1.03, rotate: 1 }}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
+                whileHover={{ y: -3, scale: 1.1 }}
               >
                 <FaLinkedin />
               </motion.a>
@@ -280,18 +292,18 @@ const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0.5, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.4, delay: 1.5 }}
-                whileHover={{ y: -2, scale: 1.03, rotate: 1 }}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 1.05, ease: [0.25, 0.1, 0.25, 1] }}
+                whileHover={{ y: -3, scale: 1.1 }}
               >
                 <FaTwitter />
               </motion.a>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   )
 }
