@@ -424,3 +424,56 @@
     font-size: 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 0 1rem;
+  }
+
+  .contact-title {
+    font-size: 1.75rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .info-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .contact-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact-cta p {
+    font-size: 0.95rem;
+  }
+
+  .info-card,
+  .contact-form {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .info-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .contact-cta h3 {
+    font-size: 1.35rem;
+  }
+
+  .contact-cta p {
+    font-size: 0.875rem;
+  }
+}

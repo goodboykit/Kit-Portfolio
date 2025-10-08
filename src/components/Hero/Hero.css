@@ -583,3 +583,86 @@
     font-size: 1.25rem;
   }
 }
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 0 1rem;
+  }
+
+  .hero-main-name {
+    font-size: 2.5rem;
+  }
+
+  .animated-role-text {
+    font-size: 1.35rem;
+  }
+
+  .hero-short-bio {
+    font-size: 0.95rem;
+  }
+
+  .profile-wrapper {
+    max-width: 280px;
+  }
+
+  .stat-minimal-number {
+    font-size: 2.25rem;
+  }
+
+  .floating-badge-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-info-badge {
+    padding: 1rem 1.25rem;
+  }
+
+  .info-badge-number {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-main-name {
+    font-size: 2.25rem;
+  }
+
+  .animated-role-text {
+    font-size: 1.25rem;
+  }
+
+  .hero-short-bio {
+    font-size: 0.875rem;
+  }
+
+  .profile-wrapper {
+    max-width: 260px;
+  }
+
+  .stat-minimal-number {
+    font-size: 2rem;
+  }
+
+  .floating-badge-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .floating-badge-text {
+    font-size: 0.5rem;
+    max-width: 70px;
+  }
+
+  .profile-info-badge {
+    padding: 0.875rem 1rem;
+  }
+
+  .info-badge-number {
+    font-size: 2rem;
+  }
+
+  .info-badge-label {
+    font-size: 0.65rem;
+  }
+}

@@ -231,7 +231,7 @@ const PortfolioShowcase = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="section-badge">• My Journey</span>
-            <h2 className="section-title">
+            <h2 className="showcase-section-title-olive">
               Community
               <br />
               Leadership & Contributions
@@ -437,7 +437,7 @@ const PortfolioShowcase = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="section-badge">• Learning & Growth</span>
-            <h2 className="section-title">
+            <h2 className="showcase-section-title-olive">
               Seminars &
               <br />
               Events Attended

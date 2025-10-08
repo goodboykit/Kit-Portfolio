@@ -23,7 +23,7 @@
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-orange), var(--accent-yellow));
+  background: #556b2f;
   color: white;
   border: none;
   cursor: pointer;
@@ -38,7 +38,7 @@
 
 .scroll-to-top:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(85, 107, 47, 0.4);
 }
 
 .scroll-to-top:active {

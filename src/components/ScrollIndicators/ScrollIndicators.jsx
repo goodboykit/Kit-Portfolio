@@ -52,7 +52,7 @@ const ScrollIndicators = () => {
             whileHover={{
               scale: 1.1,
               rotate: 360,
-              boxShadow: "0 8px 25px rgba(255, 215, 0, 0.3)"
+              boxShadow: "0 8px 25px rgba(85, 107, 47, 0.4)"
             }}
             whileTap={{ scale: 0.9 }}
             transition={{ duration: 0.3 }}

@@ -519,3 +519,51 @@
     margin-bottom: 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 0 1rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+  }
+
+  .philosophy-text {
+    font-size: 1.35rem;
+  }
+
+  .philosophy-quote {
+    font-size: 3.5rem;
+  }
+
+  .education-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-title {
+    font-size: 1.75rem;
+  }
+
+  .about-description {
+    font-size: 0.875rem;
+  }
+
+  .philosophy-text {
+    font-size: 1.25rem;
+  }
+
+  .philosophy-quote {
+    font-size: 3rem;
+  }
+
+  .education-title {
+    font-size: 1.5rem;
+  }
+}
