@@ -1,10 +1,20 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import './About.css'
 
 const About = () => {
   const [certModal, setCertModal] = useState(null)
+
+  useEffect(() => {
+    if (certModal) {
+      const original = document.body.style.overflow
+      document.body.style.overflow = 'hidden'
+      return () => {
+        document.body.style.overflow = original
+      }
+    }
+  }, [certModal])
   return (
     <>
       {/* Marquee Section - Cream Background */}

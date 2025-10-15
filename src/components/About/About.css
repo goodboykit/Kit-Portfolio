@@ -636,9 +636,11 @@
 @media (max-width: 640px) {
   .modal-card {
     width: 96%;
+    max-height: 92vh;
+    overflow: hidden;
   }
   .modal-image-wrap {
-    height: 200px;
+    height: 36vh;
     border-radius: 0.5rem;
   }
   .modal-header-cert {
@@ -652,6 +654,8 @@
   }
   .modal-body-cert {
     padding: 0 1rem 1rem;
+    max-height: calc(92vh - 36vh - 3.25rem);
+    overflow-y: auto;
   }
   .modal-close-btn {
     width: 32px;
