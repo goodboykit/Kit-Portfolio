@@ -6,6 +6,7 @@ const Loader = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0)
   const [isExiting, setIsExiting] = useState(false)
   const [loadingPhase, setLoadingPhase] = useState('initializing')
+  const [ripples, setRipples] = useState([])
 
   useEffect(() => {
     // Simulate loading progress - 6-8 seconds total
@@ -34,6 +35,21 @@ const Loader = ({ onLoadingComplete }) => {
 
     return () => clearInterval(interval)
   }, [onLoadingComplete])
+
+  // Handle click/tap ripple effect
+  const createRipple = (e) => {
+    const ripple = {
+      x: e.clientX,
+      y: e.clientY,
+      id: Date.now()
+    }
+    setRipples((prev) => [...prev, ripple])
+
+    // Remove ripple after animation completes
+    setTimeout(() => {
+      setRipples((prev) => prev.filter((r) => r.id !== ripple.id))
+    }, 1000)
+  }
 
   const containerVariants = {
     hidden: { opacity: 1 },
@@ -103,6 +119,7 @@ const Loader = ({ onLoadingComplete }) => {
       variants={containerVariants}
       initial="hidden"
       animate={isExiting ? 'exit' : 'hidden'}
+      onClick={createRipple}
     >
       <div className="loader-content">
         {/* Animated Logo/Icon */}
@@ -375,6 +392,18 @@ const Loader = ({ onLoadingComplete }) => {
           <div key={`bubble-${i}`} className="bubble" />
         ))}
       </div>
+
+      {/* Click/Tap Ripples */}
+      {ripples.map((ripple) => (
+        <div
+          key={ripple.id}
+          className="ripple"
+          style={{
+            left: ripple.x,
+            top: ripple.y
+          }}
+        />
+      ))}
     </motion.div>
   )
 }
