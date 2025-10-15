@@ -375,11 +375,14 @@
   gap: 1.5rem;
   transition: all 0.3s ease;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
 }
 
 .achievement-item:hover {
   box-shadow: 0 6px 18px rgba(255, 215, 0, 0.16);
   transform: translateY(-2px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Subtle shimmer highlight on hover */
