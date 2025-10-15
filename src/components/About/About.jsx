@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import './About.css'
 
 const About = () => {
+  const [certModal, setCertModal] = useState(null)
   return (
     <>
       {/* Marquee Section - Cream Background */}
@@ -297,7 +299,8 @@ const About = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  whileHover={{ x: 3, scale: 1.01 }}
+                  whileHover={{ x: 3, scale: 1.02, rotate: 0.2 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <div className="achievement-rank">Top 1</div>
                   <div className="achievement-details">
@@ -313,7 +316,8 @@ const About = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: 0.15 }}
-                  whileHover={{ x: 3, scale: 1.01 }}
+                  whileHover={{ x: 3, scale: 1.02, rotate: -0.2 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <div className="achievement-rank">Top 7</div>
                   <div className="achievement-details">
@@ -328,7 +332,8 @@ const About = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  whileHover={{ x: 3, scale: 1.01 }}
+                  whileHover={{ x: 3, scale: 1.02, rotate: 0.2 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <div className="achievement-rank">Top 3</div>
                   <div className="achievement-details">
@@ -344,7 +349,8 @@ const About = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: 0.25 }}
-                  whileHover={{ x: 3, scale: 1.01 }}
+                  whileHover={{ x: 3, scale: 1.02, rotate: -0.2 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <div className="achievement-rank">Top 5</div>
                   <div className="achievement-details">
@@ -359,7 +365,8 @@ const About = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  whileHover={{ x: 3, scale: 1.01 }}
+                  whileHover={{ x: 3, scale: 1.02, rotate: 0.2 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   <div className="achievement-rank">Top 11</div>
                   <div className="achievement-details">
@@ -387,7 +394,9 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileHover={{ y: -4, scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setCertModal({ org: 'CISCO', name: 'Python Essentials 1 and 2', date: '12/04/2023', image: '/certs/cisco-python-essentials.jpg' })}
                 >
                   <div className="certification-badge">CISCO</div>
                   <div className="certification-content">
@@ -402,7 +411,9 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: 0.15 }}
-                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileHover={{ y: -4, scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setCertModal({ org: 'CISCO', name: 'HTML, CSS & JavaScript for Beginners', date: '12/05/2023', image: '/certs/cisco-html-css-js.jpg' })}
                 >
                   <div className="certification-badge">CISCO</div>
                   <div className="certification-content">
@@ -417,7 +428,9 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileHover={{ y: -4, scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Introduction to the Threat Landscape 3.0', date: '06/06/2025', image: '/certs/fortinet-threat-landscape.jpg' })}
                 >
                   <div className="certification-badge">FORTINET</div>
                   <div className="certification-content">
@@ -432,7 +445,9 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: 0.25 }}
-                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileHover={{ y: -4, scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Certified Fundamentals Cybersecurity', date: '06/09/2025', image: '/certs/fortinet-cfc.jpg' })}
                 >
                   <div className="certification-badge">FORTINET</div>
                   <div className="certification-content">
@@ -447,7 +462,9 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  whileHover={{ y: -3, scale: 1.02 }}
+                  whileHover={{ y: -4, scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Getting Started in Cybersecurity 3.0', date: '06/09/2026', image: '/certs/fortinet-getting-started-3.jpg' })}
                 >
                   <div className="certification-badge">FORTINET</div>
                   <div className="certification-content">
@@ -457,6 +474,49 @@ const About = () => {
                 </motion.div>
               </div>
             </motion.div>
+
+            {certModal && (
+              <div className="modal-overlay" onClick={() => setCertModal(null)}>
+                <motion.div
+                  className="modal-card"
+                  onClick={(e) => e.stopPropagation()}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <button className="modal-close-btn" onClick={() => setCertModal(null)} aria-label="Close">
+                    ×
+                  </button>
+                  <div className="modal-header-cert">
+                    <div className="modal-image-wrap">
+                      {certModal.image ? (
+                        <img
+                          className="modal-image-cert"
+                          src={certModal.image}
+                          alt={`${certModal.org} - ${certModal.name}`}
+                          onError={(e) => { e.currentTarget.style.display = 'none' }}
+                        />
+                      ) : null}
+                      <div className="modal-image-placeholder-cert">
+                        <span className="placeholder-org">{certModal.org}</span>
+                        <span className="placeholder-name">{certModal.name}</span>
+                      </div>
+                    </div>
+                    <div className="modal-badge-org">{certModal.org}</div>
+                    <h4 className="modal-title-cert">{certModal.name}</h4>
+                    <div className="modal-date-cert">Issued: {certModal.date}</div>
+                  </div>
+                  <div className="modal-body-cert">
+                    <div className="modal-meta">
+                      <span className="meta-chip">{certModal.org}</span>
+                      <span className="meta-sep">•</span>
+                      <span className="meta-date">{certModal.date}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            )}
 
             {/* Philosophy Section */}
             <motion.div

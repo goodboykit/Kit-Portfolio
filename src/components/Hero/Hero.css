@@ -110,14 +110,14 @@
 .btn-primary-hero {
   background: var(--accent-yellow);
   color: #1a1a1a;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.15);
+  box-shadow: 0 1px 4px rgba(255, 215, 0, 0.12);
 }
 
 .btn-primary-hero:hover {
   background: var(--accent-orange);
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(255, 107, 74, 0.2);
+  box-shadow: 0 2px 8px rgba(255, 107, 74, 0.16);
 }
 
 .btn-secondary-hero {
@@ -216,7 +216,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.16);
   z-index: 10;
 }
 
@@ -239,7 +239,7 @@
   background: var(--accent-orange);
   padding: 1.5rem 2rem;
   border-radius: 0.5rem;
-  box-shadow: 0 8px 20px rgba(255, 107, 74, 0.2);
+  box-shadow: 0 6px 14px rgba(255, 107, 74, 0.16);
   z-index: 10;
 }
 
@@ -335,7 +335,7 @@
   color: #1a1a1a;
   border-color: var(--accent-yellow);
   transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.18);
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.16);
 }
 
 /* Scroll Indicator */

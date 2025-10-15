@@ -5,7 +5,7 @@ const RevealOnScroll = ({
   children,
   direction = 'up',
   delay = 0,
-  duration = 0.6,
+  duration = 0.5,
   amount = 0.3,
   once = false,
   className = '',
