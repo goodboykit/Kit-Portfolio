@@ -1,0 +1,14 @@
+{
+  "name": "Kit Nicholas Santiago Portfolio",
+  "short_name": "KN Portfolio",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#3d4f3f",
+  "background_color": "#3d4f3f",
+  "display": "standalone"
+}
