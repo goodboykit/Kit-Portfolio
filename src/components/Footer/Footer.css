@@ -223,7 +223,7 @@
   background: var(--accent-orange);
   border-color: var(--accent-orange);
   color: white;
-  box-shadow: 0 8px 20px rgba(255, 107, 74, 0.3);
+  box-shadow: 0 6px 15px rgba(255, 107, 74, 0.18);
 }
 
 /* Responsive Design */

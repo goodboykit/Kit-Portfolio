@@ -124,7 +124,7 @@
 
 .skill-category-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   border-color: var(--accent-orange);
 }
 
@@ -187,7 +187,7 @@
 .skill-item:hover .skill-icon-wrapper {
   background: var(--accent-orange);
   transform: scale(1.15) rotate(5deg);
-  box-shadow: 0 8px 25px rgba(255, 107, 74, 0.3);
+  box-shadow: 0 6px 18px rgba(255, 107, 74, 0.18);
 }
 
 .skill-icon {
