@@ -236,7 +236,7 @@ const Loader = ({ onLoadingComplete }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2, duration: 0.8 }}
         >
-          <p>Passionate Developer | Problem Solver | US Citizen</p>
+          <p>Passionate Developer | Problem Solver</p>
         </motion.div>
 
         {/* Progress Bar */}

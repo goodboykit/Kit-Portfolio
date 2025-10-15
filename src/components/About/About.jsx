@@ -63,7 +63,7 @@ const About = () => {
                 </h2>
                 <p className="about-description">
                   Hi! I'm Kit Nicholas Santiago, a 4th year IT student specializing in Mobile and Web Application
-                  development. As a US citizen currently studying in the Philippines at National University Manila,
+                  development. Currently studying at National University Manila in the Philippines,
                   I bring a unique perspective to software development, blending international experience with
                   technical expertise.
                 </p>
