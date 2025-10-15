@@ -369,6 +369,11 @@ const Loader = ({ onLoadingComplete }) => {
             }}
           />
         ))}
+
+        {/* Floating Bubbles */}
+        {[...Array(8)].map((_, i) => (
+          <div key={`bubble-${i}`} className="bubble" />
+        ))}
       </div>
     </motion.div>
   )
