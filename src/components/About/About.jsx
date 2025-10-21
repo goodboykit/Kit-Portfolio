@@ -292,7 +292,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.1 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'Data Privacy Orientation', date: '02/14/2024', image: '/src/assets/images/certifications/CEASdataprivacy.png' })}
+                  onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'Data Privacy Orientation', date: '02/14/2024', image: '/images/certifications/CEASdataprivacy.png' })}
                 >
                   <div className="certification-badge">NU</div>
                   <div className="certification-content">
@@ -311,7 +311,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.1 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'Concourse: Charting New Horizons in Technology', date: '02/12/2025', image: '/src/assets/images/certifications/Concourse.png' })}
+                  onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'Concourse: Charting New Horizons in Technology', date: '02/12/2025', image: '/images/certifications/Concourse.png' })}
                 >
                   <div className="certification-badge">NU</div>
                   <div className="certification-content">
@@ -330,7 +330,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.1 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'CISCO', name: 'Python Essentials 1 and 2', date: '12/04/2023', image: '/src/assets/images/certifications/Python Essentials.png' })}
+                  onClick={() => setCertModal({ org: 'CISCO', name: 'Python Essentials 1 and 2', date: '12/04/2023', image: '/images/certifications/Python Essentials.png' })}
                 >
                   <div className="certification-badge">CISCO</div>
                   <div className="certification-content">
@@ -341,9 +341,6 @@ const About = () => {
                     <img src="/src/assets/images/certifications/Python Essentials.png" alt="Python Essentials Certificate" />
                   </div>
                 </motion.div>
-
-
-
                 <motion.div
                   className="certification-item"
                   initial={{ opacity: 0.5, y: 20 }}
@@ -352,7 +349,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Introduction to the Threat Landscape 3.0', date: '06/06/2025', image: '/src/assets/images/certifications/IntroThreatLandscape.png' })}
+                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Introduction to the Threat Landscape 3.0', date: '06/06/2025', image: '/images/certifications/IntroThreatLandscape.png' })}
                 >
                   <div className="certification-badge">FORTINET</div>
                   <div className="certification-content">
@@ -372,7 +369,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.25 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Certified Fundamentals Cybersecurity', date: '06/09/2025', image: '/src/assets/images/certifications/CerttifiedFundamentals.png' })}
+                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Certified Fundamentals Cybersecurity', date: '06/09/2025', image: '/images/certifications/CerttifiedFundamentals.png' })}
                 >
                   <div className="certification-badge">FORTINET</div>
                   <div className="certification-content">
@@ -392,7 +389,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.3 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Getting Started in Cybersecurity 3.0', date: '06/09/2026', image: '/src/assets/images/certifications/GettingStartedCyber.png' })}
+                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Getting Started in Cybersecurity 3.0', date: '06/09/2026', image: '/images/certifications/GettingStartedCyber.png' })}
                 >
                   <div className="certification-badge">FORTINET</div>
                   <div className="certification-content">
@@ -412,7 +409,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.35 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'AWS CLOUD CLUBS', name: 'International Leader\'s Discussion', date: '08/11/2024', image: '/src/assets/images/certifications/Certificate of Partcipation copy.png' })}
+                  onClick={() => setCertModal({ org: 'AWS CLOUD CLUBS', name: 'International Leader\'s Discussion', date: '08/11/2024', image: '/images/certifications/Certificate of Partcipation copy.png' })}
                 >
                   <div className="certification-badge">AWS</div>
                   <div className="certification-content">
@@ -432,7 +429,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'GOOGLE DEVELOPER STUDENT CLUBS', name: 'Intro to Flutter: UI/UX Design', date: '02/21/2024', image: '/src/assets/images/certifications/Certificate of Participation - Kit Nicholas Santiago.png' })}
+                  onClick={() => setCertModal({ org: 'GOOGLE DEVELOPER STUDENT CLUBS', name: 'Intro to Flutter: UI/UX Design', date: '02/21/2024', image: '/images/certifications/Certificate of Participation - Kit Nicholas Santiago.png' })}
                 >
                   <div className="certification-badge">GDSC</div>
                   <div className="certification-content">
