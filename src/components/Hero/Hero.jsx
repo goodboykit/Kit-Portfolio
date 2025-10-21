@@ -61,9 +61,14 @@ const Hero = () => {
 
             <div className="hero-cta-group">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/projects" className="btn-primary-hero">
-                  View Projects
-                </Link>
+                <a 
+                  href="https://kit-santiago-portfolio-resume.s3.ap-southeast-1.amazonaws.com/SANTIAGO_RESUME.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn-primary-hero"
+                >
+                  View Resume
+                </a>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link to="/contact" className="btn-secondary-hero">
