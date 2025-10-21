@@ -250,46 +250,7 @@ const Skills = () => {
               </div>
             </motion.div>
 
-            {/* Additional Info Section */}
-            <motion.div
-              className="skills-additional"
-              initial={{ opacity: 0.5, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              whileHover={{ scale: 1.01 }}
-            >
-              <div className="additional-content">
-                <motion.div
-                  className="additional-text"
-                  initial={{ opacity: 0.5, x: -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                >
-                  <h3>Technical Expertise</h3>
-                  <p>
-                    Passionate 4th year IT student specializing in Mobile & Web Application development. 
-                    Proficient in Java, Flutter, React, and AWS cloud technologies with hands-on experience 
-                    in full-stack development, database management, and technical coordination.
-                  </p>
-                </motion.div>
-                <motion.div
-                  className="additional-badges"
-                  initial={{ opacity: 0.5, x: 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                >
-                  <span className="tech-badge">Java</span>
-                  <span className="tech-badge">Flutter</span>
-                  <span className="tech-badge">React</span>
-                  <span className="tech-badge">MySQL</span>
-                  <span className="tech-badge">AWS S3</span>
-                  <span className="tech-badge">Git</span>
-                </motion.div>
-              </div>
-            </motion.div>
+
           </div>
         </div>
       </section>
