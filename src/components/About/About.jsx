@@ -406,6 +406,44 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.1 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
+                  onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'Data Privacy Orientation', date: '02/14/2024', image: '/src/assets/images/certifications/CEASdataprivacy.png' })}
+                >
+                  <div className="certification-badge">NU</div>
+                  <div className="certification-content">
+                    <div className="certification-name">Data Privacy Orientation</div>
+                    <div className="certification-date">02/14/2024</div>
+                  </div>
+                  <div className="certification-hover-preview">
+                    <img src="/src/assets/images/certifications/CEASdataprivacy.png" alt="Data Privacy Certificate" />
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="certification-item"
+                  initial={{ opacity: 0.5, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  whileHover={{ y: -4, scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'Concourse: Charting New Horizons in Technology', date: '02/12/2025', image: '/src/assets/images/certifications/Concourse.png' })}
+                >
+                  <div className="certification-badge">NU</div>
+                  <div className="certification-content">
+                    <div className="certification-name">Concourse: Charting New Horizons in Technology</div>
+                    <div className="certification-date">02/12/2025</div>
+                  </div>
+                  <div className="certification-hover-preview">
+                    <img src="/src/assets/images/certifications/Concourse.png" alt="Concourse Certificate" />
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="certification-item"
+                  initial={{ opacity: 0.5, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  whileHover={{ y: -4, scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
                   onClick={() => setCertModal({ org: 'CISCO', name: 'Python Essentials 1 and 2', date: '12/04/2023', image: '/src/assets/images/certifications/Python Essentials.png' })}
                 >
                   <div className="certification-badge">CISCO</div>
@@ -418,25 +456,7 @@ const About = () => {
                   </div>
                 </motion.div>
 
-                <motion.div
-                  className="certification-item"
-                  initial={{ opacity: 0.5, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  transition={{ duration: 0.6, delay: 0.15 }}
-                  whileHover={{ y: -4, scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'CISCO', name: 'HTML, CSS & JavaScript for Beginners', date: '12/05/2023', image: '/src/assets/images/certifications/Course_Completion_Certificate copy.pdf' })}
-                >
-                  <div className="certification-badge">CISCO</div>
-                  <div className="certification-content">
-                    <div className="certification-name">HTML, CSS & JavaScript for Beginners</div>
-                    <div className="certification-date">12/05/2023</div>
-                  </div>
-                  <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/Course_Completion_Certificate copy.pdf" alt="HTML CSS JS Certificate" />
-                  </div>
-                </motion.div>
+
 
                 <motion.div
                   className="certification-item"
@@ -446,7 +466,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Introduction to the Threat Landscape 3.0', date: '06/06/2025', image: '/src/assets/images/certifications/Course_Completion_Certificate-2 copy.pdf' })}
+                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Introduction to the Threat Landscape 3.0', date: '06/06/2025', image: '/src/assets/images/certifications/IntroThreatLandscape.png' })}
                 >
                   <div className="certification-badge">FORTINET</div>
                   <div className="certification-content">
@@ -454,7 +474,7 @@ const About = () => {
                     <div className="certification-date">06/06/2025</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/Course_Completion_Certificate-2 copy.pdf" alt="Threat Landscape Certificate" />
+                    <img src="/src/assets/images/certifications/IntroThreatLandscape.png" alt="Threat Landscape Certificate" />
                   </div>
                 </motion.div>
 
@@ -466,7 +486,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.25 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Certified Fundamentals Cybersecurity', date: '06/09/2025', image: '/src/assets/images/certifications/Fortinet Certified Fundamentals in Cybersecurity copy.pdf' })}
+                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Certified Fundamentals Cybersecurity', date: '06/09/2025', image: '/src/assets/images/certifications/CerttifiedFundamentals.png' })}
                 >
                   <div className="certification-badge">FORTINET</div>
                   <div className="certification-content">
@@ -474,7 +494,7 @@ const About = () => {
                     <div className="certification-date">06/09/2025</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/Fortinet Certified Fundamentals in Cybersecurity copy.pdf" alt="Cybersecurity Certificate" />
+                    <img src="/src/assets/images/certifications/CerttifiedFundamentals.png" alt="Cybersecurity Certificate" />
                   </div>
                 </motion.div>
 
@@ -486,7 +506,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.3 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Getting Started in Cybersecurity 3.0', date: '06/09/2026', image: '/src/assets/images/certifications/Kit Santiago.pdf' })}
+                  onClick={() => setCertModal({ org: 'FORTINET', name: 'Getting Started in Cybersecurity 3.0', date: '06/09/2026', image: '/src/assets/images/certifications/GettingStartedCyber.png' })}
                 >
                   <div className="certification-badge">FORTINET</div>
                   <div className="certification-content">
@@ -494,7 +514,7 @@ const About = () => {
                     <div className="certification-date">06/09/2026</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/Kit Santiago.pdf" alt="Getting Started Certificate" />
+                    <img src="/src/assets/images/certifications/GettingStartedCyber.png" alt="Getting Started Certificate" />
                   </div>
                 </motion.div>
 
@@ -506,7 +526,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.35 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'AWS CLOUD CLUBS', name: 'International Leader\'s Discussion', date: '08/11/2024', image: '/src/assets/images/certifications/Kit Nicholas T. Santiago_Certificate.pdf' })}
+                  onClick={() => setCertModal({ org: 'AWS CLOUD CLUBS', name: 'International Leader\'s Discussion', date: '08/11/2024', image: '/src/assets/images/certifications/Certificate of Partcipation copy.png' })}
                 >
                   <div className="certification-badge">AWS</div>
                   <div className="certification-content">
@@ -514,7 +534,7 @@ const About = () => {
                     <div className="certification-date">08/11/2024</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/Kit Nicholas T. Santiago_Certificate.pdf" alt="AWS Leader Certificate" />
+                    <img src="/src/assets/images/certifications/Certificate of Partcipation copy.png" alt="AWS Leader Certificate" />
                   </div>
                 </motion.div>
 
@@ -526,7 +546,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.4 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'GOOGLE DEVELOPER STUDENT CLUBS', name: 'Intro to Flutter: UI/UX Design', date: '02/21/2024', image: '/src/assets/images/certifications/Certificate-Santiago _20240309_160952_0000.pdf' })}
+                  onClick={() => setCertModal({ org: 'GOOGLE DEVELOPER STUDENT CLUBS', name: 'Intro to Flutter: UI/UX Design', date: '02/21/2024', image: '/src/assets/images/certifications/Certificate of Participation - Kit Nicholas Santiago.png' })}
                 >
                   <div className="certification-badge">GDSC</div>
                   <div className="certification-content">
@@ -534,7 +554,7 @@ const About = () => {
                     <div className="certification-date">02/21/2024</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/Certificate-Santiago _20240309_160952_0000.pdf" alt="Flutter Certificate" />
+                    <img src="/src/assets/images/certifications/Certificate of Participation - Kit Nicholas Santiago.png" alt="Flutter Certificate" />
                   </div>
                 </motion.div>
 
@@ -546,7 +566,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.45 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'We Lead: Accelerate your leadership skills', date: '03/06/2024', image: '/src/assets/images/certifications/Certificate of Participation - Kit Nicholas Santiago.png' })}
+                  onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'We Lead: Accelerate your leadership skills', date: '03/06/2024', image: '/src/assets/images/certifications/WeLead:Accelerate.png' })}
                 >
                   <div className="certification-badge">NU</div>
                   <div className="certification-content">
@@ -554,7 +574,7 @@ const About = () => {
                     <div className="certification-date">03/06/2024</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/Certificate of Participation - Kit Nicholas Santiago.png" alt="Leadership Certificate" />
+                    <img src="/src/assets/images/certifications/WeLead:Accelerate.png" alt="Leadership Certificate" />
                   </div>
                 </motion.div>
               </div>
