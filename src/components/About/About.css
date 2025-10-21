@@ -284,7 +284,7 @@
   height: 80px;
   min-width: 80px;
   border-radius: 0.5rem;
-  background: linear-gradient(135deg, var(--accent-orange), var(--accent-coral));
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
