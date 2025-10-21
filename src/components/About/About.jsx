@@ -130,9 +130,7 @@ const About = () => {
               >
                 <div className="education-item-inner">
                   <div className="education-logo">
-                    <span className="logo-text">NU</span>
-                    {/* Replace with actual logo when ready */}
-                    {/* <img src="/path-to-nu-logo.png" alt="National University" className="school-logo" /> */}
+                    <img src="/images/logos/NU_shield.svg" alt="National University" className="school-logo" />
                   </div>
 
                   <div className="education-content">
@@ -159,9 +157,7 @@ const About = () => {
               >
                 <div className="education-item-inner">
                   <div className="education-logo">
-                    <span className="logo-text">NSNU</span>
-                    {/* Replace with actual logo when ready */}
-                    {/* <img src="/path-to-nsnu-logo.png" alt="Nazareth School" className="school-logo" /> */}
+                    <img src="/images/logos/nsnu-logo-1947-transparent.png" alt="Nazareth School" className="school-logo" />
                   </div>
 
                   <div className="education-content">
@@ -300,7 +296,7 @@ const About = () => {
                     <div className="certification-date">02/14/2024</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/CEASdataprivacy.png" alt="Data Privacy Certificate" />
+                    <img src="/images/certifications/CEASdataprivacy.png" alt="Data Privacy Certificate" />
                   </div>
                 </motion.div>
                 <motion.div
@@ -319,7 +315,7 @@ const About = () => {
                     <div className="certification-date">02/12/2025</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/Concourse.png" alt="Concourse Certificate" />
+                    <img src="/images/certifications/Concourse.png" alt="Concourse Certificate" />
                   </div>
                 </motion.div>
                 <motion.div
@@ -338,7 +334,7 @@ const About = () => {
                     <div className="certification-date">12/04/2023</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/Python Essentials.png" alt="Python Essentials Certificate" />
+                    <img src="/images/certifications/Python Essentials.png" alt="Python Essentials Certificate" />
                   </div>
                 </motion.div>
                 <motion.div
@@ -357,7 +353,7 @@ const About = () => {
                     <div className="certification-date">06/06/2025</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/IntroThreatLandscape.png" alt="Threat Landscape Certificate" />
+                    <img src="/images/certifications/IntroThreatLandscape.png" alt="Threat Landscape Certificate" />
                   </div>
                 </motion.div>
 
@@ -377,7 +373,7 @@ const About = () => {
                     <div className="certification-date">06/09/2025</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/CerttifiedFundamentals.png" alt="Cybersecurity Certificate" />
+                    <img src="/images/certifications/CerttifiedFundamentals.png" alt="Cybersecurity Certificate" />
                   </div>
                 </motion.div>
 
@@ -397,7 +393,7 @@ const About = () => {
                     <div className="certification-date">06/09/2026</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/GettingStartedCyber.png" alt="Getting Started Certificate" />
+                    <img src="/images/certifications/GettingStartedCyber.png" alt="Getting Started Certificate" />
                   </div>
                 </motion.div>
 
@@ -449,7 +445,7 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.45 }}
                   whileHover={{ y: -4, scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'We Lead: Accelerate your leadership skills', date: '03/06/2024', image: '/src/assets/images/certifications/WeLead:Accelerate.png' })}
+                  onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'We Lead: Accelerate your leadership skills', date: '03/06/2024', image: '/images/certifications/WeLead:Accelerate.png' })}
                 >
                   <div className="certification-badge">NU</div>
                   <div className="certification-content">
@@ -457,7 +453,7 @@ const About = () => {
                     <div className="certification-date">03/06/2024</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="/src/assets/images/certifications/WeLead:Accelerate.png" alt="Leadership Certificate" />
+                    <img src="/images/certifications/WeLead:Accelerate.png" alt="Leadership Certificate" />
                   </div>
                 </motion.div>
               </div>

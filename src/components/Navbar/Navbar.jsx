@@ -75,7 +75,7 @@ const Navbar = () => {
     { to: '/about', label: 'About' },
     { to: '/skills', label: 'Skills' },
     { to: '/projects', label: 'Projects' },
-    { to: '/showcase', label: 'Showcase' },
+    { to: '/tech-community', label: 'Tech Community' },
     { to: '/contact', label: 'Contact' },
   ]
 

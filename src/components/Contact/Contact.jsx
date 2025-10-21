@@ -48,7 +48,7 @@ const Contact = () => {
     {
       icon: <FaPhone />,
       title: 'Phone',
-      value: '+63 9568964613',
+      value: '+63 956 896 4613',
       link: 'tel:+639568964613',
     },
     {

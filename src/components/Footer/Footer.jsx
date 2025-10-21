@@ -85,7 +85,7 @@ const Footer = () => {
                 <Link to="/skills" className={`footer-pill-btn ${isActive('/skills') ? 'footer-pill-btn-filled' : ''}`}>SKILLS</Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.02, y: -2 }}>
-                <Link to="/showcase" className={`footer-pill-btn ${isActive('/showcase') ? 'footer-pill-btn-filled' : ''}`}>SHOWCASE</Link>
+                <Link to="/tech-community" className={`footer-pill-btn ${isActive('/tech-community') ? 'footer-pill-btn-filled' : ''}`}>TECH COMMUNITY</Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.02, y: -2 }}>
                 <Link to="/contact" className={`footer-pill-btn ${isActive('/contact') ? 'footer-pill-btn-filled' : ''}`}>CONTACT</Link>
@@ -128,7 +128,7 @@ const Footer = () => {
                 className="footer-pill-btn footer-pill-btn-outline"
                 whileHover={{ scale: 1.02, y: -2 }}
               >
-                +63 9568964613
+                +63 956 896 4613
               </motion.a>
               <motion.a
                 href="mailto:santiagonikos@gmail.com"

@@ -13,7 +13,7 @@ import AboutPage from './pages/AboutPage'
 import SkillsPage from './pages/SkillsPage'
 import ProjectsPage from './pages/ProjectsPage'
 import ContactPage from './pages/ContactPage'
-import PortfolioShowcase from './pages/PortfolioShowcase'
+import TechCommunity from './pages/TechCommunity'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -147,7 +147,7 @@ function App() {
                 }
               />
               <Route
-                path="/showcase"
+                path="/tech-community"
                 element={
                   <motion.div
                     variants={pageVariants}
@@ -155,7 +155,7 @@ function App() {
                     animate="animate"
                     exit="exit"
                   >
-                    <PortfolioShowcase />
+                    <TechCommunity />
                   </motion.div>
                 }
               />

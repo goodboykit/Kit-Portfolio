@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import { FaCalendarAlt, FaMapMarkerAlt, FaTrophy, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
-import './PortfolioShowcase.css'
+import './TechCommunity.css'
 
-const PortfolioShowcase = () => {
+const TechCommunity = () => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0)
 
   const photoGallery = [
@@ -601,4 +601,4 @@ const PortfolioShowcase = () => {
   )
 }
 
-export default PortfolioShowcase
+export default TechCommunity
