@@ -47,6 +47,7 @@ const TechCommunity = () => {
         'Ensured quality and flow of services for events'
       ],
       color: 'cyan',
+      logo: '/images/logos/gdsc.png',
       logoPlaceholder: 'GDSC'
     },
     {
@@ -63,6 +64,7 @@ const TechCommunity = () => {
         'Strategic planning for club sustainability'
       ],
       color: 'yellow',
+      logo: '/images/logos/aws.png',
       logoPlaceholder: 'AWS'
     },
     {
@@ -79,6 +81,7 @@ const TechCommunity = () => {
         'Taught useful tools for organization day-to-day operations'
       ],
       color: 'peach',
+      logo: '/images/logos/NU_shield.svg',
       logoPlaceholder: 'NU'
     },
     {
@@ -95,6 +98,7 @@ const TechCommunity = () => {
         'Promotes no-code/low-code solutions in mobile development and AI powered apps'
       ],
       color: 'coral',
+      logo: '/images/logos/flutterflow.png',
       logoPlaceholder: 'FF'
     }
   ]
@@ -259,7 +263,15 @@ const TechCommunity = () => {
               >
                 <div className="experience-card-inner">
                   <div className={`experience-logo ${exp.color}-bg`}>
-                    <span className="logo-text">{exp.logoPlaceholder}</span>
+                    {exp.logo ? (
+                      <img 
+                        src={exp.logo} 
+                        alt={`${exp.organization} logo`}
+                        className="experience-logo-img"
+                      />
+                    ) : (
+                      <span className="logo-text">{exp.logoPlaceholder}</span>
+                    )}
                   </div>
 
                   <div className="experience-content">
