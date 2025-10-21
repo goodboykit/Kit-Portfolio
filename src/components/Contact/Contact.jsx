@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import toast from 'react-hot-toast'
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa'
 import './Contact.css'
 
 const Contact = () => {
@@ -48,21 +48,21 @@ const Contact = () => {
     {
       icon: <FaPhone />,
       title: 'Phone',
-      value: '+1 (310) 985-0496',
-      link: 'tel:+13109850496',
+      value: '+63 9568964613',
+      link: 'tel:+639568964613',
     },
     {
       icon: <FaMapMarkerAlt />,
       title: 'Location',
-      value: 'Bellflower, CA | Manila, PH',
+      value: 'Sampaloc Manila, PH',
       link: null,
     },
   ]
 
   const socialLinks = [
-    { icon: <FaGithub />, url: 'https://github.com', label: 'GitHub' },
-    { icon: <FaLinkedin />, url: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: <FaTwitter />, url: 'https://twitter.com', label: 'Twitter' },
+    { icon: <FaGithub />, url: 'https://github.com/goodboykit', label: 'GitHub' },
+    { icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/kit-nicholas-santiago-0bb647201/', label: 'LinkedIn' },
+    { icon: <FaFacebook />, url: 'https://www.facebook.com/goodboykit', label: 'Facebook' },
   ]
 
   return (

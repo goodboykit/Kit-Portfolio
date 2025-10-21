@@ -3,11 +3,13 @@ import { useInView } from 'react-intersection-observer'
 import { TypeAnimation } from 'react-type-animation'
 import {
   FaReact, FaNodeJs, FaPython, FaGitAlt, FaDocker,
-  FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaFigma
+  FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaFigma,
+  FaJava, FaAws, FaMobile
 } from 'react-icons/fa'
 import {
   SiTypescript, SiMongodb, SiPostgresql, SiTailwindcss,
-  SiNextdotjs, SiExpress, SiRedux, SiGraphql
+  SiNextdotjs, SiExpress, SiRedux, SiGraphql, SiFlutter,
+  SiKotlin, SiMysql
 } from 'react-icons/si'
 import './Skills.css'
 
@@ -58,38 +60,49 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: 'Frontend Development',
+      title: 'Programming Languages',
       skills: [
-        { name: 'React', icon: <FaReact /> },
-        { name: 'Next.js', icon: <SiNextdotjs /> },
-        { name: 'TypeScript', icon: <SiTypescript /> },
-        { name: 'JavaScript', icon: <FaJs /> },
-        { name: 'HTML5', icon: <FaHtml5 /> },
-        { name: 'CSS3', icon: <FaCss3Alt /> },
-        { name: 'Tailwind', icon: <SiTailwindcss /> },
-        { name: 'Redux', icon: <SiRedux /> },
-      ],
-    },
-    {
-      title: 'Backend Development',
-      skills: [
+        { name: 'Java', icon: <FaJava /> },
+        { name: 'JavaFX', icon: <FaJava /> },
+        { name: 'Node Express', icon: <FaNodeJs /> },
         { name: 'Node.js', icon: <FaNodeJs /> },
-        { name: 'Express', icon: <SiExpress /> },
-        { name: 'Python', icon: <FaPython /> },
-        { name: 'GraphQL', icon: <SiGraphql /> },
-        { name: 'MongoDB', icon: <SiMongodb /> },
-        { name: 'PostgreSQL', icon: <SiPostgresql /> },
+        { name: 'Android Java', icon: <FaJava /> },
+        { name: 'Kotlin', icon: <SiKotlin /> },
       ],
     },
     {
-      title: 'Tools & Technologies',
+      title: 'Mobile & Web Development',
       skills: [
-        { name: 'Git', icon: <FaGitAlt /> },
-        { name: 'Docker', icon: <FaDocker /> },
-        { name: 'Figma', icon: <FaFigma /> },
-        { name: 'Database', icon: <FaDatabase /> },
+        { name: 'Flutter', icon: <SiFlutter /> },
+        { name: 'Flutter Flow', icon: <SiFlutter /> },
+        { name: 'React', icon: <FaReact /> },
+        { name: 'HTML', icon: <FaHtml5 /> },
+        { name: 'CSS', icon: <FaCss3Alt /> },
+        { name: 'JavaScript', icon: <FaJs /> },
       ],
     },
+    {
+      title: 'Database & Cloud',
+      skills: [
+        { name: 'MySQL', icon: <SiMysql /> },
+        { name: 'MongoDB', icon: <SiMongodb /> },
+        { name: 'AWS S3', icon: <FaAws /> },
+        { name: 'Route53', icon: <FaAws /> },
+        { name: 'AWS Amplify', icon: <FaAws /> },
+        { name: 'Git/GitHub', icon: <FaGitAlt /> },
+        { name: 'Cloud Computing', icon: <FaAws /> },
+        { name: 'NoSQL', icon: <SiMongodb /> },
+      ],
+    },
+  ]
+
+  const additionalSkills = [
+    { name: 'Object-Oriented Programming', icon: <FaJava /> },
+    { name: 'System Troubleshooting', icon: <FaDatabase /> },
+    { name: 'Network Troubleshooting', icon: <FaDatabase /> },
+    { name: 'Computer Hardware Setup', icon: <FaDatabase /> },
+    { name: 'Software Installation & Config', icon: <FaDatabase /> },
+    { name: 'Version Control (Git)', icon: <FaGitAlt /> },
   ]
 
   return (
@@ -195,6 +208,48 @@ const Skills = () => {
               ))}
             </div>
 
+            {/* Additional Skills Section - Full Width */}
+            <motion.div
+              className="skills-additional-card"
+              initial={{ opacity: 0.5, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              whileHover={{ scale: 1.01 }}
+            >
+              <div className="category-header">
+                <span className="category-icon">✦</span>
+                <h3 className="category-title">Additional Skills</h3>
+              </div>
+
+              <div className="skills-list">
+                {additionalSkills.map((skill, skillIdx) => (
+                  <motion.div
+                    key={skill.name}
+                    className="skill-item"
+                    initial={{ opacity: 0.5, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{
+                      delay: skillIdx * 0.05,
+                      duration: 0.4,
+                      ease: "easeOut"
+                    }}
+                    whileHover={{ y: -2, scale: 1.03, rotate: 1 }}
+                  >
+                    <div className="skill-item-content">
+                      <div className="skill-icon-wrapper">
+                        <div className="skill-icon">{skill.icon}</div>
+                      </div>
+                      <div className="skill-info">
+                        <span className="skill-name">{skill.name}</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
             {/* Additional Info Section */}
             <motion.div
               className="skills-additional"
@@ -212,10 +267,11 @@ const Skills = () => {
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                 >
-                  <h3>Always Learning</h3>
+                  <h3>Technical Expertise</h3>
                   <p>
-                    Continuously expanding my skill set with the latest technologies and industry best practices.
-                    Passionate about clean code, performance optimization, and creating exceptional user experiences.
+                    Passionate 4th year IT student specializing in Mobile & Web Application development. 
+                    Proficient in Java, Flutter, React, and AWS cloud technologies with hands-on experience 
+                    in full-stack development, database management, and technical coordination.
                   </p>
                 </motion.div>
                 <motion.div
@@ -225,12 +281,12 @@ const Skills = () => {
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                 >
+                  <span className="tech-badge">Java</span>
+                  <span className="tech-badge">Flutter</span>
                   <span className="tech-badge">React</span>
-                  <span className="tech-badge">Node.js</span>
-                  <span className="tech-badge">TypeScript</span>
-                  <span className="tech-badge">Next.js</span>
-                  <span className="tech-badge">MongoDB</span>
-                  <span className="tech-badge">Docker</span>
+                  <span className="tech-badge">MySQL</span>
+                  <span className="tech-badge">AWS S3</span>
+                  <span className="tech-badge">Git</span>
                 </motion.div>
               </div>
             </motion.div>

@@ -111,8 +111,8 @@ export const TESTIMONIALS = [
 
 export const CONTACT_INFO = {
   email: 'your.email@example.com',
-  phone: '+1 (555) 123-4567',
-  location: 'Your City, Country',
+  phone: '+63 9568964613',
+  location: 'Sampaloc Manila, PH',
 }
 
 export const SEO_CONFIG = {

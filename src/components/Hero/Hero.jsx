@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaFacebook } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import './Hero.css'
 
@@ -156,7 +156,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 1 }}
         >
           <motion.a
-            href="https://github.com"
+            href="https://github.com/goodboykit"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link-minimal"
@@ -166,7 +166,7 @@ const Hero = () => {
             <FaGithub />
           </motion.a>
           <motion.a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/kit-nicholas-santiago-0bb647201/"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link-minimal"
@@ -174,6 +174,16 @@ const Hero = () => {
             whileTap={{ scale: 0.9 }}
           >
             <FaLinkedin />
+          </motion.a>
+          <motion.a
+            href="https://www.facebook.com/goodboykit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link-minimal"
+            whileHover={{ scale: 1.15, y: -3 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaFacebook />
           </motion.a>
           <motion.a
             href="mailto:santiagonikos@gmail.com"

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaTiktok } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import './Footer.css'
 
@@ -124,11 +124,11 @@ const Footer = () => {
             </motion.h4>
             <div className="footer-buttons">
               <motion.a
-                href="tel:+13109850496"
+                href="tel:+639568964613"
                 className="footer-pill-btn footer-pill-btn-outline"
                 whileHover={{ scale: 1.02, y: -2 }}
               >
-                (310) 985-0496
+                +63 9568964613
               </motion.a>
               <motion.a
                 href="mailto:santiagonikos@gmail.com"
@@ -174,7 +174,7 @@ const Footer = () => {
                 className="footer-pill-btn footer-pill-btn-outline"
                 whileHover={{ scale: 1.02, y: -2 }}
               >
-                BELLFLOWER, CA
+                SAMPALOC MANILA, PH
               </motion.span>
               <motion.span
                 className="footer-pill-btn footer-pill-btn-outline"
@@ -226,7 +226,7 @@ const Footer = () => {
 
             <div className="footer-socials">
               <motion.a
-                href="https://github.com"
+                href="https://github.com/goodboykit"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 15 }}
@@ -238,7 +238,7 @@ const Footer = () => {
                 <FaGithub />
               </motion.a>
               <motion.a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/kit-nicholas-santiago-0bb647201/"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 15 }}
@@ -250,7 +250,7 @@ const Footer = () => {
                 <FaLinkedin />
               </motion.a>
               <motion.a
-                href="https://twitter.com"
+                href="https://www.facebook.com/goodboykit"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 15 }}
@@ -259,7 +259,7 @@ const Footer = () => {
                 transition={{ duration: 0.6, delay: 1.05, ease: [0.25, 0.1, 0.25, 1] }}
                 whileHover={{ y: -3, scale: 1.1 }}
               >
-                <FaTwitter />
+                <FaFacebook />
               </motion.a>
             </div>
           </div>
