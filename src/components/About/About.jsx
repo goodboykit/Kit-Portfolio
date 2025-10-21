@@ -427,7 +427,7 @@ const About = () => {
                     <div className="certification-date">08/11/2024</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="images/certifications/Certificate of Partcipation copy.png" alt="AWS Leader Certificate" />
+                    <img src="/images/certifications/Certificate of Partcipation copy.png" alt="AWS Leader Certificate" />
                   </div>
                 </motion.div>
 
@@ -449,7 +449,7 @@ const About = () => {
                     <div className="certification-date">02/21/2024</div>
                   </div>
                   <div className="certification-hover-preview">
-                    <img src="images/certifications/Certificate of Participation - Kit Nicholas Santiago.png" alt="Flutter Certificate" />
+                    <img src="/images/certifications/Certificate of Participation - Kit Nicholas Santiago.png" alt="Flutter Certificate" />
                   </div>
                 </motion.div>
 

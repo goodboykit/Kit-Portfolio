@@ -513,8 +513,8 @@
   position: absolute;
   top: -20px;
   right: -20px;
-  width: 200px;
-  height: 150px;
+  width: 300px;  /* Increased width */
+  height: 200px; /* Increased height */
   background: white;
   border-radius: 0.5rem;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -525,6 +525,7 @@
   transition: all 0.3s ease;
   z-index: 1000;
   overflow: hidden;
+  pointer-events: none; /* Prevents hover issues */
 }
 
 .certification-hover-preview img {
@@ -532,6 +533,8 @@
   height: 100%;
   object-fit: contain;
   border-radius: 0.5rem;
+  padding: 0.5rem;
+  background: white;
 }
 
 .certification-item:hover .certification-hover-preview {
