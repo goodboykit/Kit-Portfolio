@@ -11,12 +11,12 @@ const Footer = () => {
   const isActive = (path) => location.pathname === path
 
   const categories = [
-    'Web Development',
-    'UI/UX Design',
-    'Mobile Apps',
-    'E-Commerce',
-    'Branding',
-    'Full Stack'
+    'React Development',
+    'Flutter Mobile',
+    'Java Programming',
+    'JavaScript',
+    'MySQL Database',
+    'AWS Cloud'
   ]
 
   return (
@@ -72,7 +72,7 @@ const Footer = () => {
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
               >
                 ✦
-              </motion.span> STUDIO
+              </motion.span> PORTFOLIO
             </motion.h4>
             <div className="footer-buttons">
               <motion.div whileHover={{ scale: 1.02, y: -2 }}>
@@ -87,6 +87,9 @@ const Footer = () => {
               <motion.div whileHover={{ scale: 1.02, y: -2 }}>
                 <Link to="/showcase" className={`footer-pill-btn ${isActive('/showcase') ? 'footer-pill-btn-filled' : ''}`}>SHOWCASE</Link>
               </motion.div>
+              <motion.div whileHover={{ scale: 1.02, y: -2 }}>
+                <Link to="/contact" className={`footer-pill-btn ${isActive('/contact') ? 'footer-pill-btn-filled' : ''}`}>CONTACT</Link>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -98,55 +101,13 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
           ></motion.div>
 
-          {/* Discover Section */}
-          <motion.div
-            className="footer-section"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ delay: 0.35, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-          >
-            <motion.h4
-              className="footer-title"
-              whileHover={{ x: 5 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
-              <motion.span
-                className="title-icon"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: 0.5 }}
-              >
-                ✦
-              </motion.span> DISCOVER
-            </motion.h4>
-            <div className="footer-buttons">
-              <motion.div whileHover={{ scale: 1.02, y: -2 }}>
-                <Link to="/projects" className="footer-pill-btn">WEB DEVELOPMENT</Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.02, y: -2 }}>
-                <Link to="/projects" className="footer-pill-btn">MOBILE APPS</Link>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.02, y: -2 }}>
-                <Link to="/skills" className="footer-pill-btn">FULL STACK</Link>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="footer-vertical-divider"
-            initial={{ scaleY: 0, opacity: 0 }}
-            whileInView={{ scaleY: 1, opacity: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
-          ></motion.div>
-
           {/* Contact Section */}
           <motion.div
             className="footer-section"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
-            transition={{ delay: 0.45, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ delay: 0.35, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <motion.h4
               className="footer-title"
@@ -184,7 +145,7 @@ const Footer = () => {
             initial={{ scaleY: 0, opacity: 0 }}
             whileInView={{ scaleY: 1, opacity: 1 }}
             viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8, delay: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.8, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
           ></motion.div>
 
           {/* Location Section */}
@@ -193,7 +154,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
-            transition={{ delay: 0.55, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ delay: 0.45, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <motion.h4
               className="footer-title"

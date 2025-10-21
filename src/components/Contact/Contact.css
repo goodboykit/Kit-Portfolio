@@ -47,12 +47,19 @@
   line-height: 1.6;
 }
 
-/* Contact Content - Two Column Layout */
-.contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+/* Contact Content - Centered Layout */
+.contact-content-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 6rem;
+  padding: 0 3rem;
+}
+
+.contact-info-centered {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 /* Left Side - Info Card */

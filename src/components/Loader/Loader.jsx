@@ -9,7 +9,7 @@ const Loader = ({ onLoadingComplete }) => {
   const [ripples, setRipples] = useState([])
 
   useEffect(() => {
-    // Simulate loading progress - 6-8 seconds total
+    // Simulate loading progress - 2 seconds total
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -31,7 +31,7 @@ const Loader = ({ onLoadingComplete }) => {
 
         return prev + 1
       })
-    }, 70) // 70ms * 100 = 7 seconds
+    }, 20) // 20ms * 100 = 2 seconds
 
     return () => clearInterval(interval)
   }, [onLoadingComplete])

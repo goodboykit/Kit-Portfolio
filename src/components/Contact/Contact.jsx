@@ -67,259 +67,128 @@ const Contact = () => {
 
   return (
     <section className="contact section" id="contact">
-        <div className="contact-container">
-          <div>
-            {/* Section Header */}
+      <div className="contact-container">
+        <div>
+          {/* Section Header */}
+          <motion.div
+            className="contact-header"
+            initial={{ opacity: 0.5, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <span className="contact-badge">• Contact Me</span>
+            <h2 className="contact-title">
+              <TypeAnimation
+                sequence={[
+                  "Let's connect",
+                  3000,
+                  "Let's collaborate",
+                  3000,
+                  "Get in touch",
+                  3000,
+                  "Reach out",
+                  3000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
+            </h2>
+            <p className="contact-subtitle">
+              I'm actively seeking internship and career opportunities. Feel free to reach out!
+            </p>
+          </motion.div>
+
+          {/* Contact Content - Centered */}
+          <div className="contact-content-centered">
+            {/* Centered Info Card */}
             <motion.div
-              className="contact-header"
-              initial={{ opacity: 0.5, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <span className="contact-badge">• Contact Me</span>
-              <h2 className="contact-title">
-                <TypeAnimation
-                  sequence={[
-                    "Let's connect",
-                    3000,
-                    "Let's collaborate",
-                    3000,
-                    "Get in touch",
-                    3000,
-                    "Reach out",
-                    3000,
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  repeat={Infinity}
-                />
-              </h2>
-              <p className="contact-subtitle">
-                I'm actively seeking internship and career opportunities. Feel free to reach out!
-              </p>
-            </motion.div>
-
-            {/* Contact Content */}
-            <div className="contact-content">
-              {/* Left Side - Info */}
-              <motion.div
-                className="contact-info"
-                initial={{ opacity: 0.5, x: -60, scale: 0.95 }}
-                whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              >
-                <motion.div
-                  className="info-card"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <motion.h3
-                    initial={{ opacity: 0.5, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                  >
-                    Get in touch
-                  </motion.h3>
-                  <motion.p
-                    initial={{ opacity: 0.5, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                  >
-                    I'm open to discussing internship opportunities, job openings, or networking connections in the tech industry.
-                  </motion.p>
-
-                  <div className="info-items">
-                    {contactInfo.map((info, idx) => (
-                      <motion.div
-                        key={info.title}
-                        className="info-item"
-                        initial={{ opacity: 0.5, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false, amount: 0.3 }}
-                        transition={{ delay: idx * 0.1, duration: 0.5, ease: "easeOut" }}
-                        whileHover={{ x: 2, scale: 1.02 }}
-                      >
-                        <div className="info-icon">{info.icon}</div>
-                        <div className="info-content">
-                          <h4>{info.title}</h4>
-                          {info.link ? (
-                            <a href={info.link}>{info.value}</a>
-                          ) : (
-                            <span>{info.value}</span>
-                          )}
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  <motion.div
-                    className="social-links"
-                    initial={{ opacity: 0.5, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    transition={{ duration: 0.6, delay: 0.7 }}
-                  >
-                    <p className="social-label">Follow me:</p>
-                    <div className="social-icons">
-                      {socialLinks.map((social, idx) => (
-                        <motion.a
-                          key={social.label}
-                          href={social.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title={social.label}
-                          className="social-icon"
-                          initial={{ opacity: 0.5, scale: 0 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: false, amount: 0.3 }}
-                          transition={{ duration: 0.4, delay: 0.8 + idx * 0.1 }}
-                          whileHover={{ scale: 1.03, rotate: 1 }}
-                        >
-                          {social.icon}
-                        </motion.a>
-                      ))}
-                    </div>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
-
-              {/* Right Side - Form */}
-              <motion.div
-                className="contact-form-wrapper"
-                initial={{ opacity: 0.5, x: 60, scale: 0.95 }}
-                whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              >
-                <form className="contact-form" onSubmit={handleSubmit}>
-                  <motion.div
-                    className="form-row"
-                    initial={{ opacity: 0.5, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    transition={{ delay: 0 * 0.1, duration: 0.5, ease: "easeOut" }}
-                  >
-                    <div className="form-group">
-                      <label htmlFor="name">Your Name</label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="John Doe"
-                        required
-                      />
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="email">Your Email</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="john@example.com"
-                        required
-                      />
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    className="form-group"
-                    initial={{ opacity: 0.5, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    transition={{ delay: 1 * 0.1, duration: 0.5, ease: "easeOut" }}
-                  >
-                    <label htmlFor="subject">Subject</label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="Internship Inquiry / Job Opportunity"
-                      required
-                    />
-                  </motion.div>
-
-                  <motion.div
-                    className="form-group"
-                    initial={{ opacity: 0.5, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    transition={{ delay: 2 * 0.1, duration: 0.5, ease: "easeOut" }}
-                  >
-                    <label htmlFor="message">Your Message</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="I'd love to hear from you..."
-                      rows="6"
-                      required
-                    />
-                  </motion.div>
-
-                  <motion.button
-                    type="submit"
-                    className="submit-btn"
-                    disabled={isSubmitting}
-                    initial={{ opacity: 0.5, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    transition={{ delay: 3 * 0.1, duration: 0.5, ease: "easeOut" }}
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {isSubmitting ? 'Sending...' : 'Send Message →'}
-                  </motion.button>
-                </form>
-              </motion.div>
-            </div>
-
-            {/* Bottom CTA */}
-            <motion.div
-              className="contact-cta"
-              initial={{ opacity: 0.5, y: 40, scale: 0.95 }}
+              className="contact-info-centered"
+              initial={{ opacity: 0.5, y: 60, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               <motion.div
-                className="cta-decoration"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="info-card"
+                whileHover={{ scale: 1.02 }}
               >
-                ✦
+                <motion.h3
+                  initial={{ opacity: 0.5, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  Get in touch
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0.5, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  I'm open to discussing internship opportunities, job openings, or networking connections in the tech industry.
+                </motion.p>
+
+                <div className="info-items">
+                  {contactInfo.map((info, idx) => (
+                    <motion.div
+                      key={info.title}
+                      className="info-item"
+                      initial={{ opacity: 0.5, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      transition={{ delay: idx * 0.1, duration: 0.5, ease: "easeOut" }}
+                      whileHover={{ x: 2, scale: 1.02 }}
+                    >
+                      <div className="info-icon">{info.icon}</div>
+                      <div className="info-content">
+                        <h4>{info.title}</h4>
+                        {info.link ? (
+                          <a href={info.link}>{info.value}</a>
+                        ) : (
+                          <span>{info.value}</span>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <motion.div
+                  className="social-links"
+                  initial={{ opacity: 0.5, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                >
+                  <p className="social-label">Follow me:</p>
+                  <div className="social-icons">
+                    {socialLinks.map((social, idx) => (
+                      <motion.a
+                        key={social.label}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={social.label}
+                        className="social-icon"
+                        initial={{ opacity: 0.5, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        transition={{ duration: 0.4, delay: 0.8 + idx * 0.1 }}
+                        whileHover={{ scale: 1.03, rotate: 1 }}
+                      >
+                        {social.icon}
+                      </motion.a>
+                    ))}
+                  </div>
+                </motion.div>
               </motion.div>
-              <motion.h3
-                initial={{ opacity: 0.5, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                Looking for opportunities to grow
-              </motion.h3>
-              <motion.p
-                initial={{ opacity: 0.5, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                Open to internships, entry-level positions, and collaboration
-              </motion.p>
             </motion.div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
   )
 }
 

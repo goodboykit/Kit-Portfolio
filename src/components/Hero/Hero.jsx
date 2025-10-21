@@ -87,12 +87,11 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                {/* Replace src with your actual image path */}
-                <div className="profile-image-placeholder">
-                  <span className="placeholder-text">Your Photo Here</span>
-                </div>
-                {/* Uncomment below and add your image when ready */}
-                {/* <img src="/path-to-your-image.jpg" alt="Kit Nicholas Santiago" className="profile-image" /> */}
+                <img 
+                  src="/profile-image.jpg" 
+                  alt="Kit Nicholas Santiago" 
+                  className="profile-image"
+                />
               </motion.div>
 
               {/* Floating Badge */}
@@ -101,7 +100,7 @@ const Hero = () => {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
-                <span className="floating-badge-text">TOP 1 • UI DESIGN • COMPETITION</span>
+                  <span className="floating-badge-text">TECH VOLUNTEER • GOOGLE DEVELOPERS CLUB</span>
               </motion.div>
 
               {/* Info Badge */}
@@ -112,8 +111,8 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
                 <div className="info-badge-content">
-                  <span className="info-badge-number">5+</span>
-                  <span className="info-badge-label">Hackathon Wins</span>
+                  <span className="info-badge-number">Officer</span>
+                  <span className="info-badge-label">AWS Learning Club</span>
                 </div>
               </motion.div>
             </div>
@@ -128,20 +127,20 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <div className="stat-minimal-item">
-            <span className="stat-minimal-number">20+</span>
-            <span className="stat-minimal-label">Projects</span>
-          </div>
-          <div className="stat-divider-minimal"></div>
-          <div className="stat-minimal-item">
-            <span className="stat-minimal-number">4+</span>
-            <span className="stat-minimal-label">Years Exp</span>
-          </div>
-          <div className="stat-divider-minimal"></div>
-          <div className="stat-minimal-item">
-            <span className="stat-minimal-number">8+</span>
-            <span className="stat-minimal-label">Certifications</span>
-          </div>
+            <div className="stat-minimal-item">
+              <span className="stat-minimal-number">5+</span>
+              <span className="stat-minimal-label">Hackathons</span>
+            </div>
+            <div className="stat-divider-minimal"></div>
+            <div className="stat-minimal-item">
+              <span className="stat-minimal-number">4th</span>
+              <span className="stat-minimal-label">Year Student</span>
+            </div>
+            <div className="stat-divider-minimal"></div>
+            <div className="stat-minimal-item">
+              <span className="stat-minimal-number">6+</span>
+              <span className="stat-minimal-label">Certifications</span>
+            </div>
         </motion.div>
 
         {/* Social Links */}
