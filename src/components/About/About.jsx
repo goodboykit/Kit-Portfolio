@@ -290,7 +290,9 @@ const About = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'Data Privacy Orientation', date: '02/14/2024', image: '/images/certifications/CEASdataprivacy.png' })}
                 >
-                  <div className="certification-badge">NU</div>
+                  <div className="certification-badge">
+                    <img src="/images/logos/NU_shield.svg" alt="NU" className="cert-badge-logo" />
+                  </div>
                   <div className="certification-content">
                     <div className="certification-name">Data Privacy Orientation</div>
                     <div className="certification-date">02/14/2024</div>
@@ -309,7 +311,9 @@ const About = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'Concourse: Charting New Horizons in Technology', date: '02/12/2025', image: '/images/certifications/Concourse.png' })}
                 >
-                  <div className="certification-badge">NU</div>
+                  <div className="certification-badge">
+                    <img src="/images/logos/NU_shield.svg" alt="NU" className="cert-badge-logo" />
+                  </div>
                   <div className="certification-content">
                     <div className="certification-name">Concourse: Charting New Horizons in Technology</div>
                     <div className="certification-date">02/12/2025</div>
@@ -328,7 +332,9 @@ const About = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setCertModal({ org: 'CISCO', name: 'Python Essentials 1 and 2', date: '12/04/2023', image: '/images/certifications/Python Essentials.png' })}
                 >
-                  <div className="certification-badge">CISCO</div>
+                  <div className="certification-badge">
+                    <img src="/images/logos/cisco.png" alt="CISCO" className="cert-badge-logo" />
+                  </div>
                   <div className="certification-content">
                     <div className="certification-name">Python Essentials 1 and 2</div>
                     <div className="certification-date">12/04/2023</div>
@@ -347,7 +353,9 @@ const About = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setCertModal({ org: 'FORTINET', name: 'Introduction to the Threat Landscape 3.0', date: '06/06/2025', image: '/images/certifications/IntroThreatLandscape.png' })}
                 >
-                  <div className="certification-badge">FORTINET</div>
+                  <div className="certification-badge">
+                    <img src="/images/logos/fortinet.png" alt="FORTINET" className="cert-badge-logo" />
+                  </div>
                   <div className="certification-content">
                     <div className="certification-name">Introduction to the Threat Landscape 3.0</div>
                     <div className="certification-date">06/06/2025</div>
@@ -367,7 +375,9 @@ const About = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setCertModal({ org: 'FORTINET', name: 'Certified Fundamentals Cybersecurity', date: '06/09/2025', image: '/images/certifications/CerttifiedFundamentals.png' })}
                 >
-                  <div className="certification-badge">FORTINET</div>
+                  <div className="certification-badge">
+                    <img src="/images/logos/fortinet.png" alt="FORTINET" className="cert-badge-logo" />
+                  </div>
                   <div className="certification-content">
                     <div className="certification-name">Certified Fundamentals Cybersecurity</div>
                     <div className="certification-date">06/09/2025</div>
@@ -387,7 +397,9 @@ const About = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setCertModal({ org: 'FORTINET', name: 'Getting Started in Cybersecurity 3.0', date: '06/09/2026', image: '/images/certifications/GettingStartedCyber.png' })}
                 >
-                  <div className="certification-badge">FORTINET</div>
+                  <div className="certification-badge">
+                    <img src="/images/logos/fortinet.png" alt="FORTINET" className="cert-badge-logo" />
+                  </div>
                   <div className="certification-content">
                     <div className="certification-name">Getting Started in Cybersecurity 3.0</div>
                     <div className="certification-date">06/09/2026</div>
@@ -407,7 +419,9 @@ const About = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setCertModal({ org: 'AWS CLOUD CLUBS', name: 'International Leader\'s Discussion', date: '08/11/2024', image: '/images/certifications/Certificate of Partcipation copy.png' })}
                 >
-                  <div className="certification-badge">AWS</div>
+                  <div className="certification-badge">
+                    <img src="/images/logos/aws.png" alt="AWS" className="cert-badge-logo" />
+                  </div>
                   <div className="certification-content">
                     <div className="certification-name">International Leader's Discussion</div>
                     <div className="certification-date">08/11/2024</div>
@@ -427,7 +441,9 @@ const About = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setCertModal({ org: 'GOOGLE DEVELOPER STUDENT CLUBS', name: 'Intro to Flutter: UI/UX Design', date: '02/21/2024', image: '/images/certifications/Certificate of Participation - Kit Nicholas Santiago.png' })}
                 >
-                  <div className="certification-badge">GDSC</div>
+                  <div className="certification-badge">
+                    <img src="/images/logos/gdsc.png" alt="GDSC" className="cert-badge-logo" />
+                  </div>
                   <div className="certification-content">
                     <div className="certification-name">Intro to Flutter: UI/UX Design</div>
                     <div className="certification-date">02/21/2024</div>
@@ -447,7 +463,9 @@ const About = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setCertModal({ org: 'NATIONAL UNIVERSITY', name: 'We Lead: Accelerate your leadership skills', date: '03/06/2024', image: '/images/certifications/WeLead:Accelerate.png' })}
                 >
-                  <div className="certification-badge">NU</div>
+                  <div className="certification-badge">
+                    <img src="/images/logos/NU_shield.svg" alt="NU" className="cert-badge-logo" />
+                  </div>
                   <div className="certification-content">
                     <div className="certification-name">We Lead: Accelerate your leadership skills</div>
                     <div className="certification-date">03/06/2024</div>
