@@ -47,7 +47,6 @@ const Projects = () => {
       detailedDescription: 'EcoDex is a comprehensive environmental sustainability platform created for the Google Developers Student Club (GDSC) Ideathon Hackathon at National University Manila. This Figma-based prototype showcases an innovative approach to environmental awareness and community engagement. The platform features user-friendly interfaces for plant recognition, quest challenges, environmental tracking, and gamified sustainability practices that encourage users to discover their environmental footprint and contribute positively to the planet.',
       technologies: ['Figma', 'UI/UX Design', 'Prototyping', 'Design Systems'],
       features: ['Plant Recognition & Scanning', 'Quest Challenge System', 'Environmental Impact Tracking', 'Points & Rewards System', 'Plant Dictionary & Learning Hub', 'Community Engagement Features'],
-      github: 'https://github.com',
       live: 'https://www.figma.com/proto/XIIhFIzAF9At8GERnL4JDh/EcoDex?node-id=0-1&p=f&t=TXCA3OibejTNB07q-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=265%3A6288&show-proto-sidebar=1',
       color: 'cyan',
       images: [
@@ -93,14 +92,44 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      description: 'A responsive weather application that provides real-time weather data, forecasts, and interactive maps using external APIs.',
-      detailedDescription: 'A feature-rich weather application that provides real-time weather information from multiple data sources. Includes current weather conditions, 7-day forecasts, hourly predictions, interactive weather maps, weather alerts, and historical data visualization with Chart.js.',
-      technologies: ['React', 'OpenWeather API', 'Chart.js'],
-      features: ['Real-time Data', '7-Day Forecast', 'Interactive Maps', 'Weather Alerts', 'Historical Data', 'Multiple Locations'],
-      github: 'https://github.com',
-      live: 'https://example.com',
+      title: 'Smart Test',
+      description: 'A comprehensive healthcare platform focused on HIV awareness, testing, and care management, featuring anonymous consultations, real-time statistics, and a user-friendly appointment system.',
+      detailedDescription: 'Smart Test is an innovative healthcare application designed to provide comprehensive HIV-related healthcare services while maintaining user privacy and confidentiality. The platform offers anonymous consultations with healthcare professionals, real-time STD statistics tracking, appointment scheduling with specialized clinics, and a secure personal health tracking system. The app emphasizes user privacy through anonymous mode access and features an intuitive interface for managing HIV testing, consultations, and ongoing care.',
+      technologies: ['Flutter','Dart','Figma', 'UI/UX Design', 'Mobile Development'],
+      features: [
+        'Anonymous Mode Access',
+        'Real-time STD Statistics Dashboard',
+        'Secure Healthcare Provider Chat',
+        'Appointment Scheduling System',
+        'Personal Health History Tracking',
+        'Interactive Clinic Locator Map',
+        'Educational Resources & News',
+        'Confidential Test Results Management'
+      ],
+      github: 'https://github.com/goodboykit/HIV',
+      live: 'https://www.figma.com/proto/LQ932gq1h4kEiTw8ZyNiG8/HIV?node-id=33-708&p=f&t=DzyqatGprnxgjHs7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=33%3A708',
       color: 'coral',
+      preview: '/assets/images/projects/First Screen.png',
+      images: [
+        '/assets/images/projects/First Screen.png',
+        '/assets/images/projects/Messages Onboarding.png',
+        '/assets/images/projects/Doctors.png',
+        '/assets/images/projects/Doctors info.png',
+        '/assets/images/projects/Doctors info-1.png',
+        '/assets/images/projects/Doctors Rating.png',
+        '/assets/images/projects/Appointment.png',
+        '/assets/images/projects/Appointment-1.png',
+        '/assets/images/projects/Appointment-2.png',
+        '/assets/images/projects/Statistics.png',
+        '/assets/images/projects/Statistics-1.png',
+        '/assets/images/projects/stats2.png',
+        '/assets/images/projects/iPhone 14 & 15 Pro Max - 1.png',
+        '/assets/images/projects/iPhone 14 & 15 Pro Max - 2.png',
+        '/assets/images/projects/iPhone 14 & 15 Pro Max - 3.png',
+        '/assets/images/projects/iPhone 14 & 15 Pro Max - 4.png',
+        '/assets/images/projects/Details.png',
+        '/assets/images/projects/Privacy Agreement-1.png'
+      ]
     },
     {
       id: 4,
@@ -109,9 +138,96 @@ const Projects = () => {
       detailedDescription: 'An advanced analytics platform for social media management. Features comprehensive data visualization using D3.js, user engagement metrics, follower growth tracking, post performance analytics, competitor analysis, and automated reporting with customizable templates.',
       technologies: ['React', 'D3.js', 'Express', 'PostgreSQL'],
       features: ['Data Visualization', 'Engagement Metrics', 'Growth Tracking', 'Performance Analytics', 'Competitor Analysis', 'Automated Reports'],
-      github: 'https://github.com',
-      live: 'https://example.com',
+      github: '#',
+      live: '#',
       color: 'yellow',
+      preview: '/assets/images/projects/ecodex4.png',
+      images: [
+        '/assets/images/projects/ecodex4.png',
+        '/assets/images/projects/ecodex5.png',
+        '/assets/images/projects/ecodex6.png'
+      ]
+    },
+    // Preconfigured placeholders – ready to edit later
+    {
+      id: 5,
+      title: 'Project Placeholder 05',
+      description: 'Coming soon: description to be added. Fully wired for images, links, and carousel.',
+      detailedDescription: 'Placeholder project. Replace the links and images when ready. The modal carousel, indicators, and action buttons will adapt automatically based on provided properties.',
+      technologies: ['React', 'UI/UX'],
+      features: ['Feature A', 'Feature B', 'Feature C'],
+      github: '#',
+      live: '#',
+      color: 'cyan',
+      preview: '/assets/images/projects/ecodex.png',
+      images: [
+        '/assets/images/projects/ecodex.png',
+        '/assets/images/projects/ecodex2.png'
+      ]
+    },
+    {
+      id: 6,
+      title: 'Project Placeholder 06',
+      description: 'Coming soon: description to be added. Fully wired for images, links, and carousel.',
+      detailedDescription: 'Placeholder project. Replace the links and images when ready. The modal carousel, indicators, and action buttons will adapt automatically based on provided properties.',
+      technologies: ['TypeScript', 'API'],
+      features: ['Feature A', 'Feature B', 'Feature C'],
+      github: '#',
+      live: '#',
+      color: 'peach',
+      preview: '/assets/images/projects/furtastic.png',
+      images: [
+        '/assets/images/projects/furtastic.png',
+        '/assets/images/projects/furtastic2.png'
+      ]
+    },
+    {
+      id: 7,
+      title: 'Project Placeholder 07',
+      description: 'Coming soon: description to be added. Fully wired for images, links, and carousel.',
+      detailedDescription: 'Placeholder project. Replace the links and images when ready. The modal carousel, indicators, and action buttons will adapt automatically based on provided properties.',
+      technologies: ['Node.js', 'Design'],
+      features: ['Feature A', 'Feature B', 'Feature C'],
+      github: '#',
+      live: '#',
+      color: 'coral',
+      preview: '/assets/images/projects/furtastic3.png',
+      images: [
+        '/assets/images/projects/furtastic3.png',
+        '/assets/images/projects/furtastic4.png'
+      ]
+    },
+    {
+      id: 8,
+      title: 'Project Placeholder 08',
+      description: 'Coming soon: description to be added. Fully wired for images, links, and carousel.',
+      detailedDescription: 'Placeholder project. Replace the links and images when ready. The modal carousel, indicators, and action buttons will adapt automatically based on provided properties.',
+      technologies: ['Next.js', 'Prisma'],
+      features: ['Feature A', 'Feature B', 'Feature C'],
+      github: '#',
+      live: '#',
+      color: 'yellow',
+      preview: '/assets/images/projects/ecodex6.png',
+      images: [
+        '/assets/images/projects/ecodex6.png',
+        '/assets/images/projects/ecodex7.png'
+      ]
+    },
+    {
+      id: 9,
+      title: 'Project Placeholder 09',
+      description: 'Coming soon: description to be added. Fully wired for images, links, and carousel.',
+      detailedDescription: 'Placeholder project. Replace the links and images when ready. The modal carousel, indicators, and action buttons will adapt automatically based on provided properties.',
+      technologies: ['Python', 'Flask'],
+      features: ['Feature A', 'Feature B', 'Feature C'],
+      github: '#',
+      live: '#',
+      color: 'cyan',
+      preview: '/assets/images/projects/furtastic5.png',
+      images: [
+        '/assets/images/projects/furtastic5.png',
+        '/assets/images/projects/furtastic6.png'
+      ]
     },
   ]
 
@@ -218,9 +334,9 @@ const Projects = () => {
                     whileHover={{ scale: 1.01 }}
                     transition={{ duration: 0.3 }}
                   >
-                    {(project.id === 1 || project.id === 2) && project.images ? (
+                    {project.images ? (
                       <img 
-                        src={project.images[0]} 
+                        src={project.preview || project.images[0]} 
                         alt={`${project.title} Project Screenshot`}
                         className="project-image-real"
                         loading="lazy"
@@ -257,41 +373,23 @@ const Projects = () => {
                     </div>
 
                     <div className="project-action">
-                      {project.id === 1 ? (
-                        <a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="view-project-btn"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          View Figma Prototype →
-                        </a>
-                      ) : project.id === 2 ? (
+                      {project.live && project.github ? (
                         <div className="project-btn-container">
-                          <a
-                            href={project.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-link-btn"
-                            onClick={(e) => e.stopPropagation()}
-                          >
+                          <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link-btn" onClick={(e) => e.stopPropagation()}>
                             View Figma Prototype →
                           </a>
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-link-btn"
-                            onClick={(e) => e.stopPropagation()}
-                          >
+                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link-btn" onClick={(e) => e.stopPropagation()}>
                             View Project Code →
                           </a>
                         </div>
+                      ) : project.live ? (
+                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="view-project-btn" onClick={(e) => e.stopPropagation()}>
+                          View Figma Prototype →
+                        </a>
                       ) : (
-                      <button className="view-project-btn" onClick={(e) => { e.stopPropagation(); openModal(project); }}>
-                        View Details →
-                      </button>
+                        <button className="view-project-btn" onClick={(e) => { e.stopPropagation(); openModal(project); }}>
+                          View Details →
+                        </button>
                       )}
                     </div>
                   </div>
@@ -318,7 +416,7 @@ const Projects = () => {
 
             <div className="modal-header">
               <div className={`modal-image project-${selectedProject.color}`}>
-                {(selectedProject.id === 1 || selectedProject.id === 2) && selectedProject.images ? (
+                {selectedProject.images ? (
                   <img 
                     src={selectedProject.images[currentImageIndex]} 
                     alt={`${selectedProject.title} Project Screenshot ${currentImageIndex + 1}`}
@@ -336,7 +434,7 @@ const Projects = () => {
                   <span>0{selectedProject.id}</span>
                 </div>
 
-                {(selectedProject.id === 1 || selectedProject.id === 2) && selectedProject.images && selectedProject.images.length > 1 ? (
+                {selectedProject.images && selectedProject.images.length > 0 && (
                   <>
                     <button 
                       className="image-nav image-nav-left" 
@@ -354,20 +452,10 @@ const Projects = () => {
                       <FaChevronRight />
                     </button>
                   </>
-                ) : (
-                  <>
-                <button className="image-nav image-nav-left" onClick={goToPreviousProject} aria-label="Previous project">
-                  <FaChevronLeft />
-                </button>
-
-                <button className="image-nav image-nav-right" onClick={goToNextProject} aria-label="Next project">
-                  <FaChevronRight />
-                </button>
-                  </>
                 )}
               </div>
               
-              {(selectedProject.id === 1 || selectedProject.id === 2) && selectedProject.images && selectedProject.images.length > 1 && (
+              {selectedProject.images && selectedProject.images.length > 1 && (
                 <div className="image-indicators">
                   {selectedProject.images.map((_, index) => (
                     <button
@@ -409,52 +497,32 @@ const Projects = () => {
               </div>
 
               <div className="modal-actions">
-                {selectedProject.id === 1 ? (
-                  <a
-                    href={selectedProject.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-btn modal-btn-figma"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8-4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8-8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
-                    </svg>
-                    <span>View Figma Prototype</span>
-                  </a>
-                ) : selectedProject.id === 2 ? (
+                {selectedProject.live && selectedProject.github ? (
                   <>
-                    <a
-                      href={selectedProject.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="modal-btn modal-btn-github"
-                    >
+                    <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="modal-btn modal-btn-github">
                       <FaGithub />
                       <span>View Code</span>
                     </a>
-                    <a
-                      href={selectedProject.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="modal-btn modal-btn-figma"
-                    >
+                    <a href={selectedProject.live} target="_blank" rel="noopener noreferrer" className="modal-btn modal-btn-figma">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8-4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8-8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
                       </svg>
                       <span>View Figma Prototype</span>
                     </a>
                   </>
-                ) : (
-                <a
-                  href={selectedProject.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="modal-btn modal-btn-github"
-                >
-                  <FaGithub />
-                  <span>View Code</span>
-                </a>
-                )}
+                ) : selectedProject.live ? (
+                  <a href={selectedProject.live} target="_blank" rel="noopener noreferrer" className="modal-btn modal-btn-figma">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8-4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8-8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                    </svg>
+                    <span>View Figma Prototype</span>
+                  </a>
+                ) : selectedProject.github ? (
+                  <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="modal-btn modal-btn-github">
+                    <FaGithub />
+                    <span>View Code</span>
+                  </a>
+                ) : null}
               </div>
             </div>
           </div>
