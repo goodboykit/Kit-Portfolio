@@ -69,8 +69,11 @@ const Projects = () => {
       features: [
         'Real-time Pet Monitoring & Live Feed',
         'Health & Activity Tracking Dashboard',
+        'Pet Profile & Data Management',
         'Location Tracking for Pet Walks',
+        'Integrated Pet Services Marketplace',
         'Social Community Platform',
+        'Vet Appointment Scheduling',
         'Pet Product Shopping System'
       ],
       github: 'https://github.com/goodboykit/FurtasticBuddies.git',
@@ -419,24 +422,28 @@ const Projects = () => {
                     <span>View Figma Prototype</span>
                   </a>
                 ) : selectedProject.id === 2 ? (
-                  <div className="project-btn-container">
-                    <a
-                      href={selectedProject.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link-btn"
-                    >
-                      View Figma Prototype →
-                    </a>
+                  <>
                     <a
                       href={selectedProject.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="project-link-btn"
+                      className="modal-btn modal-btn-github"
                     >
-                      View Project Code →
+                      <FaGithub />
+                      <span>View Code</span>
                     </a>
-                  </div>
+                    <a
+                      href={selectedProject.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="modal-btn modal-btn-figma"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8-4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8-8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                      </svg>
+                      <span>View Figma Prototype</span>
+                    </a>
+                  </>
                 ) : (
                 <a
                   href={selectedProject.github}
