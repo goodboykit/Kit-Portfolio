@@ -22,6 +22,7 @@ const Projects = () => {
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState(null)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   // Stagger animation for project cards
   const projectVariants = {
@@ -41,14 +42,23 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce application with user authentication, product management, shopping cart, and payment integration.',
-      detailedDescription: 'A comprehensive e-commerce solution built with modern technologies. Features include user authentication with JWT, product catalog with advanced filtering, shopping cart functionality, secure payment integration with Stripe, order management system, and an admin dashboard for inventory management.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      features: ['User Authentication', 'Product Management', 'Shopping Cart', 'Payment Integration', 'Order Tracking', 'Admin Dashboard'],
+      title: 'EcoDex',
+      description: 'EcoDex is a comprehensive environmental sustainability platform created for the Google Developers Student Club (GDSC) Ideathon Hackathon at National University Manila. This Figma-based prototype showcases an innovative approach to environmental awareness and community engagement.',
+      detailedDescription: 'EcoDex is a comprehensive environmental sustainability platform created for the Google Developers Student Club (GDSC) Ideathon Hackathon at National University Manila. This Figma-based prototype showcases an innovative approach to environmental awareness and community engagement. The platform features user-friendly interfaces for tracking environmental impact, community challenges, educational resources, and gamified sustainability practices.',
+      technologies: ['Figma', 'UI/UX Design', 'Prototyping', 'Design Systems'],
+      features: ['Eco-Challenge Gamification', 'Environmental Learning Hub', 'Community Impact Tracking', 'Sustainable Lifestyle Guide', 'Green Achievement System'],
       github: 'https://github.com',
-      live: 'https://example.com',
+      live: 'https://www.figma.com/proto/XIIhFIzAF9At8GERnL4JDh/EcoDex?node-id=0-1&p=f&t=TXCA3OibejTNB07q-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=265%3A6288&show-proto-sidebar=1',
       color: 'cyan',
+      images: [
+        '/src/assets/images/projects/ecodex.png',
+        '/src/assets/images/projects/ecodex2.png',
+        '/src/assets/images/projects/ecodex3.png',
+        '/src/assets/images/projects/ecodex4.png',
+        '/src/assets/images/projects/ecodex5.png',
+        '/src/assets/images/projects/ecodex6.png',
+        '/src/assets/images/projects/ecodex7.png'
+      ]
     },
     {
       id: 2,
@@ -187,7 +197,15 @@ const Projects = () => {
                     whileHover={{ scale: 1.01 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="project-image-placeholder"></div>
+                    {project.id === 1 && project.images ? (
+                      <img 
+                        src={project.images[0]} 
+                        alt="EcoDex Project Screenshot"
+                        className="project-image-real"
+                      />
+                    ) : (
+                      <div className="project-image-placeholder"></div>
+                    )}
                     <motion.div
                       className="project-overlay"
                       initial={{ opacity: 0 }}
@@ -241,19 +259,62 @@ const Projects = () => {
 
             <div className="modal-header">
               <div className={`modal-image project-${selectedProject.color}`}>
-                <div className="modal-image-placeholder"></div>
+                {selectedProject.id === 1 && selectedProject.images ? (
+                  <img 
+                    src={selectedProject.images[currentImageIndex]} 
+                    alt={`EcoDex Project Screenshot ${currentImageIndex + 1}`}
+                    className="modal-image-real"
+                  />
+                ) : (
+                  <div className="modal-image-placeholder"></div>
+                )}
                 <div className="modal-number">
                   <span>0{selectedProject.id}</span>
                 </div>
 
-                <button className="image-nav image-nav-left" onClick={goToPreviousProject} aria-label="Previous project">
-                  <FaChevronLeft />
-                </button>
+                {selectedProject.id === 1 && selectedProject.images && selectedProject.images.length > 1 ? (
+                  <>
+                    <button 
+                      className="image-nav image-nav-left" 
+                      onClick={() => setCurrentImageIndex((prev) => prev === 0 ? selectedProject.images.length - 1 : prev - 1)} 
+                      aria-label="Previous image"
+                    >
+                      <FaChevronLeft />
+                    </button>
 
-                <button className="image-nav image-nav-right" onClick={goToNextProject} aria-label="Next project">
-                  <FaChevronRight />
-                </button>
+                    <button 
+                      className="image-nav image-nav-right" 
+                      onClick={() => setCurrentImageIndex((prev) => prev === selectedProject.images.length - 1 ? 0 : prev + 1)} 
+                      aria-label="Next image"
+                    >
+                      <FaChevronRight />
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button className="image-nav image-nav-left" onClick={goToPreviousProject} aria-label="Previous project">
+                      <FaChevronLeft />
+                    </button>
+
+                    <button className="image-nav image-nav-right" onClick={goToNextProject} aria-label="Next project">
+                      <FaChevronRight />
+                    </button>
+                  </>
+                )}
               </div>
+              
+              {selectedProject.id === 1 && selectedProject.images && selectedProject.images.length > 1 && (
+                <div className="image-indicators">
+                  {selectedProject.images.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
+                      onClick={() => setCurrentImageIndex(index)}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className="modal-body">
@@ -284,15 +345,29 @@ const Projects = () => {
               </div>
 
               <div className="modal-actions">
-                <a
-                  href={selectedProject.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="modal-btn modal-btn-github"
-                >
-                  <FaGithub />
-                  <span>View Code</span>
-                </a>
+                {selectedProject.id === 1 ? (
+                  <a
+                    href={selectedProject.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-btn modal-btn-figma"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8-4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8-8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                    </svg>
+                    <span>View Figma Prototype</span>
+                  </a>
+                ) : (
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-btn modal-btn-github"
+                  >
+                    <FaGithub />
+                    <span>View Code</span>
+                  </a>
+                )}
               </div>
             </div>
           </div>
