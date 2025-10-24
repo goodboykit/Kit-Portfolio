@@ -133,19 +133,37 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: 'Social Media Dashboard',
-      description: 'A comprehensive social media analytics dashboard with data visualization, user engagement metrics, and reporting features.',
-      detailedDescription: 'An advanced analytics platform for social media management. Features comprehensive data visualization using D3.js, user engagement metrics, follower growth tracking, post performance analytics, competitor analysis, and automated reporting with customizable templates.',
-      technologies: ['React', 'D3.js', 'Express', 'PostgreSQL'],
-      features: ['Data Visualization', 'Engagement Metrics', 'Growth Tracking', 'Performance Analytics', 'Competitor Analysis', 'Automated Reports'],
+      title: 'Coast2Cart',
+      description: 'A coastal marketplace web app that connects buyers with local fishers and artisans—browse fresh catch, chat with sellers, add to cart, and check out with a clean, mobile-first UX.',
+      detailedDescription: 'Coast2Cart is a modern e‑commerce experience tailored for coastal communities. Buyers can explore fresh seafood and souvenir listings with rich product cards, advanced filters and price ranges, and a smooth product detail flow. The app features a real-time style chat between buyers and sellers, a streamlined cart with quantity controls, profile pages with badges and activity, reviews and ratings, and load‑more pagination for performant browsing. Built with a responsive design system that keeps the interface fast and accessible across devices.',
+      technologies: ['React', 'MongoDB', 'Figma', 'Web Development'],
+      features: [
+        'Product Catalogue with Category & Price Filters',
+        'Product Detail Page with Gallery and Seller Info',
+        'Add to Cart with Quantity Controls and Inline Totals',
+        'Buyer ↔ Seller Chat Messaging',
+        'Buyer and Seller Profiles (Active/Sold tabs)',
+        'Reviews & Ratings Components'
+      ],
+      externalLinks: [
+        { href: 'https://coast2cart-frontend.vercel.app/', label: 'Open Live Site' },
+        { href: 'https://www.figma.com/proto/zKSo6pxPKwZeqNdoGJQsa8/Coast2Cart---Wireframe?node-id=244-197&p=f&t=trWKGSItr404vHBy-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=244%3A197&show-proto-sidebar=1', label: 'View Figma Prototype' }
+      ],
       github: '#',
-      live: '#',
+      live: 'https://coast2cart-frontend.vercel.app/',
       color: 'yellow',
-      preview: '/assets/images/projects/ecodex4.png',
+      preview: '/assets/images/projects/Home.png',
       images: [
-        '/assets/images/projects/ecodex4.png',
-        '/assets/images/projects/ecodex5.png',
-        '/assets/images/projects/ecodex6.png'
+        '/assets/images/projects/Home.png',
+        '/assets/images/projects/Seafood.png',
+        '/assets/images/projects/Product Detail.png',
+        '/assets/images/projects/Cart.png',
+        '/assets/images/projects/Chat.png',
+        '/assets/images/projects/Profile _ Buyer _ Recent Order.png',
+        '/assets/images/projects/Profile _ Seller _ Active Listing.png',
+        '/assets/images/projects/Profile _ Seller _ Sold Items.png',
+        '/assets/images/projects/coast1.png',
+        '/assets/images/projects/Screenshot 2025-10-25 at 5.17.24 AM.png'
       ]
     },
     // Preconfigured placeholders – ready to edit later
@@ -373,7 +391,15 @@ const Projects = () => {
                     </div>
 
                     <div className="project-action">
-                      {project.live && project.github ? (
+                      {project.externalLinks && project.externalLinks.length ? (
+                        <div className="project-btn-container">
+                          {project.externalLinks.map((l, i) => (
+                            <a key={i} href={l.href} target="_blank" rel="noopener noreferrer" className="project-link-btn" onClick={(e) => e.stopPropagation()}>
+                              {l.label} →
+                            </a>
+                          ))}
+                        </div>
+                      ) : project.live && project.github ? (
                         <div className="project-btn-container">
                           <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link-btn" onClick={(e) => e.stopPropagation()}>
                             View Figma Prototype →
@@ -497,7 +523,15 @@ const Projects = () => {
               </div>
 
               <div className="modal-actions">
-                {selectedProject.live && selectedProject.github ? (
+                {selectedProject.externalLinks && selectedProject.externalLinks.length ? (
+                  <>
+                    {selectedProject.externalLinks.map((l, i) => (
+                      <a key={i} href={l.href} target="_blank" rel="noopener noreferrer" className="modal-btn modal-btn-figma">
+                        <span>{l.label}</span>
+                      </a>
+                    ))}
+                  </>
+                ) : selectedProject.live && selectedProject.github ? (
                   <>
                     <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="modal-btn modal-btn-github">
                       <FaGithub />
