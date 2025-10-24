@@ -44,9 +44,9 @@ const Projects = () => {
       id: 1,
       title: 'EcoDex',
       description: 'EcoDex is a comprehensive environmental sustainability platform created for the Google Developers Student Club (GDSC) Ideathon Hackathon at National University Manila. This Figma-based prototype showcases an innovative approach to environmental awareness and community engagement.',
-      detailedDescription: 'EcoDex is a comprehensive environmental sustainability platform created for the Google Developers Student Club (GDSC) Ideathon Hackathon at National University Manila. This Figma-based prototype showcases an innovative approach to environmental awareness and community engagement. The platform features user-friendly interfaces for tracking environmental impact, community challenges, educational resources, and gamified sustainability practices.',
+      detailedDescription: 'EcoDex is a comprehensive environmental sustainability platform created for the Google Developers Student Club (GDSC) Ideathon Hackathon at National University Manila. This Figma-based prototype showcases an innovative approach to environmental awareness and community engagement. The platform features user-friendly interfaces for plant recognition, quest challenges, environmental tracking, and gamified sustainability practices that encourage users to discover their environmental footprint and contribute positively to the planet.',
       technologies: ['Figma', 'UI/UX Design', 'Prototyping', 'Design Systems'],
-      features: ['Eco-Challenge Gamification', 'Environmental Learning Hub', 'Community Impact Tracking', 'Sustainable Lifestyle Guide', 'Green Achievement System'],
+      features: ['Plant Recognition & Scanning', 'Quest Challenge System', 'Environmental Impact Tracking', 'Points & Rewards System', 'Plant Dictionary & Learning Hub', 'Community Engagement Features'],
       github: 'https://github.com',
       live: 'https://www.figma.com/proto/XIIhFIzAF9At8GERnL4JDh/EcoDex?node-id=0-1&p=f&t=TXCA3OibejTNB07q-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=265%3A6288&show-proto-sidebar=1',
       color: 'cyan',
@@ -231,9 +231,21 @@ const Projects = () => {
                     </div>
 
                     <div className="project-action">
-                      <button className="view-project-btn" onClick={(e) => { e.stopPropagation(); openModal(project); }}>
-                        View Details →
-                      </button>
+                      {project.id === 1 ? (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="view-project-btn"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          View Figma Prototype →
+                        </a>
+                      ) : (
+                        <button className="view-project-btn" onClick={(e) => { e.stopPropagation(); openModal(project); }}>
+                          View Details →
+                        </button>
+                      )}
                     </div>
                   </div>
                 </motion.div>
