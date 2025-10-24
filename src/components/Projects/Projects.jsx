@@ -259,28 +259,24 @@ const Projects = () => {
                           View Figma Prototype →
                         </a>
                       ) : project.id === 2 ? (
-                        <div className="project-links">
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-link-btn github-btn"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <FaGithub />
-                            <span>GitHub</span>
-                          </a>
+                        <div className="project-btn-container">
                           <a
                             href={project.live}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="project-link-btn figma-btn"
+                            className="project-link-btn"
                             onClick={(e) => e.stopPropagation()}
                           >
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8-4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8-8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
-                            </svg>
-                            <span>Figma</span>
+                            View Figma Prototype →
+                          </a>
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-link-btn"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            View Project Code →
                           </a>
                         </div>
                       ) : (
@@ -417,28 +413,24 @@ const Projects = () => {
                     <span>View Figma Prototype</span>
                   </a>
                 ) : selectedProject.id === 2 ? (
-                  <>
-                    <a
-                      href={selectedProject.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="modal-btn modal-btn-github"
-                    >
-                      <FaGithub />
-                      <span>View Code</span>
-                    </a>
+                  <div className="project-btn-container">
                     <a
                       href={selectedProject.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="modal-btn modal-btn-figma"
+                      className="project-link-btn"
                     >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8-4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8-8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
-                      </svg>
-                      <span>View Figma Prototype</span>
+                      View Figma Prototype →
                     </a>
-                  </>
+                    <a
+                      href={selectedProject.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link-btn"
+                    >
+                      View Project Code →
+                    </a>
+                  </div>
                 ) : (
                 <a
                   href={selectedProject.github}

@@ -254,39 +254,36 @@
 .project-link-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: #F24E1E;
-  color: white;
-  border-radius: 0.375rem;
-  font-weight: 600;
-  font-size: 0.85rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #FF6B4A;
+  border-radius: 0.75rem;
+  color: #FF6B4A;
+  font-weight: 500;
+  font-size: 1rem;
   text-decoration: none;
   transition: all 0.3s ease;
+  background: transparent;
   cursor: pointer;
-  font-family: inherit;
-  border: none;
 }
 
 .project-link-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 107, 74, 0.1);
 }
 
-.figma-btn {
-  background: #F24E1E;
+.project-btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-.figma-btn:hover {
-  background: #E04A1A;
+/* Removing specific button styles to use the consistent design */
+.figma-btn, .github-btn {
+  background: transparent;
 }
 
-.github-btn {
-  background: #24292e;
-}
-
-.github-btn:hover {
-  background: #1a1e22;
+.project-link-btn span {
+  margin-right: 0.5rem;
 }
 
 
