@@ -134,7 +134,7 @@ const Projects = () => {
     {
       id: 4,
       title: 'Coast2Cart',
-      description: 'A coastal marketplace web app that connects buyers with local fishers and artisans—browse fresh catch, chat with sellers, add to cart, and check out with a clean, mobile-first UX.',
+      description: 'A coastal marketplace web app that connects buyers with local fishers and artisans—browse fresh catch, chat with sellers, add to cart.',
       detailedDescription: 'Coast2Cart is a modern e‑commerce experience tailored for coastal communities. Buyers can explore fresh seafood and souvenir listings with rich product cards, advanced filters and price ranges, and a smooth product detail flow. The app features a real-time style chat between buyers and sellers, a streamlined cart with quantity controls, profile pages with badges and activity, reviews and ratings, and load‑more pagination for performant browsing. Built with a responsive design system that keeps the interface fast and accessible across devices.',
       technologies: ['React', 'MongoDB', 'Figma', 'Web Development'],
       features: [
@@ -155,48 +155,90 @@ const Projects = () => {
       preview: '/assets/images/projects/Home.png',
       images: [
         '/assets/images/projects/Home.png',
-        '/assets/images/projects/Seafood.png',
-        '/assets/images/projects/Product Detail.png',
         '/assets/images/projects/Cart.png',
         '/assets/images/projects/Chat.png',
+        '/assets/images/projects/coast1.png',
+        '/assets/images/projects/Product Detail.png',
         '/assets/images/projects/Profile _ Buyer _ Recent Order.png',
         '/assets/images/projects/Profile _ Seller _ Active Listing.png',
         '/assets/images/projects/Profile _ Seller _ Sold Items.png',
-        '/assets/images/projects/coast1.png',
-        '/assets/images/projects/Screenshot 2025-10-25 at 5.17.24 AM.png'
+        '/assets/images/projects/Screenshot 2025-10-25 at 5.17.24 AM.png',
+        '/assets/images/projects/Seafood.png'
       ]
     },
     // Preconfigured placeholders – ready to edit later
     {
       id: 5,
-      title: 'Project Placeholder 05',
-      description: 'Coming soon: description to be added. Fully wired for images, links, and carousel.',
-      detailedDescription: 'Placeholder project. Replace the links and images when ready. The modal carousel, indicators, and action buttons will adapt automatically based on provided properties.',
-      technologies: ['React', 'UI/UX'],
-      features: ['Feature A', 'Feature B', 'Feature C'],
-      github: '#',
-      live: '#',
+      title: 'Literexia',
+      description: 'An inclusive literacy platform that helps Filipino learners with dyslexia improve reading comprehension through accessible design, text‑to‑voice, and data‑driven teaching tools.',
+      detailedDescription: 'Literexia is a technology‑assisted learning platform built with educators to support Filipino learners with dyslexia and other reading difficulties. The system combines accessible UX (Open Dyslexic font, customizable text sizes, and low‑distraction themes) with CRLA‑aligned assessments and activities that target alphabet knowledge, phonological awareness, decoding, word recognition, and reading comprehension. A prescriptive analytics engine synthesizes performance to recommend next steps and classroom interventions, while teacher dashboards surface progress, trends, and actionable feedback. Literexia complements face‑to‑face instruction and can be used in class or at home.',
+      technologies: ['React','MongoDB', 'Accessibility', 'Text‑to‑Speech', 'Figma'],
+      features: [
+        'Text‑to‑voice for passages, questions, and feedback',
+        'Prescriptive analytics that suggest tailored interventions',
+        'Teacher dashboard for progress tracking and insights',
+        'Activity library for alphabet, phonology, decoding, and comprehension',
+        'Admin tools for managing classes, students, and assessment data'
+      ],
+      externalLinks: [
+        { href: 'https://literexia.com/', label: 'Open Live Site' },
+        { href: 'https://www.figma.com/proto/9XeaU1JY9nbm0BNaXHQ2DK/Literexia?node-id=977-6290&p=f&t=0uO4TFSKuaJejP20-0&scaling=min-zoom&content-scaling=fixed&page-id=681%3A269', label: 'View Figma Prototype' },
+        { href: 'https://github.com/Phil1ipfs/Dyslexia', label: 'View Project Code' }
+      ],
+      github: 'https://github.com/Phil1ipfs/Dyslexia',
+      live: 'https://literexia.com/',
       color: 'cyan',
-      preview: '/assets/images/projects/ecodex.png',
+      preview: '/assets/images/projects/Admin Pre-fed Activities View Preview.png',
       images: [
-        '/assets/images/projects/ecodex.png',
-        '/assets/images/projects/ecodex2.png'
+        '/assets/images/projects/Admin Pre-fed Activities Pantig-1.png',
+        '/assets/images/projects/Admin Pre-fed Activities Pantig.png',
+        '/assets/images/projects/Admin Pre-fed Activities View Preview.png',
+        '/assets/images/projects/Phonological_Question1-1.png',
+        '/assets/images/projects/Phonological_Question1-2.png',
+        '/assets/images/projects/Phonological_Question1-3.png',
+        '/assets/images/projects/Phonological_Question1-4.png',
+        '/assets/images/projects/Phonological_Question1-5.png',
+        '/assets/images/projects/Phonological_Question1-6.png',
+        '/assets/images/projects/Phonological_Question1-7.png',
+        '/assets/images/projects/Change Theme_ Customize-light blue.png',
+        '/assets/images/projects/Change Theme_Customize-dark-1.png',
+        '/assets/images/projects/Change Theme_Customize-orange-3.png',
+        '/assets/images/projects/Decoding-1.png',
+        '/assets/images/projects/Decoding-2.png',
+        '/assets/images/projects/Decoding.png',
+        '/assets/images/projects/Settings-1.png'
       ]
     },
     {
       id: 6,
-      title: 'Project Placeholder 06',
-      description: 'Coming soon: description to be added. Fully wired for images, links, and carousel.',
-      detailedDescription: 'Placeholder project. Replace the links and images when ready. The modal carousel, indicators, and action buttons will adapt automatically based on provided properties.',
-      technologies: ['TypeScript', 'API'],
-      features: ['Feature A', 'Feature B', 'Feature C'],
-      github: '#',
-      live: '#',
+      title: 'Communify',
+      description: 'A community-driven mobile application empowering citizens to report and track local infrastructure issues, fostering collaboration between residents and authorities for better urban management.',
+      detailedDescription: 'Communify is an innovative mobile application designed to bridge the gap between citizens and local authorities by providing a platform for reporting and monitoring community issues. Built with Flutter and Dart, the app enables users to report problems like potholes, hazardous electrical wiring, and infrastructure concerns with precise location tracking and real-time updates. The platform features an interactive map interface highlighting issue hotspots, a comprehensive news feed of local problems, and a robust system for authorities to manage and respond to community reports.',
+      technologies: ['Flutter', 'Dart','UI/UX Design', 'Mobile Development'],
+      features: [
+        'Interactive Issue Mapping System',
+        'Real-time Problem Reporting',
+        'Location-based Issue Tracking',
+        'Community News Feed Integration',
+        'Hazard Classification System',
+        'Photo Evidence Upload',
+        'Issue Status Monitoring',
+        'Authority Response Management'
+      ],
+      github: 'https://github.com/goodboykit/communify',
+      live: 'https://www.figma.com/proto/NeCtn9tSFIAJG6J4uJ3RV3/Hackhaton-2024?node-id=20-203',
       color: 'peach',
-      preview: '/assets/images/projects/furtastic.png',
+      preview: '/assets/images/projects/Title logo.png',
       images: [
-        '/assets/images/projects/furtastic.png',
-        '/assets/images/projects/furtastic2.png'
+        '/assets/images/projects/Title logo.png',
+        '/assets/images/projects/communfiy.png',
+        '/assets/images/projects/communify2.png',
+        '/assets/images/projects/communify3.png',
+        '/assets/images/projects/communify4.png',
+        '/assets/images/projects/communify5.png',
+        '/assets/images/projects/communify6.png',
+        '/assets/images/projects/communify7.png',
+        '/assets/images/projects/communify8.png'
       ]
     },
     {
@@ -525,11 +567,39 @@ const Projects = () => {
               <div className="modal-actions">
                 {selectedProject.externalLinks && selectedProject.externalLinks.length ? (
                   <>
-                    {selectedProject.externalLinks.map((l, i) => (
-                      <a key={i} href={l.href} target="_blank" rel="noopener noreferrer" className="modal-btn modal-btn-figma">
-                        <span>{l.label}</span>
-                      </a>
-                    ))}
+                    {selectedProject.externalLinks.map((l, i) => {
+                      const labelLower = (l.label || '').toLowerCase()
+                      const isGithub = /github\.com/.test(l.href) || labelLower.includes('code')
+                      const isFigma = /figma\.com/.test(l.href) || labelLower.includes('figma')
+                      const isLive = !isGithub && !isFigma
+                      const className = `modal-btn ${
+                        isGithub
+                          ? 'modal-btn-github'
+                          : isFigma
+                            ? 'modal-btn-figma'
+                            : (selectedProject.title === 'Coast2Cart' && l.label === 'Open Live Site')
+                              ? 'modal-btn-github'
+                              : 'modal-btn-live'
+                      }`
+                      return (
+                        <a
+                          key={i}
+                          href={l.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={className}
+                        >
+                          {isGithub && <FaGithub />}
+                          {isFigma && (
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                              <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8-4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8-8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                            </svg>
+                          )}
+                          {isLive && <FaExternalLinkAlt />}
+                          <span>{l.label}</span>
+                        </a>
+                      )
+                    })}
                   </>
                 ) : selectedProject.live && selectedProject.github ? (
                   <>
