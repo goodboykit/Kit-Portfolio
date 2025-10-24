@@ -63,10 +63,16 @@ const Projects = () => {
     {
       id: 2,
       title: 'Furtastic Buddies',
-      description: 'A comprehensive pet care platform designed to connect pet owners with services, community features, and pet care resources.',
-      detailedDescription: 'Furtastic Buddies is a comprehensive pet care platform created to simplify pet ownership through technology. The platform features pet profile management, service booking for grooming and medical appointments, community forums for pet owners, health tracking and monitoring, live feed capabilities for remote pet monitoring, and a marketplace for pet products and services.',
+      description: 'Your Peace of Mind, Our Focus - A comprehensive pet care platform designed to help pet owners travel worry-free with advanced monitoring, health tracking, and community features.',
+      detailedDescription: 'Furtastic Buddies is an innovative mobile application that addresses the concerns of pet owners who want to travel but worry about their pets. The app offers comprehensive features including real-time pet monitoring with live video feed, detailed health tracking for eating, drinking, and activity patterns, a social community for pet owners to share updates, and an integrated marketplace for pet products and services. Key highlights include a personalized pet profile system, location tracking for walks, professional vet appointment booking, and a vibrant community feed where pets can have their own social presence.',
       technologies: ['Flutter', 'Dart', 'Figma', 'UI/UX Design', 'Mobile Development'],
-      features: ['Pet Profile Management', 'Service Booking System', 'Health Tracking & Monitoring', 'Live Feed Monitoring', 'Community Forums', 'Pet Marketplace'],
+      features: [
+        'Real-time Pet Monitoring & Live Feed',
+        'Health & Activity Tracking Dashboard',
+        'Location Tracking for Pet Walks',
+        'Social Community Platform',
+        'Pet Product Shopping System'
+      ],
       github: 'https://github.com/goodboykit/FurtasticBuddies.git',
       live: 'https://www.figma.com/proto/eeDk5IXgXuBL6QcGf7efIa/Furtastic-Buddies?node-id=520-2049&p=f&t=89YvL8VFbRxeEhZm-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=520%3A2049&show-proto-sidebar=1',
       color: 'peach',

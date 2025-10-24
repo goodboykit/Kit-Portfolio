@@ -267,7 +267,8 @@
 }
 
 .project-link-btn:hover {
-  background: rgba(255, 107, 74, 0.1);
+  background: #FF6B4A;
+  color: white;
 }
 
 .project-btn-container {
@@ -275,6 +276,45 @@
   flex-direction: column;
   gap: 1rem;
   margin-top: 2rem;
+}
+
+/* Modal Button Styles */
+.modal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-btn svg {
+  font-size: 1.25rem;
+}
+
+.modal-btn-github {
+  background: #24292e;
+  color: white;
+}
+
+.modal-btn-github:hover {
+  background: #1a1e22;
+  transform: translateY(-2px);
+}
+
+.modal-btn-figma {
+  background: #F24E1E;
+  color: white;
+}
+
+.modal-btn-figma:hover {
+  background: #E04A1A;
+  transform: translateY(-2px);
 }
 
 /* Removing specific button styles to use the consistent design */
