@@ -75,14 +75,14 @@ const About = () => {
                 </h2>
                 <p className="about-description">
                   Hi! I'm Kit Nicholas Santiago, a 4th year IT student specializing in Mobile and Web Application
-                  development. Currently studying at National University Manila in the Philippines,
+                  development. Currently studying at National University Manila,
                   I bring a unique perspective to software development, blending international experience with
                   technical expertise.
                 </p>
                 <p className="about-description">
                   My journey includes active participation in tech communities like Google Developers Students Club
                   and AWS Learning Club, where I've developed projects using React, Flutter, Node.js, and cloud technologies.
-                  I've competed in multiple hackathons achieving top placements, and I'm passionate about creating
+                  I've competed in multiple hackathons, and I'm passionate about creating
                   user-centered applications that solve real-world problems.
                 </p>
                 <p className="about-description">
