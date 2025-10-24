@@ -227,7 +227,8 @@
 
 .project-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  align-items: center;
 }
 
 .project-links a {
@@ -248,6 +249,44 @@
   background: var(--accent-orange);
   color: white;
   transform: scale(1.15) rotate(10deg);
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #F24E1E;
+  color: white;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+}
+
+.project-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.figma-btn {
+  background: #F24E1E;
+}
+
+.figma-btn:hover {
+  background: #E04A1A;
+}
+
+.github-btn {
+  background: #24292e;
+}
+
+.github-btn:hover {
+  background: #1a1e22;
 }
 
 

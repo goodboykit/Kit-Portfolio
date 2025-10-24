@@ -51,25 +51,36 @@ const Projects = () => {
       live: 'https://www.figma.com/proto/XIIhFIzAF9At8GERnL4JDh/EcoDex?node-id=0-1&p=f&t=TXCA3OibejTNB07q-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=265%3A6288&show-proto-sidebar=1',
       color: 'cyan',
       images: [
-        '/src/assets/images/projects/ecodex.png',
-        '/src/assets/images/projects/ecodex2.png',
-        '/src/assets/images/projects/ecodex3.png',
-        '/src/assets/images/projects/ecodex4.png',
-        '/src/assets/images/projects/ecodex5.png',
-        '/src/assets/images/projects/ecodex6.png',
-        '/src/assets/images/projects/ecodex7.png'
+        '/assets/images/projects/ecodex.png',
+        '/assets/images/projects/ecodex2.png',
+        '/assets/images/projects/ecodex3.png',
+        '/assets/images/projects/ecodex4.png',
+        '/assets/images/projects/ecodex5.png',
+        '/assets/images/projects/ecodex6.png',
+        '/assets/images/projects/ecodex7.png'
       ]
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management tool with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      detailedDescription: 'An intuitive task management application designed for teams. Built with real-time synchronization using Firebase, featuring drag-and-drop task organization, team collaboration tools, deadline management, priority levels, and progress tracking with visual dashboards.',
-      technologies: ['React', 'Firebase', 'Material-UI'],
-      features: ['Real-time Updates', 'Drag & Drop', 'Team Collaboration', 'Deadline Management', 'Priority Levels', 'Progress Tracking'],
-      github: 'https://github.com',
-      live: 'https://example.com',
+      title: 'Furtastic Buddies',
+      description: 'A comprehensive pet care platform designed to connect pet owners with services, community features, and pet care resources.',
+      detailedDescription: 'Furtastic Buddies is a comprehensive pet care platform created to simplify pet ownership through technology. The platform features pet profile management, service booking for grooming and medical appointments, community forums for pet owners, health tracking and monitoring, live feed capabilities for remote pet monitoring, and a marketplace for pet products and services.',
+      technologies: ['Flutter', 'Dart', 'Figma', 'UI/UX Design', 'Mobile Development'],
+      features: ['Pet Profile Management', 'Service Booking System', 'Health Tracking & Monitoring', 'Live Feed Monitoring', 'Community Forums', 'Pet Marketplace'],
+      github: 'https://github.com/goodboykit/FurtasticBuddies.git',
+      live: 'https://www.figma.com/proto/eeDk5IXgXuBL6QcGf7efIa/Furtastic-Buddies?node-id=520-2049&p=f&t=89YvL8VFbRxeEhZm-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=520%3A2049&show-proto-sidebar=1',
       color: 'peach',
+      images: [
+        '/assets/images/projects/furtastic.png',
+        '/assets/images/projects/furtastic2.png',
+        '/assets/images/projects/furtastic3.png',
+        '/assets/images/projects/furtastic4.png',
+        '/assets/images/projects/furtastic5.png',
+        '/assets/images/projects/furtastic6.png',
+        '/assets/images/projects/furtastic7.png',
+        '/assets/images/projects/furtastic8.png',
+        '/assets/images/projects/furtastic9.png'
+      ]
     },
     {
       id: 3,
@@ -97,6 +108,7 @@ const Projects = () => {
 
   const openModal = (project) => {
     setSelectedProject(project)
+    setCurrentImageIndex(0) // Reset to first image when opening modal
     setModalIsOpen(true)
   }
 
@@ -197,14 +209,19 @@ const Projects = () => {
                     whileHover={{ scale: 1.01 }}
                     transition={{ duration: 0.3 }}
                   >
-                    {project.id === 1 && project.images ? (
+                    {(project.id === 1 || project.id === 2) && project.images ? (
                       <img 
                         src={project.images[0]} 
-                        alt="EcoDex Project Screenshot"
+                        alt={`${project.title} Project Screenshot`}
                         className="project-image-real"
+                        loading="lazy"
+                        onError={(e) => {
+                          console.warn(`Failed to load image: ${project.images[0]}`);
+                          e.target.style.display = 'none';
+                        }}
                       />
                     ) : (
-                      <div className="project-image-placeholder"></div>
+                    <div className="project-image-placeholder"></div>
                     )}
                     <motion.div
                       className="project-overlay"
@@ -241,10 +258,35 @@ const Projects = () => {
                         >
                           View Figma Prototype →
                         </a>
+                      ) : project.id === 2 ? (
+                        <div className="project-links">
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-link-btn github-btn"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <FaGithub />
+                            <span>GitHub</span>
+                          </a>
+                          <a
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-link-btn figma-btn"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8-4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8-8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                            </svg>
+                            <span>Figma</span>
+                          </a>
+                        </div>
                       ) : (
-                        <button className="view-project-btn" onClick={(e) => { e.stopPropagation(); openModal(project); }}>
-                          View Details →
-                        </button>
+                      <button className="view-project-btn" onClick={(e) => { e.stopPropagation(); openModal(project); }}>
+                        View Details →
+                      </button>
                       )}
                     </div>
                   </div>
@@ -271,20 +313,25 @@ const Projects = () => {
 
             <div className="modal-header">
               <div className={`modal-image project-${selectedProject.color}`}>
-                {selectedProject.id === 1 && selectedProject.images ? (
+                {(selectedProject.id === 1 || selectedProject.id === 2) && selectedProject.images ? (
                   <img 
                     src={selectedProject.images[currentImageIndex]} 
-                    alt={`EcoDex Project Screenshot ${currentImageIndex + 1}`}
+                    alt={`${selectedProject.title} Project Screenshot ${currentImageIndex + 1}`}
                     className="modal-image-real"
+                    loading="lazy"
+                    onError={(e) => {
+                      console.warn(`Failed to load image: ${selectedProject.images[currentImageIndex]}`);
+                      e.target.style.display = 'none';
+                    }}
                   />
                 ) : (
-                  <div className="modal-image-placeholder"></div>
+                <div className="modal-image-placeholder"></div>
                 )}
                 <div className="modal-number">
                   <span>0{selectedProject.id}</span>
                 </div>
 
-                {selectedProject.id === 1 && selectedProject.images && selectedProject.images.length > 1 ? (
+                {(selectedProject.id === 1 || selectedProject.id === 2) && selectedProject.images && selectedProject.images.length > 1 ? (
                   <>
                     <button 
                       className="image-nav image-nav-left" 
@@ -304,18 +351,18 @@ const Projects = () => {
                   </>
                 ) : (
                   <>
-                    <button className="image-nav image-nav-left" onClick={goToPreviousProject} aria-label="Previous project">
-                      <FaChevronLeft />
-                    </button>
+                <button className="image-nav image-nav-left" onClick={goToPreviousProject} aria-label="Previous project">
+                  <FaChevronLeft />
+                </button>
 
-                    <button className="image-nav image-nav-right" onClick={goToNextProject} aria-label="Next project">
-                      <FaChevronRight />
-                    </button>
+                <button className="image-nav image-nav-right" onClick={goToNextProject} aria-label="Next project">
+                  <FaChevronRight />
+                </button>
                   </>
                 )}
               </div>
               
-              {selectedProject.id === 1 && selectedProject.images && selectedProject.images.length > 1 && (
+              {(selectedProject.id === 1 || selectedProject.id === 2) && selectedProject.images && selectedProject.images.length > 1 && (
                 <div className="image-indicators">
                   {selectedProject.images.map((_, index) => (
                     <button
@@ -369,16 +416,39 @@ const Projects = () => {
                     </svg>
                     <span>View Figma Prototype</span>
                   </a>
+                ) : selectedProject.id === 2 ? (
+                  <>
+                    <a
+                      href={selectedProject.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="modal-btn modal-btn-github"
+                    >
+                      <FaGithub />
+                      <span>View Code</span>
+                    </a>
+                    <a
+                      href={selectedProject.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="modal-btn modal-btn-figma"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8-4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8-8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                      </svg>
+                      <span>View Figma Prototype</span>
+                    </a>
+                  </>
                 ) : (
-                  <a
-                    href={selectedProject.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-btn modal-btn-github"
-                  >
-                    <FaGithub />
-                    <span>View Code</span>
-                  </a>
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="modal-btn modal-btn-github"
+                >
+                  <FaGithub />
+                  <span>View Code</span>
+                </a>
                 )}
               </div>
             </div>
