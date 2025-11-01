@@ -133,14 +133,11 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
             <div className="stat-minimal-item">
-              <span className="stat-minimal-number">20+</span>
+              <span className="stat-minimal-number">10</span>
               <span className="stat-minimal-label">Projects Built</span>
             </div>
             <div className="stat-divider-minimal"></div>
-            <div className="stat-minimal-item">
-              <span className="stat-minimal-number">5+</span>
-              <span className="stat-minimal-label">Hackathon Wins</span>
-            </div>
+          
             <div className="stat-divider-minimal"></div>
             <div className="stat-minimal-item">
               <span className="stat-minimal-number">8+</span>

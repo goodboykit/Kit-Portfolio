@@ -334,6 +334,38 @@ const Projects = () => {
         '/assets/images/projects/every15.png'
       ]
     },
+    {
+      id: 10,
+      title: 'Ambers',
+      description: 'My very first website I made using HTML and CSS! It\'s for a fictional Filipino restaurant called Amber\'s that serves food like Pancit Malabon. It has a menu, about page, contact form, and even a shopping cart.',
+      detailedDescription: 'This was my first website project ever. I built it using just HTML and CSS to make a website for a fake Filipino restaurant called Amber\'s. The website has different pages like a homepage with food pictures, an about us section, a menu page where you can browse dishes, a community page with customer reviews, and a contact page with a form. There\'s also a shopping cart feature where you can add items. It even has blog-style posts about Filipino food like Pancit Malabon and Pichi Pichi. It\'s pretty basic but I learned a lot making it!',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      features: [
+        'Homepage with food pictures and info',
+        'About Us page with restaurant story',
+        'Menu page to browse dishes',
+        'Shopping cart to add items',
+        'Contact form to send messages',
+        'Community page with customer reviews',
+        'Blog posts about Filipino food'
+      ],
+      github: 'https://github.com/goodboykit/AmbersHTMLWebsite',
+      color: 'yellow',
+      preview: '/assets/images/projects/ambers.png',
+      images: [
+        '/assets/images/projects/ambers.png',
+        '/assets/images/projects/ambers2.png',
+        '/assets/images/projects/ambers3.png',
+        '/assets/images/projects/ambers5.png',
+        '/assets/images/projects/ambers6.png',
+        '/assets/images/projects/ambers7.png',
+        '/assets/images/projects/ambers8.png',
+        '/assets/images/projects/ambers10.png',
+        '/assets/images/projects/ambers11.png',
+        '/assets/images/projects/ambers13.png',
+        '/assets/images/projects/ambers14.png'
+      ]
+    },
   ]
 
   const openModal = (project) => {
