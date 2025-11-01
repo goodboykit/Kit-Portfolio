@@ -40,3 +40,4 @@ The portfolio is now optimized for production deployment with:
 - Error handling
 - Responsive design
 - Full carousel functionality for both projects
+

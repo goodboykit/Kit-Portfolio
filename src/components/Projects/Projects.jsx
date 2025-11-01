@@ -43,10 +43,10 @@ const Projects = () => {
     {
       id: 1,
       title: 'EcoDex',
-      description: 'EcoDex is a comprehensive environmental sustainability platform created for the Google Developers Student Club (GDSC) Ideathon Hackathon at National University Manila. This Figma-based prototype showcases an innovative approach to environmental awareness and community engagement.',
-      detailedDescription: 'EcoDex is a comprehensive environmental sustainability platform created for the Google Developers Student Club (GDSC) Ideathon Hackathon at National University Manila. This Figma-based prototype showcases an innovative approach to environmental awareness and community engagement. The platform features user-friendly interfaces for plant recognition, quest challenges, environmental tracking, and gamified sustainability practices that encourage users to discover their environmental footprint and contribute positively to the planet.',
+      description: 'An app idea I made for the GDSC Ideathon Hackathon at my school. It\'s all about helping people learn about plants and take care of the environment. You can scan plants, do challenges, and earn points for being eco-friendly.',
+      detailedDescription: 'I created this project for the Google Developers Student Club Ideathon at National University Manila. The idea is to make learning about plants and the environment fun. Users can scan plants to learn what they are, complete quests and challenges, track their environmental impact, and earn points and rewards. There\'s also a plant dictionary where you can learn about different plants and a community section where people can share their eco-friendly activities. It\'s all built in Figma as a prototype.',
       technologies: ['Figma', 'UI/UX Design', 'Prototyping', 'Design Systems'],
-      features: ['Plant Recognition & Scanning', 'Quest Challenge System', 'Environmental Impact Tracking', 'Points & Rewards System', 'Plant Dictionary & Learning Hub', 'Community Engagement Features'],
+      features: ['Scan plants to identify them', 'Complete quests and challenges', 'Track your environmental impact', 'Earn points and rewards', 'Learn about plants from the dictionary', 'Connect with the community'],
       live: 'https://www.figma.com/proto/XIIhFIzAF9At8GERnL4JDh/EcoDex?node-id=0-1&p=f&t=TXCA3OibejTNB07q-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=265%3A6288&show-proto-sidebar=1',
       color: 'cyan',
       images: [
@@ -62,18 +62,18 @@ const Projects = () => {
     {
       id: 2,
       title: 'Furtastic Buddies',
-      description: 'Your Peace of Mind, Our Focus - A comprehensive pet care platform designed to help pet owners travel worry-free with advanced monitoring, health tracking, and community features.',
-      detailedDescription: 'Furtastic Buddies is an innovative mobile application that addresses the concerns of pet owners who want to travel but worry about their pets. The app offers comprehensive features including real-time pet monitoring with live video feed, detailed health tracking for eating, drinking, and activity patterns, a social community for pet owners to share updates, and an integrated marketplace for pet products and services. Key highlights include a personalized pet profile system, location tracking for walks, professional vet appointment booking, and a vibrant community feed where pets can have their own social presence.',
+      description: 'An app for pet owners who want to travel but are worried about leaving their pets. You can watch your pet live, track their health, and connect with other pet owners.',
+      detailedDescription: 'This app solves the problem of pet owners who want to travel but don\'t want to leave their pets alone. With Furtastic Buddies, you can watch your pet through live video, see how much they eat and drink, track their daily activities, and make profiles for your pets. You can also see where your pet goes during walks, book vet appointments, shop for pet stuff, and join a community of other pet owners where you can share photos and updates about your pets.',
       technologies: ['Flutter', 'Dart', 'Figma', 'UI/UX Design', 'Mobile Development'],
       features: [
-        'Real-time Pet Monitoring & Live Feed',
-        'Health & Activity Tracking Dashboard',
-        'Pet Profile & Data Management',
-        'Location Tracking for Pet Walks',
-        'Integrated Pet Services Marketplace',
-        'Social Community Platform',
-        'Vet Appointment Scheduling',
-        'Pet Product Shopping System'
+        'Watch your pet live through video',
+        'Track eating, drinking, and activity',
+        'Create profiles for your pets',
+        'See where your pet goes on walks',
+        'Buy pet products and services',
+        'Join a community of pet owners',
+        'Book vet appointments',
+        'Shop for pet supplies'
       ],
       github: 'https://github.com/goodboykit/FurtasticBuddies.git',
       live: 'https://www.figma.com/proto/eeDk5IXgXuBL6QcGf7efIa/Furtastic-Buddies?node-id=520-2049&p=f&t=89YvL8VFbRxeEhZm-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=520%3A2049&show-proto-sidebar=1',
@@ -93,18 +93,18 @@ const Projects = () => {
     {
       id: 3,
       title: 'Smart Test',
-      description: 'A comprehensive healthcare platform focused on HIV awareness, testing, and care management, featuring anonymous consultations, real-time statistics, and a user-friendly appointment system.',
-      detailedDescription: 'Smart Test is an innovative healthcare application designed to provide comprehensive HIV-related healthcare services while maintaining user privacy and confidentiality. The platform offers anonymous consultations with healthcare professionals, real-time STD statistics tracking, appointment scheduling with specialized clinics, and a secure personal health tracking system. The app emphasizes user privacy through anonymous mode access and features an intuitive interface for managing HIV testing, consultations, and ongoing care.',
+      description: 'A healthcare app about HIV awareness and testing. You can chat with doctors anonymously, book appointments, and see statistics. Everything is private and confidential.',
+      detailedDescription: 'This app helps people learn about HIV and get tested. You can use it without showing your real name to stay private. It lets you chat with doctors anonymously, see stats about STDs, book appointments at clinics near you, and keep track of your health history. The app also has educational articles and news about HIV, and you can view your test results securely. Everything is designed to keep your information safe and private.',
       technologies: ['Flutter','Dart','Figma', 'UI/UX Design', 'Mobile Development'],
       features: [
-        'Anonymous Mode Access',
-        'Real-time STD Statistics Dashboard',
-        'Secure Healthcare Provider Chat',
-        'Appointment Scheduling System',
-        'Personal Health History Tracking',
-        'Interactive Clinic Locator Map',
-        'Educational Resources & News',
-        'Confidential Test Results Management'
+        'Use the app without showing your name',
+        'See statistics about STDs',
+        'Chat with doctors privately',
+        'Book appointments at clinics',
+        'Keep track of your health records',
+        'Find clinics near you on a map',
+        'Read articles and news',
+        'View your test results safely'
       ],
       github: 'https://github.com/goodboykit/HIV',
       live: 'https://www.figma.com/proto/LQ932gq1h4kEiTw8ZyNiG8/HIV?node-id=33-708&p=f&t=DzyqatGprnxgjHs7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=33%3A708',
@@ -134,16 +134,16 @@ const Projects = () => {
     {
       id: 4,
       title: 'Coast2Cart',
-      description: 'A coastal marketplace web app that connects buyers with local fishers and artisans—browse fresh catch, chat with sellers, add to cart.',
-      detailedDescription: 'Coast2Cart is a modern e‑commerce experience tailored for coastal communities. Buyers can explore fresh seafood and souvenir listings with rich product cards, advanced filters and price ranges, and a smooth product detail flow. The app features a real-time style chat between buyers and sellers, a streamlined cart with quantity controls, profile pages with badges and activity, reviews and ratings, and load‑more pagination for performant browsing. Built with a responsive design system that keeps the interface fast and accessible across devices.',
+      description: 'A website where you can buy fresh seafood and souvenirs from local fishers and sellers. Browse products, chat with sellers, and add items to your cart.',
+      detailedDescription: 'This is like an online market for coastal areas. You can browse through fresh seafood and souvenirs, filter by category or price, and see details about each product and the seller. You can add stuff to your cart, change the quantity, see the total price, and chat with sellers directly. Both buyers and sellers have their own profiles where you can see what they\'re selling or what they\'ve bought, and you can leave reviews and ratings. The website works well on phones and computers.',
       technologies: ['React', 'MongoDB', 'Figma', 'Web Development'],
       features: [
-        'Product Catalogue with Category & Price Filters',
-        'Product Detail Page with Gallery and Seller Info',
-        'Add to Cart with Quantity Controls and Inline Totals',
-        'Buyer ↔ Seller Chat Messaging',
-        'Buyer and Seller Profiles (Active/Sold tabs)',
-        'Reviews & Ratings Components'
+        'Browse products by category and price',
+        'See product details and seller info',
+        'Add items to cart and change quantities',
+        'Chat with sellers',
+        'View buyer and seller profiles',
+        'Leave reviews and ratings'
       ],
       externalLinks: [
         { href: 'https://coast2cart-frontend.vercel.app/', label: 'Open Live Site' },
@@ -170,15 +170,15 @@ const Projects = () => {
     {
       id: 5,
       title: 'Literexia',
-      description: 'An inclusive literacy platform that helps Filipino learners with dyslexia improve reading comprehension through accessible design, text‑to‑voice, and data‑driven teaching tools.',
-      detailedDescription: 'Literexia is a technology‑assisted learning platform built with educators to support Filipino learners with dyslexia and other reading difficulties. The system combines accessible UX (Open Dyslexic font, customizable text sizes, and low‑distraction themes) with CRLA‑aligned assessments and activities that target alphabet knowledge, phonological awareness, decoding, word recognition, and reading comprehension. A prescriptive analytics engine synthesizes performance to recommend next steps and classroom interventions, while teacher dashboards surface progress, trends, and actionable feedback. Literexia complements face‑to‑face instruction and can be used in class or at home.',
+      description: 'A learning website to help Filipino students with dyslexia learn to read better. It reads text out loud, has easy-to-read fonts, and lets teachers track student progress.',
+      detailedDescription: 'This website helps students who have trouble reading because of dyslexia. It reads text out loud so students can hear what they\'re reading, uses special fonts that are easier to read, and lets you make text bigger. Students can practice with different activities like learning the alphabet, sounds, and understanding what they read. Teachers can see how well each student is doing, what activities they\'ve finished, and get suggestions on how to help them more. Administrators can manage classes, add students, and view all the data. It can be used in school or at home.',
       technologies: ['React','MongoDB', 'Accessibility', 'Text‑to‑Speech', 'Figma'],
       features: [
-        'Text‑to‑voice for passages, questions, and feedback',
-        'Prescriptive analytics that suggest tailored interventions',
-        'Teacher dashboard for progress tracking and insights',
-        'Activity library for alphabet, phonology, decoding, and comprehension',
-        'Admin tools for managing classes, students, and assessment data'
+        'Reads text out loud',
+        'Suggests activities based on student progress',
+        'Teachers can see student progress',
+        'Practice activities for reading skills',
+        'Manage classes and students'
       ],
       externalLinks: [
         { href: 'https://literexia.com/', label: 'Open Live Site' },
@@ -212,18 +212,18 @@ const Projects = () => {
     {
       id: 6,
       title: 'Communify',
-      description: 'A community-driven mobile application empowering citizens to report and track local infrastructure issues, fostering collaboration between residents and authorities for better urban management.',
-      detailedDescription: 'Communify is an innovative mobile application designed to bridge the gap between citizens and local authorities by providing a platform for reporting and monitoring community issues. Built with Flutter and Dart, the app enables users to report problems like potholes, hazardous electrical wiring, and infrastructure concerns with precise location tracking and real-time updates. The platform features an interactive map interface highlighting issue hotspots, a comprehensive news feed of local problems, and a robust system for authorities to manage and respond to community reports.',
+      description: 'An app where people can report problems in their area like potholes or broken streetlights. The city can see these reports and fix them.',
+      detailedDescription: 'This app lets people in the community report problems they see around their area. You can take a photo of something broken like a pothole, dangerous electrical wires, or other issues, and report it with your location. All the problems show up on a map so everyone can see what needs to be fixed. There\'s also a feed where you can see all the problems people reported. The city government can see all these reports, mark them as fixed, and respond to the community. It helps connect people with their local government to make the city better.',
       technologies: ['Flutter', 'Dart','UI/UX Design', 'Mobile Development'],
       features: [
-        'Interactive Issue Mapping System',
-        'Real-time Problem Reporting',
-        'Location-based Issue Tracking',
-        'Community News Feed Integration',
-        'Hazard Classification System',
-        'Photo Evidence Upload',
-        'Issue Status Monitoring',
-        'Authority Response Management'
+        'See problems on a map',
+        'Report problems instantly',
+        'Track problems by location',
+        'See all community reports in a feed',
+        'Categorize problems by type',
+        'Upload photos of problems',
+        'Check if problems are fixed',
+        'City can respond to reports'
       ],
       github: 'https://github.com/goodboykit/communify',
       live: 'https://www.figma.com/proto/NeCtn9tSFIAJG6J4uJ3RV3/Hackhaton-2024?node-id=20-203',
@@ -244,17 +244,17 @@ const Projects = () => {
     {
       id: 7,
       title: 'NU-Learn',
-      description: 'A comprehensive e-learning platform designed for National University Manila, offering a modern approach to online education with interactive courses, progress tracking, and certification management.',
-      detailedDescription: 'NU-Learn is an innovative educational platform tailored for National University Manila students and faculty. The platform features a clean, modern interface focused on accessibility and user engagement. It offers a comprehensive learning management system including course enrollment, progress tracking, certification management, and interactive assessment tools. The platform emphasizes user-friendly navigation and a seamless learning experience across different course types and educational levels.',
+      description: 'An online learning platform for my school, National University Manila. Students can take courses, track their progress, take quizzes, and get certificates.',
+      detailedDescription: 'I designed this online learning platform for students at National University Manila. Students can see all their courses on a dashboard, enroll in new courses, and see how much progress they\'ve made. They can take quizzes and tests, and when they finish a course, they get a certificate. Students can also manage their profile and account settings. Courses are organized into modules so it\'s easy to follow along, and students can choose their own learning path. The design is simple and easy to use.',
       technologies: ['Figma', 'UI/UX Design', 'Educational Technology', 'Learning Management System'],
       features: [
-        'Interactive Course Dashboard',
-        'Progress Tracking System',
-        'Certificate Generation & Management',
-        'Profile & Account Management',
-        'Assessment & Quiz System',
-        'Course Module Organization',
-        'Learning Path Customization',
+        'See all your courses on dashboard',
+        'Track your progress in each course',
+        'Get certificates when you finish',
+        'Manage your profile and account',
+        'Take quizzes and tests',
+        'Courses organized into modules',
+        'Choose your own learning path'
       ],
       live: 'https://www.figma.com/proto/xCEmjBilpgphgSSzBJ81zB/E-LEARNING?node-id=111-2&p=f&t=gOKMQuTgU2g3JMpA-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1',
       color: 'coral',
@@ -275,34 +275,63 @@ const Projects = () => {
     },
     {
       id: 8,
-      title: 'Project Placeholder 08',
-      description: 'Coming soon: description to be added. Fully wired for images, links, and carousel.',
-      detailedDescription: 'Placeholder project. Replace the links and images when ready. The modal carousel, indicators, and action buttons will adapt automatically based on provided properties.',
-      technologies: ['Next.js', 'Prisma'],
-      features: ['Feature A', 'Feature B', 'Feature C'],
-      github: '#',
-      live: '#',
-      color: 'yellow',
-      preview: '/assets/images/projects/ecodex6.png',
+      title: 'BarkBank',
+      description: 'A simple banking app made with Java. You can create an account, login, deposit money, withdraw money, and check your balance. It uses object-oriented programming.',
+      detailedDescription: 'This is a banking application I built using Java and JavaFX. Users can register for an account with their information, login with a username and PIN, deposit money into their account, withdraw money, and check their current balance. The app also keeps track of all your transactions so you can see your history. Everything is protected with a PIN when you login. The interface has a bulldog mascot and is built using object-oriented programming principles I learned in school.',
+      technologies: ['Java', 'JavaFX', 'OOP', 'GUI Development'],
+      features: [
+        'Create account and login',
+        'Register with your information',
+        'Deposit money',
+        'Withdraw money',
+        'Check your balance',
+        'See transaction history'
+      ],
+      github: 'https://github.com/goodboykit/BarkBankSystemOOP',
+      color: 'cyan',
+      preview: '/assets/images/projects/bark.png',
       images: [
-        '/assets/images/projects/ecodex6.png',
-        '/assets/images/projects/ecodex7.png'
+        '/assets/images/projects/bark.png',
+        '/assets/images/projects/bark2.png',
+        '/assets/images/projects/bark3.png',
+        '/assets/images/projects/bark4.png',
+        '/assets/images/projects/bark5.png',
+        '/assets/images/projects/bark6.png',
+        '/assets/images/projects/bark7.png'
       ]
     },
     {
       id: 9,
-      title: 'Project Placeholder 09',
-      description: 'Coming soon: description to be added. Fully wired for images, links, and carousel.',
-      detailedDescription: 'Placeholder project. Replace the links and images when ready. The modal carousel, indicators, and action buttons will adapt automatically based on provided properties.',
-      technologies: ['Python', 'Flask'],
-      features: ['Feature A', 'Feature B', 'Feature C'],
-      github: '#',
-      live: '#',
-      color: 'cyan',
-      preview: '/assets/images/projects/furtastic5.png',
+      title: 'Every Juan\'a',
+      description: 'A job search website for Filipinos. You can search for jobs, filter by location and experience, apply for positions, and upload your resume. There\'s also an admin side to manage companies and applicants.',
+      detailedDescription: 'This was a group project I worked on for my Information Management class. It\'s a job search platform where people can look for jobs in different industries all over the Philippines. Job seekers can filter jobs by location, industry, and how much experience is needed. They can create an account, make a profile, upload their resume and education info, and apply for jobs. The admin side lets you manage companies, add new job postings, see statistics about how many people applied, and view applicant resumes. It\'s built with Java and MySQL database.',
+      technologies: ['Java', 'MySQL', 'Database Management', 'Information Management System'],
+      features: [
+        'Search and filter jobs by location, industry, experience',
+        'Create account and manage profile',
+        'Upload resume and education info',
+        'Browse companies and job details',
+        'Track your applications',
+        'Admin can see statistics and manage everything',
+        'Add and edit companies and job postings',
+        'View applicant resumes'
+      ],
+      github: 'https://github.com/goodboykit/EveryJuana/tree/main',
+      color: 'yellow',
+      preview: '/assets/images/projects/every1.png',
       images: [
-        '/assets/images/projects/furtastic5.png',
-        '/assets/images/projects/furtastic6.png'
+        '/assets/images/projects/every1.png',
+        '/assets/images/projects/every2.png',
+        '/assets/images/projects/every3.png',
+        '/assets/images/projects/every4.png',
+        '/assets/images/projects/every6.png',
+        '/assets/images/projects/every7.png',
+        '/assets/images/projects/every8.png',
+        '/assets/images/projects/every9.png',
+        '/assets/images/projects/every11.png',
+        '/assets/images/projects/every12.png',
+        '/assets/images/projects/every13.png',
+        '/assets/images/projects/every15.png'
       ]
     },
   ]
@@ -469,6 +498,10 @@ const Projects = () => {
                       ) : project.live ? (
                         <a href={project.live} target="_blank" rel="noopener noreferrer" className="view-project-btn" onClick={(e) => e.stopPropagation()}>
                           View Figma Prototype →
+                        </a>
+                      ) : project.github ? (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="view-project-btn" onClick={(e) => e.stopPropagation()}>
+                          View Project Code →
                         </a>
                       ) : (
                         <button className="view-project-btn" onClick={(e) => { e.stopPropagation(); openModal(project); }}>
