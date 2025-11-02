@@ -256,8 +256,8 @@ const TechCommunity = () => {
       type: 'Leadership',
       description: [
         'Supported technical projects and initiatives for student developers',
-        'Assists in organizing coding hackathons and mentorship programs',
-        'Assessed and maintained tech systems with Facebook, Microsoft Teams live streaming',
+        'Provided technical and production support for coding events and mentorship programs',
+        'Assessed and maintained tech systems including Facebook and Microsoft Teams live streaming',
         'Ensured quality and flow of services for events'
       ],
       color: 'cyan',
@@ -307,9 +307,9 @@ const TechCommunity = () => {
       type: 'Volunteer',
       description: [
         'Actively contributes to community events and workshops',
-        'Assists beginners in learning Flutter Flow for app development',
+        'Provides technical assistance and onboarding support for beginners using Flutter Flow',
         'Engages with students and developers',
-        'Promotes no-code/low-code solutions in mobile development and AI powered apps'
+        'Promotes no-code/low-code solutions in mobile development and AI-powered apps'
       ],
       color: 'coral',
       logo: '/images/logos/flutterflow.png',
@@ -379,7 +379,7 @@ const TechCommunity = () => {
                 <span className="title-highlight">Experience</span>
               </h1>
               <p className="hero-subtitle">
-                Active participation in tech communities, organizing workshops and hackathons that bring developers together. Building connections and fostering growth through collaborative learning experiences.
+                Active participation in tech communities, contributing to workshops and events that bring developers together. Building connections and fostering growth through collaborative learning experiences.
               </p>
 
               <div className="hero-stats">
@@ -782,7 +782,7 @@ const TechCommunity = () => {
                 collaboration with every event
               </h2>
               <p className="collage-description">
-                Active participation in tech communities, organizing workshops and hackathons
+                Active participation in tech communities, contributing to workshops and events
                 that bring developers together. Building connections and fostering growth through
                 collaborative learning experiences.
               </p>
@@ -863,13 +863,13 @@ const TechCommunity = () => {
               <span className="impact-highlight">Creating Impact</span>
             </h2>
             <p className="impact-description">
-              Through active participation in tech communities, I've helped organize hackathons, mentored aspiring developers, and contributed to digital literacy initiatives that empower individuals and organizations.
+              Through active participation in tech communities, I have supported events with technical and production assistance, helped onboard participants, and contributed to digital literacy initiatives that empower individuals and organizations.
             </p>
             <div className="impact-badges" role="list" aria-label="Key community roles">
-              <span role="listitem" className="impact-badge" aria-label="Organized hackathons">Organized Hackathons</span>
-              <span role="listitem" className="impact-badge" aria-label="Mentored developers">Mentored Developers</span>
-              <span role="listitem" className="impact-badge" aria-label="Led digital literacy programs">Led Digital Literacy Programs</span>
-              <span role="listitem" className="impact-badge" aria-label="Coordinated community events">Coordinated Community Events</span>
+              <span role="listitem" className="impact-badge" aria-label="Supported event production">Supported Event Production</span>
+              <span role="listitem" className="impact-badge" aria-label="Onboarded participants">Onboarded Participants</span>
+              <span role="listitem" className="impact-badge" aria-label="Delivered digital literacy sessions">Delivered Digital Literacy Sessions</span>
+              <span role="listitem" className="impact-badge" aria-label="Coordinated technical operations">Coordinated Technical Operations</span>
             </div>
           </motion.div>
         </div>
@@ -898,7 +898,7 @@ const TechCommunity = () => {
               <h4>Tech Community Experience</h4>
               <ul>
                 <li><strong>Technical Team</strong> — Google Developer Student Club, National University Manila (09/2023 - 06/2025)
-                  <br/>Supported technical projects and initiatives, organized hackathons and mentorship programs, and managed live streaming and event technology.
+                  <br/>Supported technical projects and initiatives, provided technical and production support for hackathons and mentorship programs, and managed live streaming and event technology.
                 </li>
                 <li><strong>Vice Finance Officer</strong> — Amazon Web Services Learning Club (04/2024 - 05/2025)
                   <br/>Managed budgeting, sponsorship coordination, and resource allocation for club activities.
