@@ -62,7 +62,7 @@ const Hero = () => {
             <div className="hero-cta-group">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <a 
-                  href="https://kit-santiago-portfolio-resume.s3.ap-southeast-1.amazonaws.com/SANTIAGO_RESUME.pdf" 
+                  href="https://kit-santiago-portfolio.s3.ap-southeast-1.amazonaws.com/SANTIAGO_RESUME.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn-primary-hero"
