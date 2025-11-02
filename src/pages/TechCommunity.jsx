@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import { FaCalendarAlt, FaMapMarkerAlt, FaTrophy, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
@@ -6,22 +6,203 @@ import './TechCommunity.css'
 
 const TechCommunity = () => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [fadeKey, setFadeKey] = useState(0)
 
   const photoGallery = [
-    { id: 1, label: 'GDSC Event', name: 'GDSC-WORKSHOP', color: 'cyan-gradient' },
-    { id: 2, label: 'AWS Learning', name: 'AWS-WORKSHOP', color: 'coral-gradient' },
-    { id: 3, label: 'Community Event', name: 'COMMUNITY-MEETUP', color: 'orange-gradient' },
-    { id: 4, label: 'Flutter Workshop', name: 'FLUTTER-SESSION', color: 'yellow-gradient' },
+    { 
+      id: 1, 
+      label: 'GDSC NU Manila', 
+      name: 'GDSC-WORKSHOP', 
+      color: 'cyan-gradient',
+      images: [
+        '/assets/images/tech/GDSC/480871108_605447458955426_7496871908496789900_n.jpg',
+        '/assets/images/tech/GDSC/481113553_605447112288794_6457250476791053370_n.jpg',
+        '/assets/images/tech/GDSC/480695154_604758982357607_5307189619321212288_n.jpg',
+        '/assets/images/tech/GDSC/480908393_610514691782036_647718043333092385_n.jpg',
+        '/assets/images/tech/GDSC/481982344_610515241781981_269591837803728220_n.jpg',
+        '/assets/images/tech/GDSC/481070677_606120345554804_4581297450948057759_n.jpg'
+      ],
+      eventName: 'Google Developer Student Club',
+      eventOrg: 'National University Manila'
+    },
+    { 
+      id: 2, 
+      label: 'Carrot Cartel', 
+      name: 'AWS-WORKSHOP', 
+      color: 'coral-gradient',
+      images: [
+        '/assets/images/tech/AWS/472727353_122140422242453862_5381392377238647785_n.jpg',
+        '/assets/images/tech/AWS/472741348_122140422116453862_4107644048650758344_n.jpg',
+        '/assets/images/tech/AWS/472789588_122140422248453862_6136962851370394666_n.jpg',
+        '/assets/images/tech/AWS/472804619_122140422164453862_313888085117651785_n.jpg',
+        '/assets/images/tech/AWS/472819217_122140421612453862_6512942304773259070_n.jpg'
+      ],
+      eventName: 'Carrot Cartel',
+      eventOrg: 'AWS Learning Club Legarda'
+    },
+    { 
+      id: 3, 
+      label: 'Arduino Days', 
+      name: 'ARDUINO-EVENT', 
+      color: 'orange-gradient',
+      images: [
+        '/assets/images/tech/Arduino/6D748911-3354-4393-BD0D-2077ACC15E1E.jpeg',
+        '/assets/images/tech/Arduino/C0418662-EBC8-41BD-8913-4028B4532F09.jpeg'
+      ],
+      eventName: 'Arduino Days 2024 Philippines',
+      eventOrg: 'IACADEMY & DEV CON PH'
+    },
+    { 
+      id: 4, 
+      label: 'Canva Connect', 
+      name: 'CANVA-EVENT', 
+      color: 'yellow-gradient',
+      images: [
+        '/assets/images/tech/Canva/03C8CDD2-32EC-4F32-8BD2-253B9910EAA3_1_105_c.jpeg',
+        '/assets/images/tech/Canva/0BC4A406-CBDE-4CA1-AC8D-F51F4F4E383B_1_105_c.jpeg',
+        '/assets/images/tech/Canva/4E0EB695-AA51-43EE-A4A0-84891AE57B2B_1_105_c.jpeg',
+        '/assets/images/tech/Canva/2229E527-0321-42B6-8A9F-A44799F4CA07_1_105_c.jpeg',
+        '/assets/images/tech/Canva/F73A00BF-0DEF-458C-8337-2F78CD345D58_1_105_c.jpeg'
+      ],
+      eventName: 'Canva Connect: Manila',
+      eventOrg: 'Canva Philippines'
+    },
+    { 
+      id: 5, 
+      label: 'DLSU Event', 
+      name: 'DLSU-EVENT', 
+      color: 'purple-gradient',
+      images: [
+        '/assets/images/tech/DLSU/8C8705FE-7033-4245-A4DE-4CA620B0775B_1_105_c.jpeg',
+        '/assets/images/tech/DLSU/B2700D4F-2847-439D-ABDB-3AB95235522E_1_105_c.jpeg',
+        '/assets/images/tech/DLSU/D7C5DF35-F419-4C2F-90F2-26C29E678E09_1_105_c.jpeg'
+      ],
+      eventName: 'DLSU Tech Event',
+      eventOrg: 'De La Salle University'
+    },
+    { 
+      id: 6, 
+      label: 'GDSC-PLM InnoLympics', 
+      name: 'GDSC-PLM-INNOLYMPICS', 
+      color: 'green-gradient',
+      images: [
+        '/assets/images/tech/GDSC-PLM/1F8F7B87-C028-41DC-8B5E-7750805CD0E2_1_105_c.jpeg',
+        '/assets/images/tech/GDSC-PLM/0228DCC7-B62E-41CB-AF78-098D40675F3B_1_105_c.jpeg',
+        '/assets/images/tech/GDSC-PLM/7988FED4-1B0B-4304-9B0D-E5F4FF79DCEA_1_105_c.jpeg',
+        '/assets/images/tech/GDSC-PLM/C31DEB09-658F-4D38-8085-9EE2B4F80D6D_1_105_c.jpeg'
+      ],
+      eventName: 'GDSC-PLM InnoLympics',
+      eventOrg: 'Google Developer Student Club PLM'
+    },
+    { 
+      id: 7, 
+      label: 'FlutterFlow Hackfest', 
+      name: 'FLUTTERFLOW-HACKFEST', 
+      color: 'blue-gradient',
+      images: [
+        '/assets/images/tech/Google-Flutter-Hacvkathon/01BD67D7-7E1F-4E67-95C1-7585183FF81F_1_102_o.jpeg',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/2CCF098F-D51A-4AA1-971B-83BC4FE5E4B0_1_102_o.jpeg',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/3FEACA13-5138-467B-8EE7-00014EFCA5F9_1_102_o.jpeg',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/05C9FF24-81FB-4B04-B1C0-8B647B36F5E4.heic',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/6F2AABC0-ECA9-4423-84A7-40584E53CDB1_1_105_c.jpeg',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/12FA57A9-23A4-48D4-9026-15293A17BEE4_1_105_c.jpeg',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/1327C186-66C5-4452-9748-7AE72E466BCE_4_5005_c.jpeg',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/547632EA-DF7E-430A-A2D1-45948E31611A_1_105_c.jpeg',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/A1D8ADCA-374D-4490-8AF8-D5EFD3527A77_1_105_c.jpeg',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/B874AAA3-7CA2-4317-B8C0-D1BA61CBC788_1_102_o.jpeg',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/BD9E2CD8-DCC9-47E4-B147-BB00A531B82F_1_105_c.jpeg',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/D28B3F0B-2112-41AE-BF65-B7DAA5DF237B_1_105_c.jpeg',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/EF01E739-407B-4744-B371-776E79D1B0BE_1_102_o.jpeg',
+        '/assets/images/tech/Google-Flutter-Hacvkathon/EF9AFAA9-0DBA-4AEA-9A46-75132CA1845B_1_102_o.jpeg'
+      ],
+      eventName: 'FlutterFlow Hackfest & Seminar',
+      eventOrg: 'FlutterFlow & GDSC Manila'
+    },
+    { 
+      id: 8, 
+      label: 'I/O Extended Manila', 
+      name: 'IO-EXTENDED-MANILA', 
+      color: 'pink-gradient',
+      images: [
+        '/assets/images/tech/I:O Extended/BE6405A9-7E6A-4BAC-B774-B5F315AFD788_1_105_c.jpeg',
+        '/assets/images/tech/I:O Extended/CE6389B5-DDC4-46FA-A322-5AFC293B6D79_1_105_c.jpeg',
+        '/assets/images/tech/I:O Extended/E1B17072-5630-447F-B2E4-261EFD96D028_1_105_c.jpeg'
+      ],
+      eventName: 'Google I/O Extended Manila',
+      eventOrg: 'Google Developers Group Philippines'
+    },
   ]
 
-  // Auto-play functionality - change photo every 5 seconds
+  // Reset image index and loading state when photo index changes
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentPhotoIndex((prev) => (prev + 1) % photoGallery.length)
-    }, 5000) // 5 seconds
+    setCurrentImageIndex(0)
+    setImageLoaded(false)
+    setFadeKey(prev => prev + 1)
+    
+    // Check if initial image is already loaded (cached)
+    const currentGallery = photoGallery[currentPhotoIndex]
+    if (currentGallery?.images?.length > 0) {
+      const img = new Image()
+      img.onload = () => setImageLoaded(true)
+      img.src = currentGallery.images[0]
+    }
+  }, [currentPhotoIndex])
 
-    return () => clearInterval(interval)
-  }, [photoGallery.length])
+  // Preload images for smooth transitions and handle image loading state
+  useEffect(() => {
+    const currentGallery = photoGallery[currentPhotoIndex]
+    if (currentGallery?.images?.length > 0) {
+      const currentImage = currentGallery.images[currentImageIndex]
+      const nextImageIndex = (currentImageIndex + 1) % currentGallery.images.length
+      const nextImage = currentGallery.images[nextImageIndex]
+      
+      // Preload current and next images
+      const preloadImages = [currentImage]
+      if (nextImage) preloadImages.push(nextImage)
+      
+      preloadImages.forEach(src => {
+        const img = new Image()
+        img.src = src
+      })
+      
+      // Check if current image is already cached/loaded
+      const checkImage = new Image()
+      checkImage.onload = () => setImageLoaded(true)
+      checkImage.onerror = () => setImageLoaded(true) // Still show even if error
+      checkImage.src = currentImage
+    }
+  }, [currentPhotoIndex, currentImageIndex, photoGallery])
+
+  // Auto-play functionality - cycle through images within the current gallery item
+  useEffect(() => {
+    const currentGallery = photoGallery[currentPhotoIndex]
+    const hasImages = currentGallery?.images?.length > 0
+    
+    if (hasImages) {
+      // Cycle through all images in this gallery only
+      const imageInterval = setInterval(() => {
+        setImageLoaded(false)
+        setFadeKey(prev => prev + 1)
+        setCurrentImageIndex((prev) => {
+          const nextIndex = (prev + 1) % currentGallery.images.length
+          return nextIndex
+        })
+      }, 4000) // Change image every 4 seconds
+      
+      return () => clearInterval(imageInterval)
+    }
+  }, [currentPhotoIndex, photoGallery])
+
+  // Auto-advance to next gallery item after 2.5 minutes (150 seconds)
+  useEffect(() => {
+    const autoAdvanceTimer = setTimeout(() => {
+      setCurrentPhotoIndex((prev) => (prev + 1) % photoGallery.length)
+    }, 150000) // 2.5 minutes = 150,000 milliseconds
+
+    return () => clearTimeout(autoAdvanceTimer)
+  }, [currentPhotoIndex, photoGallery])
 
   const handleNextPhoto = () => {
     setCurrentPhotoIndex((prev) => (prev + 1) % photoGallery.length)
@@ -202,15 +383,13 @@ const TechCommunity = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               <div className="hero-image-wrapper">
-                <motion.div
-                  className="hero-image-placeholder"
+                <motion.img
+                  src="/assets/images/tech/AWS/472804619_122140422164453862_313888085117651785_n.jpg"
+                  alt="AWS Learning Club Community Photo"
+                  className="hero-image"
                   whileHover={{ scale: 1.02, rotate: 1 }}
                   transition={{ duration: 0.4 }}
-                >
-                  <div className="image-overlay">
-                    <span className="placeholder-text">Your Community Photo Here</span>
-                  </div>
-                </motion.div>
+                />
                 <motion.div
                   className="floating-badge"
                   animate={{ rotate: 360 }}
@@ -330,11 +509,21 @@ const TechCommunity = () => {
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className={`photo-placeholder ${photoGallery[(currentPhotoIndex - 1 + photoGallery.length) % photoGallery.length].color}`}>
-                  <span className="photo-placeholder-text">
-                    {photoGallery[(currentPhotoIndex - 1 + photoGallery.length) % photoGallery.length].label}
-                  </span>
-                </div>
+                {(() => {
+                  const prevGallery = photoGallery[(currentPhotoIndex - 1 + photoGallery.length) % photoGallery.length]
+                  const hasImages = prevGallery.images?.length > 0
+                  return hasImages ? (
+                    <img
+                      src={prevGallery.images[0]}
+                      alt={prevGallery.eventName || prevGallery.label}
+                      className="photo-image"
+                    />
+                  ) : (
+                    <div className={`photo-placeholder ${prevGallery.color}`}>
+                      <span className="photo-placeholder-text">{prevGallery.label}</span>
+                    </div>
+                  )
+                })()}
               </motion.div>
               <div className="photo-label-wrapper">
                 <div className="photo-number">
@@ -349,22 +538,56 @@ const TechCommunity = () => {
             {/* Center Large Circular Photo - Current */}
             <motion.div
               className="showcase-photo-center"
-              initial={{ opacity: 0.5, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0.5 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
               <motion.div
-                key={currentPhotoIndex}
                 className="circular-photo"
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5 }}
                 whileHover={{ scale: 1.02, rotate: 1 }}
               >
-                <div className={`photo-placeholder ${photoGallery[currentPhotoIndex].color}`}>
-                  <span className="photo-placeholder-text">{photoGallery[currentPhotoIndex].label}</span>
-                </div>
+                {photoGallery[currentPhotoIndex].images?.length > 0 ? (
+                  <>
+                    <div className="image-wrapper">
+                      <AnimatePresence mode="wait">
+                        <motion.img
+                          key={`${currentPhotoIndex}-${currentImageIndex}`}
+                          src={photoGallery[currentPhotoIndex].images[currentImageIndex]}
+                          alt={photoGallery[currentPhotoIndex].eventName || photoGallery[currentPhotoIndex].label}
+                          className="center-photo-image"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ 
+                            duration: 0.8,
+                            ease: "easeInOut"
+                          }}
+                          onLoad={() => setImageLoaded(true)}
+                          loading="lazy"
+                        />
+                      </AnimatePresence>
+                      {!imageLoaded && (
+                        <motion.div 
+                          className={`photo-loading-placeholder ${photoGallery[currentPhotoIndex].color}`}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <span className="photo-placeholder-text">Loading...</span>
+                        </motion.div>
+                      )}
+                    </div>
+                    <div className="image-counter">
+                      {currentImageIndex + 1}/{photoGallery[currentPhotoIndex].images.length}
+                    </div>
+                  </>
+                ) : (
+                  <div className={`photo-placeholder ${photoGallery[currentPhotoIndex].color}`}>
+                    <span className="photo-placeholder-text">{photoGallery[currentPhotoIndex].label}</span>
+                  </div>
+                )}
               </motion.div>
             </motion.div>
 
@@ -381,11 +604,21 @@ const TechCommunity = () => {
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className={`photo-placeholder ${photoGallery[(currentPhotoIndex + 1) % photoGallery.length].color}`}>
-                  <span className="photo-placeholder-text">
-                    {photoGallery[(currentPhotoIndex + 1) % photoGallery.length].label}
-                  </span>
-                </div>
+                {(() => {
+                  const nextGallery = photoGallery[(currentPhotoIndex + 1) % photoGallery.length]
+                  const hasImages = nextGallery.images?.length > 0
+                  return hasImages ? (
+                    <img
+                      src={nextGallery.images[0]}
+                      alt={nextGallery.eventName || nextGallery.label}
+                      className="photo-image"
+                    />
+                  ) : (
+                    <div className={`photo-placeholder ${nextGallery.color}`}>
+                      <span className="photo-placeholder-text">{nextGallery.label}</span>
+                    </div>
+                  )
+                })()}
               </motion.div>
               <div className="photo-label-wrapper">
                 <div className="photo-number">

@@ -93,7 +93,11 @@ const About = () => {
                 whileHover={{ scale: 1.02, rotate: 1 }}
               >
                 <div className="about-image-wrapper">
-                  <div className="about-image-placeholder"></div>
+                  <img 
+                    src="/assets/images/tech/about.jpeg" 
+                    alt="Kit Nicholas Santiago at National University" 
+                    className="about-image"
+                  />
                   <div className="about-badge-float">
                     <span>Creative</span>
                   </div>
