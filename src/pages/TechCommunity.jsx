@@ -133,6 +133,38 @@ const TechCommunity = () => {
       eventName: 'Google I/O Extended Manila',
       eventOrg: 'Google Developers Group Philippines'
     },
+    {
+      id: 9,
+      label: 'GDSC Ideathon',
+      name: 'GDSC-IDEATHON',
+      color: 'teal-gradient',
+      images: [
+        '/assets/images/tech/Ideathon/5A7F8572-B974-4EDD-A033-44E0F0C3E57F_1_105_c.jpeg',
+        '/assets/images/tech/Ideathon/993E1AA1-30B2-487B-9A06-E71B8CA2B046_1_105_c.jpeg',
+        '/assets/images/tech/Ideathon/C3A9F955-4FB0-43F1-AD3E-BE5E7686F0F2_1_105_c.jpeg',
+        '/assets/images/tech/Ideathon/DA805CBE-61CD-4F24-A00B-0FC408C92B6C_1_105_c.jpeg'
+      ],
+      eventName: 'GDSC Ideathon 2024',
+      eventOrg: 'Google Developer Student Club'
+    },
+    {
+      id: 10,
+      label: 'Next Hire',
+      name: 'NEXTHIRE-PH',
+      color: 'indigo-gradient',
+      images: [
+        '/assets/images/tech/NextHire-PhilippineCareer/6FDF367C-69E2-46BF-B494-58B539EA7569.jpeg',
+        '/assets/images/tech/NextHire-PhilippineCareer/59F4E6F5-2BF4-43A0-8192-FC04E050133B_1_105_c.jpeg',
+        '/assets/images/tech/NextHire-PhilippineCareer/94509BB4-3F58-45B8-AB29-A9C85592BF48_1_102_o.jpeg',
+        '/assets/images/tech/NextHire-PhilippineCareer/490868576_644148438418661_6899248176509122063_n.jpg',
+        '/assets/images/tech/NextHire-PhilippineCareer/490922649_644148505085321_4964135944762548492_n.jpg',
+        '/assets/images/tech/NextHire-PhilippineCareer/490962986_644148448418660_3162152796817055291_n.jpg',
+        '/assets/images/tech/NextHire-PhilippineCareer/B05E0995-C50E-415F-B796-D08DEDD993D5_1_102_o.jpeg',
+        '/assets/images/tech/NextHire-PhilippineCareer/FF46B05F-E74A-4599-B3EE-CEEDDF96A8A6.jpeg'
+      ],
+      eventName: 'Next Hire: Philippine Career',
+      eventOrg: 'Next Hire Philippines'
+    },
   ]
 
   // Reset image index and loading state when photo index changes
