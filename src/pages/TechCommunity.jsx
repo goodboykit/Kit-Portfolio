@@ -322,7 +322,8 @@ const TechCommunity = () => {
     'Introduction to Flutter Mobile UI/UX 2024',
     'Ctrl + Solve: Google Solutions Challenge 2023',
     'Arduino Day 2024: Coding and Robotics',
-    'FFDC Extended Manila: Build Next Gen Apps with Flutter Flow 5.0 2024'
+    'Canva Connect: Manila 2024',
+    'FFDC Extended: Building Apps with Flutterflow 5.0'
   ]
 
   return (
@@ -355,7 +356,7 @@ const TechCommunity = () => {
             >
               <span className="hero-badge">
                 <span className="badge-icon">✦</span>
-                Community Involvement
+                COMMUNITY PROJECT
               </span>
               <h1 className="hero-title">
                 <TypeAnimation
@@ -377,8 +378,7 @@ const TechCommunity = () => {
                 <span className="title-highlight">Experience</span>
               </h1>
               <p className="hero-subtitle">
-                Passionate about building tech communities, organizing events, and empowering
-                developers through mentorship and collaboration.
+                Active participation in tech communities, organizing workshops and hackathons that bring developers together. Building connections and fostering growth through collaborative learning experiences.
               </p>
 
               <div className="hero-stats">
@@ -386,14 +386,14 @@ const TechCommunity = () => {
                   className="stat-item"
                   whileHover={{ scale: 1.02, y: -2 }}
                 >
-                  <div className="stat-number">4+</div>
+                  <div className="stat-number">2</div>
                   <div className="stat-label">Organizations</div>
                 </motion.div>
                 <motion.div
                   className="stat-item"
                   whileHover={{ scale: 1.02, y: -2 }}
                 >
-                  <div className="stat-number">6+</div>
+                  <div className="stat-number">7</div>
                   <div className="stat-label">Events Attended</div>
                 </motion.div>
                 <motion.div
@@ -785,11 +785,7 @@ const TechCommunity = () => {
                 that bring developers together. Building connections and fostering growth through
                 collaborative learning experiences.
               </p>
-              <div className="collage-meta">
-                <span>2023 - 2025</span>
-                <span className="meta-divider">|</span>
-                <span>KIT NICHOLAS</span>
-              </div>
+            
             </motion.div>
 
             <motion.div
@@ -800,10 +796,15 @@ const TechCommunity = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="large-circular-photo">
-                <div className="photo-placeholder yellow-gradient">
-                  <span className="photo-placeholder-text">Workshop Leader</span>
-                </div>
+                <motion.img
+                  src="/assets/images/tech/Google-Flutter-Hacvkathon/2CCF098F-D51A-4AA1-971B-83BC4FE5E4B0_1_102_o.jpeg"
+                  alt="Tech Community Photo"
+                  className="collage-photo"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.4 }}
+                />
               </div>
+             
               <motion.div
                 className="drag-badge"
                 animate={{
@@ -816,7 +817,7 @@ const TechCommunity = () => {
                 }}
                 whileHover={{ scale: 1.03 }}
               >
-                <span>DRAG<br />TO VIEW<br />MORE</span>
+                <span>Tech<br />Community<br /></span>
               </motion.div>
             </motion.div>
           </div>

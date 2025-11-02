@@ -984,6 +984,20 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
+/* Collage photo inside the circular frame */
+.collage-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.collage-photo:hover {
+  transform: scale(1.03);
+  filter: brightness(1.02);
+}
+
 .drag-badge {
   position: absolute;
   top: -30px;
