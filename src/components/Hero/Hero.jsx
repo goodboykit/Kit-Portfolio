@@ -140,12 +140,12 @@ const Hero = () => {
           
             <div className="stat-divider-minimal"></div>
             <div className="stat-minimal-item">
-              <span className="stat-minimal-number">8+</span>
+              <span className="stat-minimal-number">8</span>
               <span className="stat-minimal-label">Certifications</span>
             </div>
             <div className="stat-divider-minimal"></div>
             <div className="stat-minimal-item">
-              <span className="stat-minimal-number">10+</span>
+              <span className="stat-minimal-number">7</span>
               <span className="stat-minimal-label">Tech Events</span>
             </div>
         </motion.div>

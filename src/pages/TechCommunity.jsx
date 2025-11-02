@@ -782,9 +782,7 @@ const TechCommunity = () => {
                 collaboration with every event
               </h2>
               <p className="collage-description">
-                Active participation in tech communities, contributing to workshops and events
-                that bring developers together. Building connections and fostering growth through
-                collaborative learning experiences.
+                I support community events by handling technical production, participant onboarding, and hands-on workshop assistance. My focus is on making meetups practical, welcoming, and valuable for developers at every level.
               </p>
             
             </motion.div>
