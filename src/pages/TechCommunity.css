@@ -1021,6 +1021,64 @@
   transform-origin: center;
 }
 
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--showcase-white);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.btn-primary {
+  background: var(--showcase-yellow);
+  color: var(--showcase-black);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+/* Role badges */
+.role-badges, .impact-badges {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.role-badge, .impact-badge {
+  background: rgba(255,255,255,0.12);
+  color: var(--showcase-cream);
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Full resume section */
+.community-resume {
+  background: var(--showcase-cream);
+  padding: 3rem 0 6rem;
+}
+.resume-full {
+  background: var(--showcase-white);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+.resume-full h3 { margin: 0 0 0.5rem 0; }
+.resume-sub { color: var(--showcase-gray); margin-bottom: 0.5rem; }
+.resume-contact { color: var(--showcase-gray-light); margin-bottom: 1rem; }
+.resume-full h4 { margin-top: 1.25rem; }
+.resume-list { margin-left: 1rem; }
+
 /* Artistic Gallery */
 .artistic-gallery {
   background-color: var(--showcase-olive);

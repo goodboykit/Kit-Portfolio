@@ -9,6 +9,7 @@ const TechCommunity = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [imageLoaded, setImageLoaded] = useState(false)
   const [fadeKey, setFadeKey] = useState(0)
+  const [showResume, setShowResume] = useState(false)
 
   const photoGallery = [
     { 
@@ -862,19 +863,73 @@ const TechCommunity = () => {
               <span className="impact-highlight">Creating Impact</span>
             </h2>
             <p className="impact-description">
-              Through active participation in tech communities, I've helped organize hackathons,
-              mentored aspiring developers, and contributed to digital literacy initiatives that
-              empower individuals and organizations.
+              Through active participation in tech communities, I've helped organize hackathons, mentored aspiring developers, and contributed to digital literacy initiatives that empower individuals and organizations.
             </p>
-            <div className="impact-badges">
-              <span className="impact-badge">Hackathon Organizer</span>
-              <span className="impact-badge">Community Mentor</span>
-              <span className="impact-badge">Digital Literacy Advocate</span>
-              <span className="impact-badge">Event Coordinator</span>
+            <div className="impact-badges" role="list" aria-label="Key community roles">
+              <span role="listitem" className="impact-badge" aria-label="Organized hackathons">Organized Hackathons</span>
+              <span role="listitem" className="impact-badge" aria-label="Mentored developers">Mentored Developers</span>
+              <span role="listitem" className="impact-badge" aria-label="Led digital literacy programs">Led Digital Literacy Programs</span>
+              <span role="listitem" className="impact-badge" aria-label="Coordinated community events">Coordinated Community Events</span>
             </div>
           </motion.div>
         </div>
       </section>
+      {showResume && (
+        <section className="community-resume">
+          <div className="showcase-container">
+            <div className="resume-full">
+              <h3>KIT NICHOLAS T. SANTIAGO</h3>
+              <div className="resume-sub">4th Year College Student — IT (Mobile & Web Applications)</div>
+              <div className="resume-contact">📞 (310) 985 0496 &nbsp; | &nbsp; santiagonikos@gmail.com &nbsp; | &nbsp; 📍 8723 Artesia Blvd, Space 75, Bellflower CA 90706</div>
+
+              <h4>Profile</h4>
+              <p>
+                Passionate fourth-year college student specializing in mobile and web applications. Experienced in technical coordination, production, and collaborative project development. A proactive leader and problem-solver actively engaged in technical communities, mentorship programs, seminars, workshops, and events. US citizen currently studying in the Philippines and seeking internship opportunities in the US to maximize potential and contribute to organizational growth.
+              </p>
+
+              <h4>Skills</h4>
+              <ul>
+                <li>Java · JavaScript · JavaFX · Node.js</li>
+                <li>Flutter (Dart) · Flutter Flow · React · Kotlin</li>
+                <li>MySQL · MongoDB · Git/GitHub · AWS S3</li>
+                <li>Frontend & Backend Development · OOP · Cloud Computing · Troubleshooting</li>
+              </ul>
+
+              <h4>Tech Community Experience</h4>
+              <ul>
+                <li><strong>Technical Team</strong> — Google Developer Student Club, National University Manila (09/2023 - 06/2025)
+                  <br/>Supported technical projects and initiatives, organized hackathons and mentorship programs, and managed live streaming and event technology.
+                </li>
+                <li><strong>Vice Finance Officer</strong> — Amazon Web Services Learning Club (04/2024 - 05/2025)
+                  <br/>Managed budgeting, sponsorship coordination, and resource allocation for club activities.
+                </li>
+                <li><strong>Core Volunteer</strong> — National University Community Extension (04/08/2024)
+                  <br/>Delivered digital literacy training to Molinete Farmers Association (MOFA).
+                </li>
+                <li><strong>Core Volunteer</strong> — Flutter Flow Manila Philippines (07/2024 - Present)
+                  <br/>Contributed to workshops and mentorship for no-code/low-code mobile development.
+                </li>
+              </ul>
+
+              <h4>Education</h4>
+              <p><strong>Senior High (STEM)</strong> — Nazareth School of National University Manila (08/2020 - 06/2022). Graduated with High Honors.</p>
+              <p><strong>BS Information Technology</strong> — National University Manila (Expected 2026). Specializing in Mobile & Web Application.</p>
+
+              <h4>Achievements & Certifications</h4>
+              <ul>
+                <li>Top 1 — Senior High IT Immersion, UI Design (SY 2022-2023)</li>
+                <li>Top 7 — DLSU Hacker-Cup Hackathon (SY 2023-2024)</li>
+                <li>Top 3 — Ideathon Hackathon, GDSC (SY 2024-2025)</li>
+                <li>CISCO: Python Essentials 1 & 2; HTML, CSS & JavaScript for Beginners</li>
+                <li>Fortinet: Threat Landscape & Fundamentals (2025)</li>
+              </ul>
+
+              <h4>Seminars</h4>
+              <p>Google I/O Extended Manila 2024 · GDG Cloud Manila PH 2024 AI Workshop · Introduction to Flutter Mobile UI/UX 2024 · Ctrl + Solve: Google Solutions Challenge 2023 · Arduino Day 2024 · Canva Connect: Manila 2024 · FFDC Extended: Building Apps with Flutterflow 5.0</p>
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   )
 }
