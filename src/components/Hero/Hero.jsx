@@ -61,9 +61,9 @@ const Hero = () => {
 
             <div className="hero-cta-group">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a 
-                  href="https://kit-santiago-portfolio.s3.ap-southeast-1.amazonaws.com/SANTIAGO_RESUME.pdf" 
-                  target="_blank" 
+                <a
+                  href="https://kit-santiago-portfolio.s3.ap-southeast-1.amazonaws.com/SANTIAGO_RESUME2.pdf"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary-hero"
                 >
@@ -92,9 +92,9 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <img 
-                  src="/profile-image.jpg" 
-                  alt="Kit Nicholas Santiago" 
+                <img
+                  src="/profile-image.jpg"
+                  alt="Kit Nicholas Santiago"
                   className="profile-image"
                 />
               </motion.div>
@@ -105,7 +105,7 @@ const Hero = () => {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
-                  <span className="floating-badge-text">TECH VOLUNTEER • GOOGLE DEVELOPERS CLUB</span>
+                <span className="floating-badge-text">TECH VOLUNTEER • GOOGLE DEVELOPERS CLUB</span>
               </motion.div>
 
               {/* Info Badge */}
@@ -132,22 +132,22 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-            <div className="stat-minimal-item">
-              <span className="stat-minimal-number">10</span>
-              <span className="stat-minimal-label">Projects Built</span>
-            </div>
-            <div className="stat-divider-minimal"></div>
-          
-            <div className="stat-divider-minimal"></div>
-            <div className="stat-minimal-item">
-              <span className="stat-minimal-number">8</span>
-              <span className="stat-minimal-label">Certifications</span>
-            </div>
-            <div className="stat-divider-minimal"></div>
-            <div className="stat-minimal-item">
-              <span className="stat-minimal-number">7</span>
-              <span className="stat-minimal-label">Tech Events</span>
-            </div>
+          <div className="stat-minimal-item">
+            <span className="stat-minimal-number">10</span>
+            <span className="stat-minimal-label">Projects Built</span>
+          </div>
+          <div className="stat-divider-minimal"></div>
+
+          <div className="stat-divider-minimal"></div>
+          <div className="stat-minimal-item">
+            <span className="stat-minimal-number">8</span>
+            <span className="stat-minimal-label">Certifications</span>
+          </div>
+          <div className="stat-divider-minimal"></div>
+          <div className="stat-minimal-item">
+            <span className="stat-minimal-number">7</span>
+            <span className="stat-minimal-label">Tech Events</span>
+          </div>
         </motion.div>
 
         {/* Social Links */}
